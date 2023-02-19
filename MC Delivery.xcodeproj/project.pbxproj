@@ -13,6 +13,12 @@
 		F93FAFA329A26E1400786ED4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFA129A26E1400786ED4 /* Main.storyboard */; };
 		F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFA429A26E1500786ED4 /* Assets.xcassets */; };
 		F93FAFA829A26E1500786ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFA629A26E1500786ED4 /* LaunchScreen.storyboard */; };
+		F93FAFB629A26E2600786ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAFB529A26E2600786ED4 /* AppDelegate.swift */; };
+		F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAFB729A26E2600786ED4 /* SceneDelegate.swift */; };
+		F93FAFBA29A26E2600786ED4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAFB929A26E2600786ED4 /* ViewController.swift */; };
+		F93FAFBD29A26E2600786ED4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFBB29A26E2600786ED4 /* Main.storyboard */; };
+		F93FAFBF29A26E2600786ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFBE29A26E2600786ED4 /* Assets.xcassets */; };
+		F93FAFC229A26E2600786ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFC029A26E2600786ED4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +30,25 @@
 		F93FAFA429A26E1500786ED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F93FAFA729A26E1500786ED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F93FAFA929A26E1500786ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93FAFB329A26E2600786ED4 /* MC Delivery Carrier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC Delivery Carrier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F93FAFB529A26E2600786ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F93FAFB729A26E2600786ED4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F93FAFB929A26E2600786ED4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F93FAFBC29A26E2600786ED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F93FAFBE29A26E2600786ED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F93FAFC129A26E2600786ED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F93FAFC329A26E2600786ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F93FAF9529A26E1400786ED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93FAFB029A26E2600786ED4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				F93FAF9A29A26E1400786ED4 /* MC Delivery */,
+				F93FAFB429A26E2600786ED4 /* MC Delivery Carrier */,
 				F93FAF9929A26E1400786ED4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				F93FAF9829A26E1400786ED4 /* MC Delivery.app */,
+				F93FAFB329A26E2600786ED4 /* MC Delivery Carrier.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +88,20 @@
 				F93FAFA929A26E1500786ED4 /* Info.plist */,
 			);
 			path = "MC Delivery";
+			sourceTree = "<group>";
+		};
+		F93FAFB429A26E2600786ED4 /* MC Delivery Carrier */ = {
+			isa = PBXGroup;
+			children = (
+				F93FAFB529A26E2600786ED4 /* AppDelegate.swift */,
+				F93FAFB729A26E2600786ED4 /* SceneDelegate.swift */,
+				F93FAFB929A26E2600786ED4 /* ViewController.swift */,
+				F93FAFBB29A26E2600786ED4 /* Main.storyboard */,
+				F93FAFBE29A26E2600786ED4 /* Assets.xcassets */,
+				F93FAFC029A26E2600786ED4 /* LaunchScreen.storyboard */,
+				F93FAFC329A26E2600786ED4 /* Info.plist */,
+			);
+			path = "MC Delivery Carrier";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +124,23 @@
 			productReference = F93FAF9829A26E1400786ED4 /* MC Delivery.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F93FAFB229A26E2600786ED4 /* MC Delivery Carrier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F93FAFC429A26E2600786ED4 /* Build configuration list for PBXNativeTarget "MC Delivery Carrier" */;
+			buildPhases = (
+				F93FAFAF29A26E2600786ED4 /* Sources */,
+				F93FAFB029A26E2600786ED4 /* Frameworks */,
+				F93FAFB129A26E2600786ED4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MC Delivery Carrier";
+			productName = "MC Delivery Carrier";
+			productReference = F93FAFB329A26E2600786ED4 /* MC Delivery Carrier.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +152,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					F93FAF9729A26E1400786ED4 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					F93FAFB229A26E2600786ED4 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -116,6 +173,7 @@
 			projectRoot = "";
 			targets = (
 				F93FAF9729A26E1400786ED4 /* MC Delivery */,
+				F93FAFB229A26E2600786ED4 /* MC Delivery Carrier */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +189,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F93FAFB129A26E2600786ED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93FAFC229A26E2600786ED4 /* LaunchScreen.storyboard in Resources */,
+				F93FAFBF29A26E2600786ED4 /* Assets.xcassets in Resources */,
+				F93FAFBD29A26E2600786ED4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,6 +209,16 @@
 				F93FAFA029A26E1400786ED4 /* ViewController.swift in Sources */,
 				F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */,
 				F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93FAFAF29A26E2600786ED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93FAFBA29A26E2600786ED4 /* ViewController.swift in Sources */,
+				F93FAFB629A26E2600786ED4 /* AppDelegate.swift in Sources */,
+				F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +237,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				F93FAFA729A26E1500786ED4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F93FAFBB29A26E2600786ED4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F93FAFBC29A26E2600786ED4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F93FAFC029A26E2600786ED4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F93FAFC129A26E2600786ED4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -336,6 +430,62 @@
 			};
 			name = Release;
 		};
+		F93FAFC529A26E2600786ED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7N24P583L5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MC Delivery Carrier/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.linthit.MC-Delivery-Carrier";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F93FAFC629A26E2600786ED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7N24P583L5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MC Delivery Carrier/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.linthit.MC-Delivery-Carrier";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -353,6 +503,15 @@
 			buildConfigurations = (
 				F93FAFAD29A26E1500786ED4 /* Debug */,
 				F93FAFAE29A26E1500786ED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F93FAFC429A26E2600786ED4 /* Build configuration list for PBXNativeTarget "MC Delivery Carrier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F93FAFC529A26E2600786ED4 /* Debug */,
+				F93FAFC629A26E2600786ED4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

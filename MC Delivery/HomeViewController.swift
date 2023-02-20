@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     private let customButton = CustomButton()
     private let customNavBar = CustomNavigationBar()
     
-    @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak var homeCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,11 @@ class HomeViewController: UIViewController {
             self.title = "MyanCare Pharmacy"
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationBar.standardAppearance = self.customNavBar.navBar
-            self.homeTableView.backgroundColor = self.customColor.backgroundColor
-            self.homeTableView.delegate = self
-            self.homeTableView.dataSource = self
+            self.homeCollectionView.register(UINib(nibName: MedicineCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MedicineCollectionViewCell.reuseIdentifier)
+            self.homeCollectionView.backgroundColor = self.customColor.backgroundColor
+            self.homeCollectionView.delegate = self
+            self.homeCollectionView.dataSource = self
+            self.homeCollectionView.collectionViewLayout = CustomLayout.configureLayout()
             self.navigationItem.leftBarButtonItem = self.customButton.menuButton
         }
         customButton.menuButton.target = self
@@ -37,28 +39,14 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    func numberOfSections(in tableView: UITableView) -> Int {return 2}
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {return 80}
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return CustomHeaderView(tableView: tableView, section: section).headerView
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 50
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0: return 150
-        case 1: return 300
-        default: return 0
-        }
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {return 1}
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = .gray
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MedicineCollectionViewCell.reuseIdentifier, for: indexPath)
         return cell
     }
     

@@ -25,8 +25,10 @@
 		F9E461A229A359460050BF0F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A029A359460050BF0F /* CustomButton.swift */; };
 		F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */; };
 		F9E461A529A360F20050BF0F /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */; };
-		F9E461AA29A369D80050BF0F /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A929A369D80050BF0F /* CustomHeaderView.swift */; };
-		F9E461AB29A369D80050BF0F /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A929A369D80050BF0F /* CustomHeaderView.swift */; };
+		F9E461AE29A3AED60050BF0F /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461AD29A3AED60050BF0F /* CustomLayout.swift */; };
+		F9E461AF29A3AED60050BF0F /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461AD29A3AED60050BF0F /* CustomLayout.swift */; };
+		F9E461B229A3B1160050BF0F /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461B029A3B1160050BF0F /* MedicineCollectionViewCell.swift */; };
+		F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +51,9 @@
 		F9E4619729A337300050BF0F /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		F9E461A029A359460050BF0F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		F9E461A929A369D80050BF0F /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		F9E461AD29A3AED60050BF0F /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		F9E461B029A3B1160050BF0F /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCollectionViewCell.swift; sourceTree = "<group>"; };
+		F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +77,6 @@
 		F93FAF8F29A26E1400786ED4 = {
 			isa = PBXGroup;
 			children = (
-				F9E461A929A369D80050BF0F /* CustomHeaderView.swift */,
 				F9E461A029A359460050BF0F /* CustomButton.swift */,
 				F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */,
 				F9E4619729A337300050BF0F /* CustomColor.swift */,
@@ -102,6 +105,9 @@
 				F93FAFA929A26E1500786ED4 /* Info.plist */,
 				F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */,
 				F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */,
+				F9E461B029A3B1160050BF0F /* MedicineCollectionViewCell.swift */,
+				F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */,
+				F9E461AD29A3AED60050BF0F /* CustomLayout.swift */,
 			);
 			path = "MC Delivery";
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */,
 				F93FAFA829A26E1500786ED4 /* LaunchScreen.storyboard in Resources */,
 				F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */,
 				F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */,
@@ -222,8 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E461B229A3B1160050BF0F /* MedicineCollectionViewCell.swift in Sources */,
 				F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
-				F9E461AA29A369D80050BF0F /* CustomHeaderView.swift in Sources */,
+				F9E461AE29A3AED60050BF0F /* CustomLayout.swift in Sources */,
 				F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */,
 				F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */,
 				F9E461A129A359460050BF0F /* CustomButton.swift in Sources */,
@@ -237,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E461A529A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
-				F9E461AB29A369D80050BF0F /* CustomHeaderView.swift in Sources */,
+				F9E461AF29A3AED60050BF0F /* CustomLayout.swift in Sources */,
 				F93FAFB629A26E2600786ED4 /* AppDelegate.swift in Sources */,
 				F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */,
 				F9E461A229A359460050BF0F /* CustomButton.swift in Sources */,

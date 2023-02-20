@@ -19,6 +19,14 @@
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
 		F9E4619629A32FED0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4619429A32FED0050BF0F /* HomeViewController.xib */; };
+		F9E4619829A337300050BF0F /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619729A337300050BF0F /* CustomColor.swift */; };
+		F9E4619929A337300050BF0F /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619729A337300050BF0F /* CustomColor.swift */; };
+		F9E461A129A359460050BF0F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A029A359460050BF0F /* CustomButton.swift */; };
+		F9E461A229A359460050BF0F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A029A359460050BF0F /* CustomButton.swift */; };
+		F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */; };
+		F9E461A529A360F20050BF0F /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */; };
+		F9E461AA29A369D80050BF0F /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A929A369D80050BF0F /* CustomHeaderView.swift */; };
+		F9E461AB29A369D80050BF0F /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461A929A369D80050BF0F /* CustomHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,10 @@
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4619429A32FED0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		F9E4619729A337300050BF0F /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		F9E461A029A359460050BF0F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		F9E461A929A369D80050BF0F /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,10 @@
 		F93FAF8F29A26E1400786ED4 = {
 			isa = PBXGroup;
 			children = (
+				F9E461A929A369D80050BF0F /* CustomHeaderView.swift */,
+				F9E461A029A359460050BF0F /* CustomButton.swift */,
+				F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */,
+				F9E4619729A337300050BF0F /* CustomColor.swift */,
 				F93FAF9A29A26E1400786ED4 /* MC Delivery */,
 				F93FAFB429A26E2600786ED4 /* MC Delivery Carrier */,
 				F93FAF9929A26E1400786ED4 /* Products */,
@@ -206,8 +222,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
+				F9E461AA29A369D80050BF0F /* CustomHeaderView.swift in Sources */,
 				F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */,
 				F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */,
+				F9E461A129A359460050BF0F /* CustomButton.swift in Sources */,
+				F9E4619829A337300050BF0F /* CustomColor.swift in Sources */,
 				F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,8 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E461A529A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
+				F9E461AB29A369D80050BF0F /* CustomHeaderView.swift in Sources */,
 				F93FAFB629A26E2600786ED4 /* AppDelegate.swift in Sources */,
 				F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */,
+				F9E461A229A359460050BF0F /* CustomButton.swift in Sources */,
+				F9E4619929A337300050BF0F /* CustomColor.swift in Sources */,
 				F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

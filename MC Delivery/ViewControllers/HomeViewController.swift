@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class HomeViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         DispatchQueue.main.async {
             self.view.backgroundColor = self.customColor.backgroundColor
             self.title = "MyanCare Pharmacy"
@@ -34,12 +36,20 @@ class HomeViewController: UIViewController {
     }
     
     @objc
-    func menuButtonPressed() {
-        print("Menu Button Pressed")
+    private func menuButtonPressed() {
+        let menu = SideMenuNavigationController(rootViewController: MenuViewController())
+        menu.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        present(menu, animated: true, completion: nil)
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 50

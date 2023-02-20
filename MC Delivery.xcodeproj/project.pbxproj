@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A871279AE9160D0C35ACFA1 /* Pods_MC_Delivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9C1E602AA88B4385238787 /* Pods_MC_Delivery.framework */; };
+		4048E5A52CB647CA31529E8E /* Pods_MC_Delivery_Carrier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368835D84D79D47DED9006A8 /* Pods_MC_Delivery_Carrier.framework */; };
 		F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */; };
 		F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */; };
 		F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFA429A26E1500786ED4 /* Assets.xcassets */; };
@@ -29,9 +31,17 @@
 		F9E461AF29A3AED60050BF0F /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461AD29A3AED60050BF0F /* CustomLayout.swift */; };
 		F9E461B229A3B1160050BF0F /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461B029A3B1160050BF0F /* MedicineCollectionViewCell.swift */; };
 		F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */; };
+		F9E461BE29A3C3090050BF0F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461BC29A3C3090050BF0F /* MenuViewController.swift */; };
+		F9E461BF29A3C3090050BF0F /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E461BD29A3C3090050BF0F /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		368835D84D79D47DED9006A8 /* Pods_MC_Delivery_Carrier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MC_Delivery_Carrier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		428391C23254F94CB82B7D85 /* Pods-MC Delivery Carrier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MC Delivery Carrier.debug.xcconfig"; path = "Target Support Files/Pods-MC Delivery Carrier/Pods-MC Delivery Carrier.debug.xcconfig"; sourceTree = "<group>"; };
+		7A08076750AC6F8941580B95 /* Pods-MC Delivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MC Delivery.release.xcconfig"; path = "Target Support Files/Pods-MC Delivery/Pods-MC Delivery.release.xcconfig"; sourceTree = "<group>"; };
+		7C9C1E602AA88B4385238787 /* Pods_MC_Delivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MC_Delivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDFCAEA7BB4AFC2B380C7DC4 /* Pods-MC Delivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MC Delivery.debug.xcconfig"; path = "Target Support Files/Pods-MC Delivery/Pods-MC Delivery.debug.xcconfig"; sourceTree = "<group>"; };
+		BE0A5D872F035253E519D132 /* Pods-MC Delivery Carrier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MC Delivery Carrier.release.xcconfig"; path = "Target Support Files/Pods-MC Delivery Carrier/Pods-MC Delivery Carrier.release.xcconfig"; sourceTree = "<group>"; };
 		F93FAF9829A26E1400786ED4 /* MC Delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC Delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +64,8 @@
 		F9E461AD29A3AED60050BF0F /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		F9E461B029A3B1160050BF0F /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCollectionViewCell.swift; sourceTree = "<group>"; };
 		F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineCollectionViewCell.xib; sourceTree = "<group>"; };
+		F9E461BC29A3C3090050BF0F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		F9E461BD29A3C3090050BF0F /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A871279AE9160D0C35ACFA1 /* Pods_MC_Delivery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +81,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4048E5A52CB647CA31529E8E /* Pods_MC_Delivery_Carrier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55D4BDECA07C8DC37B8BEFB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C9C1E602AA88B4385238787 /* Pods_MC_Delivery.framework */,
+				368835D84D79D47DED9006A8 /* Pods_MC_Delivery_Carrier.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA6321E8CEC6A3D9A13DE7D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDFCAEA7BB4AFC2B380C7DC4 /* Pods-MC Delivery.debug.xcconfig */,
+				7A08076750AC6F8941580B95 /* Pods-MC Delivery.release.xcconfig */,
+				428391C23254F94CB82B7D85 /* Pods-MC Delivery Carrier.debug.xcconfig */,
+				BE0A5D872F035253E519D132 /* Pods-MC Delivery Carrier.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F93FAF8F29A26E1400786ED4 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +117,8 @@
 				F93FAF9A29A26E1400786ED4 /* MC Delivery */,
 				F93FAFB429A26E2600786ED4 /* MC Delivery Carrier */,
 				F93FAF9929A26E1400786ED4 /* Products */,
+				BA6321E8CEC6A3D9A13DE7D9 /* Pods */,
+				55D4BDECA07C8DC37B8BEFB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,16 +134,14 @@
 		F93FAF9A29A26E1400786ED4 /* MC Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				F9E461B429A3B8220050BF0F /* ViewControllers */,
+				F9E461B529A3B8320050BF0F /* Cells */,
 				F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */,
 				F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */,
+				F9E461AD29A3AED60050BF0F /* CustomLayout.swift */,
 				F93FAFA429A26E1500786ED4 /* Assets.xcassets */,
 				F93FAFA629A26E1500786ED4 /* LaunchScreen.storyboard */,
 				F93FAFA929A26E1500786ED4 /* Info.plist */,
-				F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */,
-				F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */,
-				F9E461B029A3B1160050BF0F /* MedicineCollectionViewCell.swift */,
-				F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */,
-				F9E461AD29A3AED60050BF0F /* CustomLayout.swift */,
 			);
 			path = "MC Delivery";
 			sourceTree = "<group>";
@@ -126,6 +160,26 @@
 			path = "MC Delivery Carrier";
 			sourceTree = "<group>";
 		};
+		F9E461B429A3B8220050BF0F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */,
+				F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */,
+				F9E461BC29A3C3090050BF0F /* MenuViewController.swift */,
+				F9E461BD29A3C3090050BF0F /* MenuViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F9E461B529A3B8320050BF0F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F9E461B029A3B1160050BF0F /* MedicineCollectionViewCell.swift */,
+				F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F93FAFAC29A26E1500786ED4 /* Build configuration list for PBXNativeTarget "MC Delivery" */;
 			buildPhases = (
+				139D04DDCEC9A9392656771C /* [CP] Check Pods Manifest.lock */,
 				F93FAF9429A26E1400786ED4 /* Sources */,
 				F93FAF9529A26E1400786ED4 /* Frameworks */,
 				F93FAF9629A26E1400786ED4 /* Resources */,
+				6332817086F200C45B9B67D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F93FAFC429A26E2600786ED4 /* Build configuration list for PBXNativeTarget "MC Delivery Carrier" */;
 			buildPhases = (
+				992BF0728880FD1D31BDF093 /* [CP] Check Pods Manifest.lock */,
 				F93FAFAF29A26E2600786ED4 /* Sources */,
 				F93FAFB029A26E2600786ED4 /* Frameworks */,
 				F93FAFB129A26E2600786ED4 /* Resources */,
@@ -207,6 +264,7 @@
 			files = (
 				F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */,
 				F93FAFA829A26E1500786ED4 /* LaunchScreen.storyboard in Resources */,
+				F9E461BF29A3C3090050BF0F /* MenuViewController.xib in Resources */,
 				F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */,
 				F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */,
 			);
@@ -224,6 +282,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		139D04DDCEC9A9392656771C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MC Delivery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6332817086F200C45B9B67D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MC Delivery/Pods-MC Delivery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MC Delivery/Pods-MC Delivery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MC Delivery/Pods-MC Delivery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		992BF0728880FD1D31BDF093 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MC Delivery Carrier-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F93FAF9429A26E1400786ED4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -233,6 +355,7 @@
 				F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
 				F9E461AE29A3AED60050BF0F /* CustomLayout.swift in Sources */,
 				F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */,
+				F9E461BE29A3C3090050BF0F /* MenuViewController.swift in Sources */,
 				F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */,
 				F9E461A129A359460050BF0F /* CustomButton.swift in Sources */,
 				F9E4619829A337300050BF0F /* CustomColor.swift in Sources */,
@@ -392,6 +515,7 @@
 		};
 		F93FAFAD29A26E1500786ED4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDFCAEA7BB4AFC2B380C7DC4 /* Pods-MC Delivery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -418,6 +542,7 @@
 		};
 		F93FAFAE29A26E1500786ED4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A08076750AC6F8941580B95 /* Pods-MC Delivery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,6 +569,7 @@
 		};
 		F93FAFC529A26E2600786ED4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 428391C23254F94CB82B7D85 /* Pods-MC Delivery Carrier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +597,7 @@
 		};
 		F93FAFC629A26E2600786ED4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE0A5D872F035253E519D132 /* Pods-MC Delivery Carrier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

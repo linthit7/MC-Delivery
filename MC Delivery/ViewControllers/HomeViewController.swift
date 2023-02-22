@@ -64,8 +64,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let medicineDetailVC = MedicineDetailViewController()
-        medicineDetailVC.medicine = medicineList[indexPath.row]
+        let medicineDetailVC = MedicineDetailViewController(medicine: medicineList[indexPath.row])
+//        medicineDetailVC.medicine = medicineList[indexPath.row]
+//        medicineDetailVC.medicineId = medicineList[indexPath.row]._id
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = UIColor.white

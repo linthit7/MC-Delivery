@@ -8,6 +8,34 @@
 import SwiftyJSON
 import Alamofire
 
+struct MedicineRequest {
+    
+    static func getMedicineById(medicineId: String, completion: @escaping (Medicine) -> Void) {
+        
+        let medicineByIdRoute: String = "https://pharmacy-delivery.onrender.com/api/medicines/\(medicineId)"
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            AF.request(medicineByIdRoute, method: .get).response { response in
+                switch response.data {
+                case .some(let data):
+                    let json: JSON = JSON(data)
+                    if json["statusCode"].stringValue == "200" {
+//                        print(json)
+                        let medicine = Medicine.loadMedicine(json: JSON(rawValue: json["payload"].dictionaryValue)!)
+                        completion(medicine)
+                    }
+                    
+                case .none: print("Nothing in response")
+                }
+            }
+        }
+//        print(medicineId)
+    }
+    
+    
+}
+
 struct MedicinesRequest {
         
     private let allMedicinesRoute: String = "https://pharmacy-delivery.onrender.com/api/medicines"
@@ -37,6 +65,5 @@ struct MedicinesRequest {
             }
         }
     }
-    
     
 }

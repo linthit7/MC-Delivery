@@ -94,7 +94,7 @@ extension HomeViewController: UIScrollViewDelegate {
             medicinesRequest.getAllMedicinesWithPagination(page: page) { medicines,_ in
                 self.medicineList.append(contentsOf: medicines)
 //                print(self.medicineList)
-                print(self.medicineList.count)
+//                print(self.medicineList.count)
                 DispatchQueue.main.async {
                     self.homeCollectionView.reloadData()
                 }

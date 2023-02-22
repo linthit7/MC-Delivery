@@ -13,6 +13,12 @@ class MedicineDetailViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = CustomColor().backgroundColor
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(shoppingCartButtonPressed))
+    }
+    
+    @objc
+    private func shoppingCartButtonPressed() {
+        print("Shopping Cart Button Pressed")
     }
 
 }

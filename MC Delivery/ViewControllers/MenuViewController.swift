@@ -8,8 +8,6 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
-    let items = ["First", "Second", "Third"]
     
     @IBOutlet weak var menuListTableView: UITableView!
     
@@ -22,13 +20,18 @@ class MenuViewController: UIViewController {
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(LoginViewController(), animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = items[indexPath.row]
+        cell.textLabel?.text = "Login"
         return cell
     }
     

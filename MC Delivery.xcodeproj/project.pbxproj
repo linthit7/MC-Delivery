@@ -13,6 +13,8 @@
 		F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */; };
 		F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */; };
 		F932AE8729A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8529A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib */; };
+		F932AE8A29A6559100DFB859 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8829A6559100DFB859 /* LoginViewController.swift */; };
+		F932AE8B29A6559100DFB859 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8929A6559100DFB859 /* LoginViewController.xib */; };
 		F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */; };
 		F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */; };
 		F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFA429A26E1500786ED4 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDetailViewController.xib; sourceTree = "<group>"; };
 		F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailTableViewCell.swift; sourceTree = "<group>"; };
 		F932AE8529A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDetailTableViewCell.xib; sourceTree = "<group>"; };
+		F932AE8829A6559100DFB859 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F932AE8929A6559100DFB859 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		F93FAF9829A26E1400786ED4 /* MC Delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC Delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 				F9E461BD29A3C3090050BF0F /* MenuViewController.xib */,
 				F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */,
 				F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */,
+				F932AE8829A6559100DFB859 /* LoginViewController.swift */,
+				F932AE8929A6559100DFB859 /* LoginViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F932AE8B29A6559100DFB859 /* LoginViewController.xib in Resources */,
 				F932AE8729A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib in Resources */,
 				F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */,
 				F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */,
@@ -387,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F932AE8A29A6559100DFB859 /* LoginViewController.swift in Sources */,
 				F9E461B229A3B1160050BF0F /* MedicineCollectionViewCell.swift in Sources */,
 				F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
 				F9E461AE29A3AED60050BF0F /* CustomLayout.swift in Sources */,

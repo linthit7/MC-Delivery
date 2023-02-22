@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A871279AE9160D0C35ACFA1 /* Pods_MC_Delivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9C1E602AA88B4385238787 /* Pods_MC_Delivery.framework */; };
 		4048E5A52CB647CA31529E8E /* Pods_MC_Delivery_Carrier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368835D84D79D47DED9006A8 /* Pods_MC_Delivery_Carrier.framework */; };
+		F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */; };
+		F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */; };
 		F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */; };
 		F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */; };
 		F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFA429A26E1500786ED4 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		7C9C1E602AA88B4385238787 /* Pods_MC_Delivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MC_Delivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFCAEA7BB4AFC2B380C7DC4 /* Pods-MC Delivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MC Delivery.debug.xcconfig"; path = "Target Support Files/Pods-MC Delivery/Pods-MC Delivery.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0A5D872F035253E519D132 /* Pods-MC Delivery Carrier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MC Delivery Carrier.release.xcconfig"; path = "Target Support Files/Pods-MC Delivery Carrier/Pods-MC Delivery Carrier.release.xcconfig"; sourceTree = "<group>"; };
+		F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
+		F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDetailViewController.xib; sourceTree = "<group>"; };
 		F93FAF9829A26E1400786ED4 /* MC Delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC Delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */,
 				F9E461BC29A3C3090050BF0F /* MenuViewController.swift */,
 				F9E461BD29A3C3090050BF0F /* MenuViewController.xib */,
+				F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */,
+				F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */,
 				F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */,
 				F93FAFA829A26E1500786ED4 /* LaunchScreen.storyboard in Resources */,
 				F9E461BF29A3C3090050BF0F /* MenuViewController.xib in Resources */,
@@ -382,6 +389,7 @@
 				F9FF20E629A4735D002E05A1 /* MedicinesRequest.swift in Sources */,
 				F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */,
 				F9E461A129A359460050BF0F /* CustomButton.swift in Sources */,
+				F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */,
 				F9E4619829A337300050BF0F /* CustomColor.swift in Sources */,
 				F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */,
 			);

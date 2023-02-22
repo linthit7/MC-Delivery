@@ -9,12 +9,13 @@ import SwiftyJSON
 import Alamofire
 
 struct MedicinesRequest {
-    
+        
     private let allMedicinesRoute: String = "https://pharmacy-delivery.onrender.com/api/medicines"
     
     func getAllMedicinesWithPagination(page: Int, limit: Int = 10, completion: @escaping ([Medicine], Int) -> Void) {
         
         print(page)
+        
         let medicineRouteWithHTTP = "\(allMedicinesRoute)?page=\(page)&limit=\(limit)"
         
         DispatchQueue.global(qos: .userInitiated).async {

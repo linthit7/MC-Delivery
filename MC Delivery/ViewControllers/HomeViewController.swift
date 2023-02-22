@@ -10,10 +10,8 @@ import SideMenu
 
 class HomeViewController: UIViewController {
     
-//    private let customColor = CustomColor()
     private let customButton = CustomButton()
-//    private let customNavBar = CustomNavigationBar()
-    private let medicinesRequest = MedicinesRequest()
+    private var medicinesRequest = MedicinesRequest()
     private var medicineList = [Medicine]()
     private var total = 0
     private var page = 1
@@ -65,6 +63,9 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.pushViewController(MedicineDetailViewController(), animated: true)
         print(indexPath)
     }
     
@@ -100,16 +101,5 @@ extension HomeViewController: UIScrollViewDelegate {
             }
         }
         
-//        if popularMoviePageCount < popularMoviePageTotal {
-//            request.movieRequest(url: getVC.popularVC, pagination: true, pageCount: popularMoviePageCount, pageTotal: popularMoviePageTotal) { movieResult, count, pageTotal in
-//                self.popularMovieList.append(contentsOf: movieResult)
-//                self.popularMoviePageCount = count
-//                self.popularMoviePageTotal = pageTotal
-//                print("Page count", count)
-//                DispatchQueue.main.async {
-//                    self.popularCollectionView.reloadData()
-//                }
-//            }
-//        }
     }
 }

@@ -38,6 +38,9 @@
                             <rect key="frame" x="0.0" y="106" width="374" height="34.5"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                            <connections>
+                                <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="EFR-xb-2gq"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

@@ -63,10 +63,14 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let medicineDetailVC = MedicineDetailViewController()
+        medicineDetailVC.medicine = medicineList[indexPath.row]
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.pushViewController(MedicineDetailViewController(), animated: true)
-        print(indexPath)
+        navigationController?.pushViewController(medicineDetailVC, animated: true)
+//        print(indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

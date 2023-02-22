@@ -21,10 +21,6 @@ class MedicineCollectionViewCell: UICollectionViewCell {
         
         layer.cornerCurve = .continuous
         layer.cornerRadius = 10
-     
-//        medicineImageView.image = UIImage(systemName: "square.and.arrow.up")
-//        medicineNameLabel.text = "Medicine"
-//        priceLabel.text = "5000"
     }
     
     func createMedicineCell(medicine: Medicine) {

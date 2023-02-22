@@ -30,7 +30,11 @@ struct UserRequest {
                 switch response.data {
                 case .some(let data):
                     let json: JSON = JSON(data)
-                    print(json)
+                    if json["statusCode"].stringValue == "200" {
+                        let existingUsers = ExistingUser.loadExistingUserArray(jsonArray: json["payload"].arrayValue)
+                        print(existingUsers)
+                    }
+//                    print(json)
                 case .none: print("No data in Get All Users Api Call")
                 }
             }

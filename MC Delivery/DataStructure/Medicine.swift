@@ -14,10 +14,11 @@ struct MedicineResponse {
     var payload: [Medicine]!
     
     static func loadMedicineResponse(json: JSON) -> MedicineResponse {
+        
         var medicineResponse = MedicineResponse()
         medicineResponse.statusCode = json["statusCode"].intValue
         medicineResponse.total = json["total"].intValue
-        
+//        medicineResponse.payload = Medicine.loadMedicineArray(jsonArray: json["payload"].arrayValue)
         return medicineResponse
     }
 }
@@ -38,6 +39,7 @@ struct Medicine {
     var categoryDetail: CategoryDetail!
     
     static func loadMedicine(json: JSON) -> Medicine {
+        
         var medicine = Medicine()
         medicine._id = json["_id"].stringValue
         medicine.name = json["name"].stringValue
@@ -55,6 +57,7 @@ struct Medicine {
     }
     
     static func loadMedicineArray(jsonArray: [JSON]) -> [Medicine] {
+        
         var medicineArray: [Medicine] = []
         for json in jsonArray {
             let medicine = Medicine.loadMedicine(json: json)
@@ -71,6 +74,7 @@ struct CategoryDetail {
     var pictureUrls: [JSON]!
     
     static func loadCategoryDetail(json: JSON) -> CategoryDetail {
+        
         var categoryDetail = CategoryDetail()
         categoryDetail.id = json["id"].stringValue
         categoryDetail.title = json["title"].stringValue

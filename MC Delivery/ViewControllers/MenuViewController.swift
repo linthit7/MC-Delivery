@@ -22,17 +22,29 @@ class MenuViewController: UIViewController {
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(LoginViewController(), animated: true)
+        switch indexPath.row {
+        case 0: navigationController?.pushViewController(LoginViewController(), animated: true)
+        case 1: navigationController?.pushViewController(CarrierViewController(), animated: true)
+        default: print("Default case MenuVC didSelectRowAt")
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "Login"
-        return cell
+        switch indexPath.row {
+        case 0:
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "Login"
+            return cell
+        case 1:
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "Users"
+            return cell
+        default: return UITableViewCell()
+        }
     }
     
     

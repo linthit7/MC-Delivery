@@ -20,7 +20,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjVjNmQ4YjE0MWIxODdkZTQ4Y2Q0YyIsImlhdCI6MTY3NzA3OTI4NCwiZXhwIjoxNjc3MTY1Njg0fQ.fIyuY2Ly_z1Ou-QjvSv5RP2aUbpPzQsOISs1rig_d4Y").getAllUsers()
         
         medicinesRequest.getAllMedicinesWithPagination(page: page) { medicines, total in
             

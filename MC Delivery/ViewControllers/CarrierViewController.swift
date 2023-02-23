@@ -19,9 +19,8 @@ class CarrierViewController: UIViewController {
         carrierTableView.delegate = self
         carrierTableView.dataSource = self
         
-        UserRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjVjNmQ4YjE0MWIxODdkZTQ4Y2Q0YyIsImlhdCI6MTY3NzEyMzg2NSwiZXhwIjoxNjc3MjEwMjY1fQ.EEPSgoSzx_tikQbw4sMjQWjNdMOpsIgDZcXonyVK3pM").getAllUsers() { existingUserList in
+        UserRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjU4MzU0MzRiM2EyMDY1NDQ0NWRiZCIsImlhdCI6MTY3NzEzMzM5NiwiZXhwIjoxNjc3MjE5Nzk2fQ.J3tvW6XTjbAYwe-MVwcoJP8fPJSuUfXjr7twmZVrREE").getAllUsers() { existingUserList in
             self.existingUserList.append(contentsOf: existingUserList)
-            print(self.existingUserList)
             
             DispatchQueue.main.async {
                 self.carrierTableView.reloadData()
@@ -40,11 +39,14 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = existingUserList[indexPath.row].name
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(existingUserList[indexPath.row].name)
+        CreateOrJoinRoomRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjU4MzU0MzRiM2EyMDY1NDQ0NWRiZCIsImlhdCI6MTY3NzEzMzM5NiwiZXhwIjoxNjc3MjE5Nzk2fQ.J3tvW6XTjbAYwe-MVwcoJP8fPJSuUfXjr7twmZVrREE", roomName: "haahhahha").creatOrJoinRoom() { room in
+            print(room.existingRoom.sid)
+        }
     }
     
 }

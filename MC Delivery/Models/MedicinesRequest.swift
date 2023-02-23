@@ -42,7 +42,7 @@ struct MedicinesRequest {
     
     func getAllMedicinesWithPagination(page: Int, limit: Int = 10, completion: @escaping ([Medicine], Int) -> Void) {
         
-        print(page)
+//        print(page)
         
         let medicineRouteWithHTTP = "\(allMedicinesRoute)?page=\(page)&limit=\(limit)"
         

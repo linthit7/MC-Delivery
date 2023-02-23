@@ -21,6 +21,8 @@
 		F932AE9329A6756C00DFB859 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE9229A6756C00DFB859 /* User.swift */; };
 		F932AE9829A70F7900DFB859 /* CarrierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE9629A70F7900DFB859 /* CarrierViewController.swift */; };
 		F932AE9929A70F7900DFB859 /* CarrierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE9729A70F7900DFB859 /* CarrierViewController.xib */; };
+		F932AE9B29A747E800DFB859 /* CreateOrJoinRoomRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */; };
+		F932AE9D29A74B8C00DFB859 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE9C29A74B8C00DFB859 /* Room.swift */; };
 		F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */; };
 		F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */; };
 		F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFA429A26E1500786ED4 /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		F932AE9229A6756C00DFB859 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F932AE9629A70F7900DFB859 /* CarrierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierViewController.swift; sourceTree = "<group>"; };
 		F932AE9729A70F7900DFB859 /* CarrierViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarrierViewController.xib; sourceTree = "<group>"; };
+		F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrJoinRoomRequest.swift; sourceTree = "<group>"; };
+		F932AE9C29A74B8C00DFB859 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		F93FAF9829A26E1400786ED4 /* MC Delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC Delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				F9FF20E529A4735D002E05A1 /* MedicinesRequest.swift */,
 				F932AE8C29A65E0700DFB859 /* AuthRequest.swift */,
 				F932AE9029A6705700DFB859 /* UserRequest.swift */,
+				F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				F9FF20EA29A4CE02002E05A1 /* Medicine.swift */,
 				F932AE8E29A6621400DFB859 /* Auth.swift */,
 				F932AE9229A6756C00DFB859 /* User.swift */,
+				F932AE9C29A74B8C00DFB859 /* Room.swift */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -415,6 +421,7 @@
 			files = (
 				F932AE9829A70F7900DFB859 /* CarrierViewController.swift in Sources */,
 				F932AE8A29A6559100DFB859 /* LoginViewController.swift in Sources */,
+				F932AE9D29A74B8C00DFB859 /* Room.swift in Sources */,
 				F9E461B229A3B1160050BF0F /* MedicineCollectionViewCell.swift in Sources */,
 				F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
 				F9E461AE29A3AED60050BF0F /* CustomLayout.swift in Sources */,
@@ -432,6 +439,7 @@
 				F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */,
 				F9E4619829A337300050BF0F /* CustomColor.swift in Sources */,
 				F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */,
+				F932AE9B29A747E800DFB859 /* CreateOrJoinRoomRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

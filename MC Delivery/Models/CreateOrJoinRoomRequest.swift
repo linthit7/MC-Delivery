@@ -1,0 +1,53 @@
+//
+//  CreateOrJoinRoomRequest.swift
+//  MC Delivery
+//
+//  Created by Lin Thit Khant on 2/23/23.
+//
+
+import SwiftyJSON
+import Alamofire
+
+struct CreateOrJoinRoomRequest {
+    
+    var accessToken: String
+    var roomName: String
+    
+    init(accessToken: String, roomName: String) {
+        self.accessToken = accessToken
+        self.roomName = roomName
+    }
+    
+    func creatOrJoinRoom(completion: @escaping (Room) -> Void) {
+        
+        let creatOrJoinRoomRoute: String = "https://pharmacy-delivery.onrender.com/api/rooms"
+        
+        let headers: HTTPHeaders = [
+            .authorization(accessToken)
+        ]
+        
+        let params: Parameters = [
+            "roomName": roomName
+        ]
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            AF.request(creatOrJoinRoomRoute, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).response { response in
+                switch response.data {
+                case .some(let data):
+                    let json: JSON = JSON(data)
+                    if json["statusCode"].stringValue == "200" {
+//                        print(json)
+                        let room = Room.loadRoom(json: JSON(rawValue: json["payload"].dictionaryValue)!)
+//                        print(response.payload.existingRoom.sid)
+//                        print(response.payload.token)
+//                        print(response.payload.existingRoom.statusCallback)
+//                        print(response.payload.existingRoom.links.recording_rules)
+                        completion(room)
+                    }
+                case .none: print("No data in CreateOrJoinRoomRequest")
+                }
+            }
+        }
+    }
+}

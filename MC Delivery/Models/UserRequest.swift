@@ -16,7 +16,7 @@ struct UserRequest {
         self.accessToken = accessToken
     }
     
-    func getAllUsers() {
+    func getAllUsers(completion: @escaping ([ExistingUser]) -> Void) {
         
         let getAllUsersRoute: String = "https://pharmacy-delivery.onrender.com/api/users"
         
@@ -32,7 +32,8 @@ struct UserRequest {
                     let json: JSON = JSON(data)
                     if json["statusCode"].stringValue == "200" {
                         let existingUsers = ExistingUser.loadExistingUserArray(jsonArray: json["payload"].arrayValue)
-                        print(existingUsers)
+//                        print(existingUsers)
+                        completion(existingUsers)
                     }
 //                    print(json)
                 case .none: print("No data in Get All Users Api Call")

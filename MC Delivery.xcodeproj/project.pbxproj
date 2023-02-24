@@ -34,6 +34,7 @@
 		F975A81729A86229006EE0E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81529A86229006EE0E7 /* ProfileViewController.swift */; };
 		F975A81829A86229006EE0E7 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A81629A86229006EE0E7 /* ProfileViewController.xib */; };
 		F975A81A29A86A21006EE0E7 /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81929A86A21006EE0E7 /* CredentialsStore.swift */; };
+		F975A81C29A87965006EE0E7 /* SocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81B29A87965006EE0E7 /* SocketHandler.swift */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -90,6 +91,7 @@
 		F975A81529A86229006EE0E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F975A81629A86229006EE0E7 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		F975A81929A86A21006EE0E7 /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
+		F975A81B29A87965006EE0E7 /* SocketHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHandler.swift; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				F932AE9029A6705700DFB859 /* UserRequest.swift */,
 				F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */,
 				F975A81929A86A21006EE0E7 /* CredentialsStore.swift */,
+				F975A81B29A87965006EE0E7 /* SocketHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				F932AE9329A6756C00DFB859 /* User.swift in Sources */,
 				F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */,
 				F9E4619829A337300050BF0F /* CustomColor.swift in Sources */,
+				F975A81C29A87965006EE0E7 /* SocketHandler.swift in Sources */,
 				F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */,
 				F932AE9B29A747E800DFB859 /* CreateOrJoinRoomRequest.swift in Sources */,
 			);

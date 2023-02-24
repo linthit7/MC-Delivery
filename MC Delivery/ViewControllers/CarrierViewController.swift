@@ -19,7 +19,7 @@ class CarrierViewController: UIViewController {
         carrierTableView.delegate = self
         carrierTableView.dataSource = self
         
-        UserRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjU4MzU0MzRiM2EyMDY1NDQ0NWRiZCIsImlhdCI6MTY3NzIxMzg0OSwiZXhwIjoxNjc3MzAwMjQ5fQ.9Q-jbzJiuYCxM5gtvbmMA_bkN5hAJBE8zWoeHbTgdW4").getAllUsers() { existingUserList in
+        UserRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjg1ZTA3ZjZkYzZhOWI4YTc1ZjI3MSIsImlhdCI6MTY3NzIyOTM0MCwiZXhwIjoxNjc3MzE1NzQwfQ.VuDkThgNwW-759qU6L2d-Krxabo_2lEtlt2SpiQnpzo").getAllUsers() { existingUserList in
             self.existingUserList.append(contentsOf: existingUserList)
             
             DispatchQueue.main.async {
@@ -44,10 +44,12 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        CreateOrJoinRoomRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjU4MzU0MzRiM2EyMDY1NDQ0NWRiZCIsImlhdCI6MTY3NzIwNTY2MCwiZXhwIjoxNjc3MjkyMDYwfQ.ehQ8qd8tKAef0eRB2FQ_8tCmd8AZHYDCB0VIJTDEUfw", roomName: "AAA").creatOrJoinRoom() { room in
+        print(indexPath)
+        CreateOrJoinRoomRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjg1ZTA3ZjZkYzZhOWI4YTc1ZjI3MSIsImlhdCI6MTY3NzIyOTM0MCwiZXhwIjoxNjc3MzE1NzQwfQ.VuDkThgNwW-759qU6L2d-Krxabo_2lEtlt2SpiQnpzo", roomName: "A").creatOrJoinRoom() { room in
             
 //            print(room.existingRoom.sid)
 //            print(room.token!)
+            print("Room", room.token!)
         }
     }
     

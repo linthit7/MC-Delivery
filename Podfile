@@ -11,6 +11,7 @@ target 'MC Delivery' do
  pod 'Alamofire'
  pod 'SDWebImage', '~> 5.0'
  pod 'Socket.IO-Client-Swift', '~> 15.2.0'
+ pod 'TwilioVideo', '~> 5'
  
 end
 
@@ -24,5 +25,5 @@ target 'MC Delivery Carrier' do
   pod 'Alamofire'
   pod 'SDWebImage', '~> 5.0'
   pod 'Socket.IO-Client-Swift', '~> 15.2.0'
-  
+  pod 'TwilioVideo', '~> 5'
 end

@@ -49,11 +49,32 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
         if  AppDelegate.loginState {
             let token = CredentialsStore.getCredentials()?.accessToken
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
-                
+                self.startDemo()
                 print("Room", room.token!)
             }
         }
-        
     }
     
+}
+
+//MARK: - CallManager
+
+extension CarrierViewController {
+    
+    func startDemo() {
+        
+        //Report Incoming Call
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+//            let callManger = CallManager()
+//            let id = UUID()
+//            callManger.reportIncomingCall(id: id, handle: "Travis")
+//        })
+        
+        //Start Call
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+//            let callManager = CallManager()
+//            let id = UUID()
+//            callManager.startCall(id: id, handle: "Scott")
+//        })
+    }
 }

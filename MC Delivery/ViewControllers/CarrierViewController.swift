@@ -44,13 +44,16 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
-        CreateOrJoinRoomRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjg1ZTA3ZjZkYzZhOWI4YTc1ZjI3MSIsImlhdCI6MTY3NzIyOTM0MCwiZXhwIjoxNjc3MzE1NzQwfQ.VuDkThgNwW-759qU6L2d-Krxabo_2lEtlt2SpiQnpzo", roomName: "A").creatOrJoinRoom() { room in
-            
-//            print(room.existingRoom.sid)
-//            print(room.token!)
-            print("Room", room.token!)
+//        print(indexPath)
+        
+        if  AppDelegate.loginState {
+            let token = CredentialsStore.getCredentials()?.accessToken
+            CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
+                
+                print("Room", room.token!)
+            }
         }
+        
     }
     
 }

@@ -174,12 +174,12 @@
 		F93FAF9A29A26E1400786ED4 /* MC Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */,
+				F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */,
 				F9FF20E729A4ACD2002E05A1 /* DataStructure */,
 				F9FF20E229A46EAB002E05A1 /* Models */,
 				F9E461B429A3B8220050BF0F /* ViewControllers */,
 				F9E461B529A3B8320050BF0F /* Cells */,
-				F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */,
-				F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */,
 				F9E461AD29A3AED60050BF0F /* CustomLayout.swift */,
 				F93FAFA429A26E1500786ED4 /* Assets.xcassets */,
 				F93FAFA629A26E1500786ED4 /* LaunchScreen.storyboard */,

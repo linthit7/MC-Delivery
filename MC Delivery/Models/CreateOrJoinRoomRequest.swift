@@ -11,11 +11,11 @@ import Alamofire
 struct CreateOrJoinRoomRequest {
     
     var accessToken: String
-    var roomName: String
+//    var roomName: String
     
-    init(accessToken: String, roomName: String) {
+    init(accessToken: String) {
         self.accessToken = accessToken
-        self.roomName = roomName
+//        self.roomName = roomName
     }
     
     func creatOrJoinRoom(completion: @escaping (Room) -> Void) {
@@ -26,13 +26,13 @@ struct CreateOrJoinRoomRequest {
             .authorization(accessToken)
         ]
         
-        let params: Parameters = [
-            "roomName": roomName
-        ]
+//        let params: Parameters = [
+//            "roomName": roomName
+//        ]
         
         DispatchQueue.global(qos: .userInitiated).async {
             
-            AF.request(creatOrJoinRoomRoute, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).response { response in
+            AF.request(creatOrJoinRoomRoute, method: .post, encoding: JSONEncoding.default, headers: headers).response { response in
                 switch response.data {
                 case .some(let data):
                     let json: JSON = JSON(data)

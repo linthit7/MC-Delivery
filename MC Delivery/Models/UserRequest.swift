@@ -33,6 +33,7 @@ struct UserRequest {
                     if json["statusCode"].stringValue == "200" {
                         let existingUsers = ExistingUser.loadExistingUserArray(jsonArray: json["payload"].arrayValue)
 //                        print(existingUsers)
+                        
                         completion(existingUsers)
                     }
 //                    print(json)

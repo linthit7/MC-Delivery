@@ -15,14 +15,16 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(popThisViewController), name: NSNotification.Name("Login Successful"), object: nil)
+        
         DispatchQueue.main.async {
             self.view.backgroundColor = CustomColor().backgroundColor
             self.title = "Login"
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         
-        emailTextField.text = "testyesir@gmail.com"
-        passwordTextField.text = "12345678"
+//        emailTextField.text = "testa@gmail.com"
+//        passwordTextField.text = "test1234"
         
     }
 
@@ -30,6 +32,14 @@ class LoginViewController: UIViewController {
         print(self.emailTextField.text!)
         print(self.passwordTextField.text!)
         let authLogic = AuthRequest(email: emailTextField.text!, password: passwordTextField.text!)
-        authLogic.validateWithEmailAndPassword()
+        authLogic.validateWithEmailAndPassword() { loginResponse in
+        
+            CredentialsStore.storeCredentials(payload: loginResponse.payload)
+        }
+    }
+    
+    @objc
+    private func popThisViewController() {
+        navigationController?.popViewController(animated: true)
     }
 }

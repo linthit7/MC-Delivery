@@ -31,6 +31,9 @@
 		F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAFB729A26E2600786ED4 /* SceneDelegate.swift */; };
 		F93FAFBF29A26E2600786ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFBE29A26E2600786ED4 /* Assets.xcassets */; };
 		F93FAFC229A26E2600786ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFC029A26E2600786ED4 /* LaunchScreen.storyboard */; };
+		F975A81729A86229006EE0E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81529A86229006EE0E7 /* ProfileViewController.swift */; };
+		F975A81829A86229006EE0E7 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A81629A86229006EE0E7 /* ProfileViewController.xib */; };
+		F975A81A29A86A21006EE0E7 /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81929A86A21006EE0E7 /* CredentialsStore.swift */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -84,6 +87,9 @@
 		F93FAFBE29A26E2600786ED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F93FAFC129A26E2600786ED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F93FAFC329A26E2600786ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F975A81529A86229006EE0E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F975A81629A86229006EE0E7 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		F975A81929A86A21006EE0E7 /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +213,8 @@
 				F932AE8929A6559100DFB859 /* LoginViewController.xib */,
 				F932AE9629A70F7900DFB859 /* CarrierViewController.swift */,
 				F932AE9729A70F7900DFB859 /* CarrierViewController.xib */,
+				F975A81529A86229006EE0E7 /* ProfileViewController.swift */,
+				F975A81629A86229006EE0E7 /* ProfileViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 				F932AE8C29A65E0700DFB859 /* AuthRequest.swift */,
 				F932AE9029A6705700DFB859 /* UserRequest.swift */,
 				F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */,
+				F975A81929A86A21006EE0E7 /* CredentialsStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 				F93FAFA829A26E1500786ED4 /* LaunchScreen.storyboard in Resources */,
 				F9E461BF29A3C3090050BF0F /* MenuViewController.xib in Resources */,
 				F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */,
+				F975A81829A86229006EE0E7 /* ProfileViewController.xib in Resources */,
 				F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +435,7 @@
 				F9E461B229A3B1160050BF0F /* MedicineCollectionViewCell.swift in Sources */,
 				F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
 				F9E461AE29A3AED60050BF0F /* CustomLayout.swift in Sources */,
+				F975A81729A86229006EE0E7 /* ProfileViewController.swift in Sources */,
 				F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */,
 				F9FF20EB29A4CE02002E05A1 /* Medicine.swift in Sources */,
 				F9E461BE29A3C3090050BF0F /* MenuViewController.swift in Sources */,
@@ -435,6 +446,7 @@
 				F9E461A129A359460050BF0F /* CustomButton.swift in Sources */,
 				F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */,
 				F932AE9129A6705700DFB859 /* UserRequest.swift in Sources */,
+				F975A81A29A86A21006EE0E7 /* CredentialsStore.swift in Sources */,
 				F932AE9329A6756C00DFB859 /* User.swift in Sources */,
 				F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */,
 				F9E4619829A337300050BF0F /* CustomColor.swift in Sources */,
@@ -601,9 +613,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7N24P583L5;
+				DEVELOPMENT_TEAM = 53FDVL354X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MC Delivery/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app requires access to local network";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to microphone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -613,7 +628,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.linthit.MC-Delivery";
+				PRODUCT_BUNDLE_IDENTIFIER = com.projectMCD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -629,9 +644,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7N24P583L5;
+				DEVELOPMENT_TEAM = 53FDVL354X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MC Delivery/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app requires access to local network";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to microphone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -641,7 +659,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.linthit.MC-Delivery";
+				PRODUCT_BUNDLE_IDENTIFIER = com.projectMCD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

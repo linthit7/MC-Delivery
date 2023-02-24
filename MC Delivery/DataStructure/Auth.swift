@@ -22,7 +22,7 @@ struct LoginResponse {
     }
 }
 
-struct Payload {
+struct Payload: Codable {
     
     var user: User!
     var accessToken: String!
@@ -35,7 +35,7 @@ struct Payload {
     }
 }
 
-struct User {
+struct User: Codable {
     
     var _id: String!
     var id: String!

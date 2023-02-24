@@ -18,7 +18,7 @@ struct AuthRequest {
         self.password = password
     }
     
-    func validateWithEmailAndPassword() {
+    func validateWithEmailAndPassword(completion: @escaping (LoginResponse) -> Void) {
         
         let loginRoute = "https://pharmacy-delivery.onrender.com/api/auth/login"
         
@@ -39,6 +39,7 @@ struct AuthRequest {
 //                    print(loginResponse.payload.user._id)
 //                    print(loginResponse.payload.user.picPublicIds[0].stringValue)
 //                    print(loginResponse.payload.accessToken)
+                    completion(loginResponse)
                 case .none: print("No response from login route.")
                 }
             }

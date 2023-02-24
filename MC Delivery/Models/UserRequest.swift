@@ -18,7 +18,7 @@ struct UserRequest {
     
     func getAllUsers(completion: @escaping ([ExistingUser]) -> Void) {
         
-        let getAllUsersRoute: String = "https://pharmacy-delivery.onrender.com/api/users"
+        let getAllUsersRoute: String = "https://pharmacydelivery-production.up.railway.app/api/users"
         
         let headers: HTTPHeaders = [
             .authorization(accessToken)

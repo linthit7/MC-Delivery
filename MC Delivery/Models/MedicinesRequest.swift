@@ -12,7 +12,7 @@ struct MedicineRequest {
     
     static func getMedicineById(medicineId: String, completion: @escaping (Medicine) -> Void) {
         
-        let medicineByIdRoute: String = "https://pharmacy-delivery.onrender.com/api/medicines/\(medicineId)"
+        let medicineByIdRoute: String = "https://pharmacydelivery-production.up.railway.app/api/medicines/\(medicineId)"
         
         DispatchQueue.global(qos: .userInitiated).async {
             
@@ -38,7 +38,7 @@ struct MedicineRequest {
 
 struct MedicinesRequest {
         
-    private let allMedicinesRoute: String = "https://pharmacy-delivery.onrender.com/api/medicines"
+    private let allMedicinesRoute: String = "https://pharmacydelivery-production.up.railway.app/api/medicines"
     
     func getAllMedicinesWithPagination(page: Int, limit: Int = 10, completion: @escaping ([Medicine], Int) -> Void) {
         

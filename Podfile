@@ -10,7 +10,8 @@ target 'MC Delivery' do
  pod 'SwiftyJSON', '~> 4.0'
  pod 'Alamofire'
  pod 'SDWebImage', '~> 5.0'
-
+ pod 'Socket.IO-Client-Swift', '~> 15.2.0'
+ 
 end
 
 target 'MC Delivery Carrier' do
@@ -18,5 +19,10 @@ target 'MC Delivery Carrier' do
   use_frameworks!
 
   # Pods for MC Delivery Carrier
-
+  pod 'SideMenu'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Alamofire'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'Socket.IO-Client-Swift', '~> 15.2.0'
+  
 end

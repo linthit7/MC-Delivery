@@ -20,7 +20,7 @@ struct CreateOrJoinRoomRequest {
     
     func creatOrJoinRoom(completion: @escaping (Room) -> Void) {
         
-        let creatOrJoinRoomRoute: String = "https://pharmacy-delivery.onrender.com/api/rooms"
+        let creatOrJoinRoomRoute: String = "https://pharmacydelivery-production.up.railway.app/api/rooms"
         
         let headers: HTTPHeaders = [
             .authorization(accessToken)

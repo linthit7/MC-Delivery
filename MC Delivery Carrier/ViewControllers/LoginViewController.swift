@@ -30,7 +30,11 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         print(self.emailTextField.text!)
         print(self.passwordTextField.text!)
+        let authLogic = AuthRequest(email: emailTextField.text!, password: passwordTextField.text!)
+        authLogic.validateWithEmailAndPassword() { loginResponse in
         
+            CredentialsStore.storeCredentials(payload: loginResponse.payload)
+        }
         
     }
     

@@ -40,6 +40,9 @@
 		F975A82429AA055D006EE0E7 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A82229AA055D006EE0E7 /* MenuViewController.xib */; };
 		F975A82C29AA0A26006EE0E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A82A29AA0A26006EE0E7 /* LoginViewController.swift */; };
 		F975A82D29AA0A26006EE0E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A82B29AA0A26006EE0E7 /* LoginViewController.xib */; };
+		F975A82E29AA2C28006EE0E7 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8C29A65E0700DFB859 /* AuthRequest.swift */; };
+		F975A82F29AA2C46006EE0E7 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8E29A6621400DFB859 /* Auth.swift */; };
+		F975A83229AA2E51006EE0E7 /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81929A86A21006EE0E7 /* CredentialsStore.swift */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -161,6 +164,8 @@
 		F93FAF8F29A26E1400786ED4 = {
 			isa = PBXGroup;
 			children = (
+				F975A83029AA2C5B006EE0E7 /* CommonDataStructure */,
+				F975A83129AA2C6A006EE0E7 /* CommonModels */,
 				F9E461A029A359460050BF0F /* CustomButton.swift */,
 				F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */,
 				F9E4619729A337300050BF0F /* CustomColor.swift */,
@@ -224,6 +229,23 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		F975A83029AA2C5B006EE0E7 /* CommonDataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				F932AE8E29A6621400DFB859 /* Auth.swift */,
+			);
+			path = CommonDataStructure;
+			sourceTree = "<group>";
+		};
+		F975A83129AA2C6A006EE0E7 /* CommonModels */ = {
+			isa = PBXGroup;
+			children = (
+				F932AE8C29A65E0700DFB859 /* AuthRequest.swift */,
+				F975A81929A86A21006EE0E7 /* CredentialsStore.swift */,
+			);
+			path = CommonModels;
+			sourceTree = "<group>";
+		};
 		F9E461B429A3B8220050BF0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,10 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				F9FF20E529A4735D002E05A1 /* MedicinesRequest.swift */,
-				F932AE8C29A65E0700DFB859 /* AuthRequest.swift */,
 				F932AE9029A6705700DFB859 /* UserRequest.swift */,
 				F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */,
-				F975A81929A86A21006EE0E7 /* CredentialsStore.swift */,
 				F975A81B29A87965006EE0E7 /* SocketHandler.swift */,
 				F975A81F29A9164B006EE0E7 /* CallManager.swift */,
 			);
@@ -272,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				F9FF20EA29A4CE02002E05A1 /* Medicine.swift */,
-				F932AE8E29A6621400DFB859 /* Auth.swift */,
 				F932AE9229A6756C00DFB859 /* User.swift */,
 				F932AE9C29A74B8C00DFB859 /* Room.swift */,
 			);
@@ -511,11 +530,14 @@
 				F9E461A529A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
 				F9E461AF29A3AED60050BF0F /* CustomLayout.swift in Sources */,
 				F93FAFB629A26E2600786ED4 /* AppDelegate.swift in Sources */,
+				F975A83229AA2E51006EE0E7 /* CredentialsStore.swift in Sources */,
 				F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */,
 				F9E461A229A359460050BF0F /* CustomButton.swift in Sources */,
+				F975A82F29AA2C46006EE0E7 /* Auth.swift in Sources */,
 				F9E4619929A337300050BF0F /* CustomColor.swift in Sources */,
 				F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */,
 				F975A82329AA055D006EE0E7 /* MenuViewController.swift in Sources */,
+				F975A82E29AA2C28006EE0E7 /* AuthRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

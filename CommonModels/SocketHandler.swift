@@ -13,7 +13,7 @@ class SocketHandler: NSObject {
     
     static let sharedInstance = SocketHandler()
     
-    let socket = SocketManager(socketURL: URL(string: "https://pharmacydelivery-production.up.railway.app")!, config: [.compress, .extraHeaders(["token": CredentialsStore.getCredentials()!.accessToken]), .forceWebsockets(true), .connectParams(["EIO": "3"])])
+    let socket = SocketManager(socketURL: URL(string: "https://pharmacydelivery-production.up.railway.app")!, config: [.compress, .extraHeaders(["token": CredentialsStore.getCredentials()?.accessToken ?? ""]), .forceWebsockets(true), .connectParams(["EIO": "3"])])
     
     var mSocket: SocketIOClient!
 

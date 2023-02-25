@@ -37,7 +37,7 @@ struct CreateOrJoinRoomRequest {
                 case .some(let data):
                     let json: JSON = JSON(data)
                     if json["statusCode"].stringValue == "200" {
-//                        print(json)
+                        print(json)
                         let room = Room.loadRoom(json: JSON(rawValue: json["payload"].dictionaryValue)!)
 //                        print(response.payload.existingRoom.sid)
 //                        print(response.payload.token)

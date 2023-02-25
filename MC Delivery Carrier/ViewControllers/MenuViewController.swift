@@ -41,8 +41,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             }
             navigationController?.pushViewController(viewControllerToPush, animated: true)
         case 1:
-            break
-//            navigationController?.pushViewController(ClientViewController(), animated: true)
+            navigationController?.pushViewController(ClientViewController(), animated: true)
         default: print("Default case MenuVC didSelectRowAt")
         }
     }

@@ -1,26 +1,27 @@
 //
-//  CarrierViewController.swift
-//  MC Delivery
+//  ClientViewController.swift
+//  MC Delivery Carrier
 //
-//  Created by Lin Thit Khant on 2/23/23.
+//  Created by Lin Thit Khant on 2/25/23.
 //
 
 import UIKit
+import SDWebImage
 
-class CarrierViewController: UIViewController {
+class ClientViewController: UIViewController {
     
     private var existingUserList = [ExistingUser]()
     var mSocket = SocketHandler.sharedInstance.getSocket()
     var callManager = CallManager()
     
-    @IBOutlet weak var carrierTableView: UITableView!
-    
+    @IBOutlet weak var clientTableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         
-        carrierTableView.delegate = self
-        carrierTableView.dataSource = self
+        clientTableView.delegate = self
+        clientTableView.dataSource = self
         
         if AppDelegate.loginState {
             let token = CredentialsStore.getCredentials()?.accessToken
@@ -28,24 +29,23 @@ class CarrierViewController: UIViewController {
                 self.existingUserList.append(contentsOf: existingUserList)
                 
                 DispatchQueue.main.async {
-                    self.carrierTableView.reloadData()
+                    self.clientTableView.reloadData()
                 }
             }
         }
-        
-        
+
     }
     
     private func setupUI() {
         DispatchQueue.main.async {
-            self.title = "Carrier List"
+            self.title = "Client List"
             self.view.backgroundColor = CustomColor().backgroundColor
         }
     }
-    
+
 }
 
-extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
+extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return existingUserList.count
@@ -71,7 +71,7 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
                 //                print("Room", room.token!)
                 self.callManager.startCall(id: UUID(), handle: callee.name)
-                
+
                 self.mSocket.emit("start-call") {
                     print("start-call emitted")
                 }
@@ -80,4 +80,3 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
-

@@ -69,9 +69,9 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
             let callee = existingUserList[indexPath.row]
             
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
-                //                print("Room", room.token!)
+                //  print("Room", room.token!)
+                //  Don't forget to get id for call.
                 self.callManager.startCall(id: UUID(), handle: callee.name)
-
                 self.mSocket.emit("start-call") {
                     print("start-call emitted")
                 }

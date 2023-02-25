@@ -70,8 +70,10 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
             
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
                 //                print("Room", room.token!)
-                self.callManager.startCall(id: UUID(), handle: callee.name)
+                // Don't forget to get id for call.
                 
+                
+                self.callManager.startCall(id: UUID(), handle: callee.name)
                 self.mSocket.emit("start-call") {
                     print("start-call emitted")
                 }

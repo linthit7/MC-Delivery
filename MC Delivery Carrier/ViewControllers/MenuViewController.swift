@@ -35,7 +35,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             var viewControllerToPush = UIViewController()
             if AppDelegate.loginState {
-//                viewControllerToPush = ProfileViewController()
+                viewControllerToPush = ProfileViewController()
             } else {
                 viewControllerToPush = LoginViewController()
             }

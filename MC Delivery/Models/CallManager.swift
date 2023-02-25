@@ -7,7 +7,6 @@
 
 import CallKit
 
-
 class CallManager: NSObject, CXProviderDelegate {
     
     //MARK: - Delegate
@@ -52,6 +51,7 @@ class CallManager: NSObject, CXProviderDelegate {
             if let error = error {
                 print(error)
             } else {
+                
                 print("Started call")
             }
         }

@@ -10,24 +10,39 @@ import UIKit
 class CarrierViewController: UIViewController {
     
     private var existingUserList = [ExistingUser]()
+    var mSocket = SocketHandler.sharedInstance.getSocket()
+    var callManger = CallManager()
     
     @IBOutlet weak var carrierTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+        
         carrierTableView.delegate = self
         carrierTableView.dataSource = self
         
-        UserRequest(accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjg1ZTA3ZjZkYzZhOWI4YTc1ZjI3MSIsImlhdCI6MTY3NzIyOTM0MCwiZXhwIjoxNjc3MzE1NzQwfQ.VuDkThgNwW-759qU6L2d-Krxabo_2lEtlt2SpiQnpzo").getAllUsers() { existingUserList in
-            self.existingUserList.append(contentsOf: existingUserList)
-            
-            DispatchQueue.main.async {
-                self.carrierTableView.reloadData()
+        if AppDelegate.loginState {
+            let token = CredentialsStore.getCredentials()?.accessToken
+            UserRequest(accessToken: token!).getAllUsers() { existingUserList in
+                self.existingUserList.append(contentsOf: existingUserList)
+                
+                DispatchQueue.main.async {
+                    self.carrierTableView.reloadData()
+                }
             }
         }
+        
+        
     }
-
+    
+    private func setupUI() {
+        DispatchQueue.main.async {
+            self.title = "Carrier List"
+            self.view.backgroundColor = CustomColor().backgroundColor
+        }
+    }
+    
 }
 
 extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
@@ -39,42 +54,30 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = existingUserList[indexPath.row].name
+        cell.imageView?.image = UIImage(systemName: "phone.fill")
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print(indexPath)
+        //        print(indexPath)
         
         if  AppDelegate.loginState {
+            
             let token = CredentialsStore.getCredentials()?.accessToken
+            let caller = CredentialsStore.getCredentials()?.user
+            let callee = existingUserList[indexPath.row]
+            
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
-                self.startDemo()
-                print("Room", room.token!)
+                //                print("Room", room.token!)
+                self.callManger.startCall(id: UUID(), handle: callee.name)
+                
+                self.mSocket.emit("start-call") {
+                    print("start-call emitted")
+                }
             }
         }
     }
     
 }
 
-//MARK: - CallManager
-
-extension CarrierViewController {
-    
-    func startDemo() {
-        
-        //Report Incoming Call
-//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-//            let callManger = CallManager()
-//            let id = UUID()
-//            callManger.reportIncomingCall(id: id, handle: "Travis")
-//        })
-        
-        //Start Call
-//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-//            let callManager = CallManager()
-//            let id = UUID()
-//            callManager.startCall(id: id, handle: "Scott")
-//        })
-    }
-}

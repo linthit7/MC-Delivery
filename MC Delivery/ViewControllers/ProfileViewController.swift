@@ -12,7 +12,15 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Profile")
+        DispatchQueue.main.async {
+            self.setUpUI()
+        }
+    }
+    
+    func setUpUI() {
+        let name = CredentialsStore.getCredentials()?.user.name
+        self.title = name
+        self.view.backgroundColor = CustomColor().backgroundColor
     }
 
 }

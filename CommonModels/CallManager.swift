@@ -52,7 +52,7 @@ class CallManager: NSObject, CXProviderDelegate {
                 print(error)
             } else {
                 
-                print("Started call")
+                print("Started calling UI")
             }
         }
     }

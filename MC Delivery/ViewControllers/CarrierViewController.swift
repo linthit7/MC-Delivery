@@ -45,6 +45,7 @@ class CarrierViewController: UIViewController {
     
 }
 
+@available(iOS 16.0, *)
 extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,12 +72,12 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
                 //                print("Room", room.token!)
                 // Don't forget to get id for call.
-                
-                
+                let videoVC = VideoCallViewController()
+                self.navigationController?.pushViewController(videoVC, animated: false)
                 self.callManager.startCall(id: UUID(), handle: callee.name)
-                self.mSocket.emit("start-call") {
-                    print("start-call emitted")
-                }
+//                self.mSocket.emit("start-call") {
+//                    print("start-call emitted")
+//                }
             }
         }
     }

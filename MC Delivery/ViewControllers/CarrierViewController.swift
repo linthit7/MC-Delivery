@@ -54,7 +54,7 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = existingUserList[indexPath.row].name
-        cell.imageView?.image = UIImage(systemName: "phone.fill")
+        cell.imageView?.image = UIImage(systemName: "phone.fill")?.sd_tintedImage(with: CustomColor().backgroundColor)
         
         return cell
     }

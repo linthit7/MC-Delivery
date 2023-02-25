@@ -1,19 +1,19 @@
 //
 //  MenuViewController.swift
-//  MC Delivery
+//  MC Delivery Carrier
 //
-//  Created by Lin Thit Khant on 2/20/23.
+//  Created by Lin Thit Khant on 2/25/23.
 //
 
 import UIKit
 
 class MenuViewController: UIViewController {
-    
+
     @IBOutlet weak var menuListTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         menuListTableView.dataSource = self
         menuListTableView.delegate = self
         
@@ -24,32 +24,27 @@ class MenuViewController: UIViewController {
     private func loginSuccesshandler() {
         menuListTableView.reloadData()
     }
+
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        switch indexPath.row {
-//        case 0: navigationController?.pushViewController(LoginViewController(), animated: true)
-//        case 1: navigationController?.pushViewController(CarrierViewController(), animated: true)
-//        default: print("Default case MenuVC didSelectRowAt")
-//        }
-        
         switch indexPath.row {
         case 0:
             var viewControllerToPush = UIViewController()
             if AppDelegate.loginState {
-                viewControllerToPush = ProfileViewController()
+//                viewControllerToPush = ProfileViewController()
             } else {
                 viewControllerToPush = LoginViewController()
             }
             navigationController?.pushViewController(viewControllerToPush, animated: true)
         case 1:
-            navigationController?.pushViewController(CarrierViewController(), animated: true)
+            break
+//            navigationController?.pushViewController(ClientViewController(), animated: true)
         default: print("Default case MenuVC didSelectRowAt")
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,7 +64,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             case 1:
                 let cell = UITableViewCell()
-                cell.textLabel?.text = "Carriers"
+                cell.textLabel?.text = "Clients"
                 return cell
             default: return UITableViewCell()
             }
@@ -83,6 +78,5 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
     
 }

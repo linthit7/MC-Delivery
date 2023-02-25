@@ -44,7 +44,6 @@ class HomeViewController: UIViewController {
             self.homeCollectionView.dataSource = self
             self.homeCollectionView.collectionViewLayout = CustomLayout.configureLayout()
             self.navigationItem.leftBarButtonItem = self.customButton.menuButton
-//            self.homeCollectionView.reloadData()
         }
         customButton.menuButton.target = self
         customButton.menuButton.action = #selector(menuButtonPressed)

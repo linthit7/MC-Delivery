@@ -19,9 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SocketHandler.sharedInstance.establishConnection(token: token!)
             print(token)
         }
-        
-//        print(CredentialsStore.getCredentials()?.accessToken)
-        
+                
         return true
     }
 

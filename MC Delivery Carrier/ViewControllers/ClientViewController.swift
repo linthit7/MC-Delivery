@@ -19,6 +19,7 @@ class ClientViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        socketOn()
         
         clientTableView.delegate = self
         clientTableView.dataSource = self
@@ -69,13 +70,40 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
             let callee = existingUserList[indexPath.row]
             
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
-                //  print("Room", room.token!)
-                //  Don't forget to get id for call.
-                self.callManager.startCall(id: UUID(), handle: callee.name)
-                self.mSocket.emit("start-call") {
-                    print("start-call emitted")
+                
+                let data = [
+                    "callerId": caller?._id,
+                    "calleeId": callee._id,
+                    "roomName": room.roomName
+                    ]
+                
+                self.mSocket.emit("start-call", data) {
+                    print("Emitted Start-call", data)
+                    
+                    let videoVC = VideoCallViewController()
+                    self.navigationController?.pushViewController(videoVC, animated: false)
+                    self.callManager.startCall(id: UUID(), handle: callee.name)
                 }
             }
+        }
+    }
+    
+}
+
+extension ClientViewController {
+    
+    func socketOn() {
+        self.mSocket.on("calling") { data, ack in
+//            print("Calling", data)
+            let dataDic = data[0] as? NSDictionary
+            let roomName = dataDic?.value(forKey: "roomName") as? String
+            let token = dataDic?.value(forKey: "token") as? String
+            let caller = dataDic?.value(forKey: "caller") as? NSDictionary
+            
+//            print(roomName)
+//            print(token)
+//            print(caller)
+            self.callManager.reportIncomingCall(id: UUID(uuidString: roomName!)!, handle: caller?.value(forKey: "name") as! String)
         }
     }
     

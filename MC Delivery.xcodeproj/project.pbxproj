@@ -55,6 +55,7 @@
 		F975A84029AA38B3006EE0E7 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE9C29A74B8C00DFB859 /* Room.swift */; };
 		F975A84329AA56B9006EE0E7 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */; };
 		F975A84429AA56B9006EE0E7 /* VideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */; };
+		F975A84529AB9BDF006EE0E7 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -182,6 +183,7 @@
 		F93FAF8F29A26E1400786ED4 = {
 			isa = PBXGroup;
 			children = (
+				F975A84629AB9BFC006EE0E7 /* CommonViewController */,
 				F975A83029AA2C5B006EE0E7 /* CommonDataStructure */,
 				F975A83129AA2C6A006EE0E7 /* CommonModels */,
 				F9E461A029A359460050BF0F /* CustomButton.swift */,
@@ -274,6 +276,15 @@
 			path = CommonModels;
 			sourceTree = "<group>";
 		};
+		F975A84629AB9BFC006EE0E7 /* CommonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */,
+				F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */,
+			);
+			path = CommonViewController;
+			sourceTree = "<group>";
+		};
 		F9E461B429A3B8220050BF0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,8 +300,6 @@
 				F932AE9729A70F7900DFB859 /* CarrierViewController.xib */,
 				F975A81529A86229006EE0E7 /* ProfileViewController.swift */,
 				F975A81629A86229006EE0E7 /* ProfileViewController.xib */,
-				F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */,
-				F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -562,6 +571,7 @@
 				F93FAFB629A26E2600786ED4 /* AppDelegate.swift in Sources */,
 				F975A83C29AA355A006EE0E7 /* SocketHandler.swift in Sources */,
 				F975A83229AA2E51006EE0E7 /* CredentialsStore.swift in Sources */,
+				F975A84529AB9BDF006EE0E7 /* VideoCallViewController.swift in Sources */,
 				F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */,
 				F9E461A229A359460050BF0F /* CustomButton.swift in Sources */,
 				F975A83B29AA32B0006EE0E7 /* User.swift in Sources */,

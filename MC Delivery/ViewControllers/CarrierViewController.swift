@@ -69,15 +69,7 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
             let callee = existingUserList[indexPath.row]
             
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
-                //                print("Room", room.token!)
-                // Don't forget to get id for call.
                 
-//                self.mSocket.emit("start-call", with: dataField) {
-//
-//                    let videoVC = VideoCallViewController()
-//                    self.navigationController?.pushViewController(videoVC, animated: false)
-//                    self.callManager.startCall(id: UUID(), handle: callee.name)
-//                }
                 let data = [
                     "callerId": caller?._id,
                     "calleeId": callee._id,
@@ -89,7 +81,7 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
                     
                     let videoVC = VideoCallViewController()
                     self.navigationController?.pushViewController(videoVC, animated: false)
-                    self.callManager.startCall(id: UUID(), handle: callee.name)
+                    self.callManager.startCall(id: UUID(uuidString: room.roomName)!, handle: callee.name)
                 }
             }
         }

@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
             self.title = "MyanCare Carrier"
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationBar.standardAppearance = CustomNavigationBar().navBar
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            self.navigationController?.navigationBar.tintColor = UIColor.white
             self.navigationItem.leftBarButtonItem = self.customButton.menuButton
         }
         customButton.menuButton.target = self

@@ -60,7 +60,6 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        print(indexPath)
         
         if  AppDelegate.loginState {
             

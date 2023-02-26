@@ -19,7 +19,6 @@ class ClientViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        socketOn()
         
         clientTableView.delegate = self
         clientTableView.dataSource = self
@@ -61,7 +60,6 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        print(indexPath)
         
         if  AppDelegate.loginState {
             
@@ -82,7 +80,7 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
                     
                     let videoVC = VideoCallViewController()
                     self.navigationController?.pushViewController(videoVC, animated: false)
-                    self.callManager.startCall(id: UUID(), handle: callee.name)
+                    self.callManager.startCall(id: UUID(uuidString: room.roomName)!, handle: callee.name)
                 }
             }
         }
@@ -90,21 +88,3 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-extension ClientViewController {
-    
-    func socketOn() {
-        self.mSocket.on("calling") { data, ack in
-//            print("Calling", data)
-            let dataDic = data[0] as? NSDictionary
-            let roomName = dataDic?.value(forKey: "roomName") as? String
-            let token = dataDic?.value(forKey: "token") as? String
-            let caller = dataDic?.value(forKey: "caller") as? NSDictionary
-            
-//            print(roomName)
-//            print(token)
-//            print(caller)
-            self.callManager.reportIncomingCall(id: UUID(uuidString: roomName!)!, handle: caller?.value(forKey: "name") as! String)
-        }
-    }
-    
-}

@@ -56,6 +56,9 @@
 		F975A84329AA56B9006EE0E7 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */; };
 		F975A84429AA56B9006EE0E7 /* VideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */; };
 		F975A84529AB9BDF006EE0E7 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */; };
+		F975A84829ABA5F4006EE0E7 /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84729ABA5F4006EE0E7 /* SocketEventHandler.swift */; };
+		F975A84929ABA5F4006EE0E7 /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84729ABA5F4006EE0E7 /* SocketEventHandler.swift */; };
+		F975A84A29ABA94E006EE0E7 /* VideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -124,6 +127,7 @@
 		F975A83829AA3256006EE0E7 /* ClientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientViewController.xib; sourceTree = "<group>"; };
 		F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCallViewController.xib; sourceTree = "<group>"; };
+		F975A84729ABA5F4006EE0E7 /* SocketEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketEventHandler.swift; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				F975A81F29A9164B006EE0E7 /* CallManager.swift */,
 				F932AE9029A6705700DFB859 /* UserRequest.swift */,
 				F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */,
+				F975A84729ABA5F4006EE0E7 /* SocketEventHandler.swift */,
 			);
 			path = CommonModels;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				F93FAFBF29A26E2600786ED4 /* Assets.xcassets in Resources */,
 				F975A83A29AA3256006EE0E7 /* ClientViewController.xib in Resources */,
 				F9E4619629A32FED0050BF0F /* HomeViewController.xib in Resources */,
+				F975A84A29ABA94E006EE0E7 /* VideoCallViewController.xib in Resources */,
 				F975A82429AA055D006EE0E7 /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +548,7 @@
 				F9FF20EB29A4CE02002E05A1 /* Medicine.swift in Sources */,
 				F9E461BE29A3C3090050BF0F /* MenuViewController.swift in Sources */,
 				F932AE8F29A6621400DFB859 /* Auth.swift in Sources */,
+				F975A84829ABA5F4006EE0E7 /* SocketEventHandler.swift in Sources */,
 				F9FF20E629A4735D002E05A1 /* MedicinesRequest.swift in Sources */,
 				F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */,
 				F932AE8D29A65E0700DFB859 /* AuthRequest.swift in Sources */,
@@ -579,6 +586,7 @@
 				F9E4619929A337300050BF0F /* CustomColor.swift in Sources */,
 				F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */,
 				F975A84029AA38B3006EE0E7 /* Room.swift in Sources */,
+				F975A84929ABA5F4006EE0E7 /* SocketEventHandler.swift in Sources */,
 				F975A83529AA3151006EE0E7 /* ProfileViewController.swift in Sources */,
 				F975A82329AA055D006EE0E7 /* MenuViewController.swift in Sources */,
 				F975A82E29AA2C28006EE0E7 /* AuthRequest.swift in Sources */,

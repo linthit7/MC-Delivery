@@ -38,6 +38,8 @@ class HomeViewController: UIViewController {
             self.title = "MyanCare Pharmacy"
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationBar.standardAppearance = CustomNavigationBar().navBar
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            self.navigationController?.navigationBar.tintColor = UIColor.white
             self.homeCollectionView.register(UINib(nibName: MedicineCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MedicineCollectionViewCell.reuseIdentifier)
             self.homeCollectionView.backgroundColor = CustomColor().backgroundColor
             self.homeCollectionView.delegate = self
@@ -64,17 +66,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let medicineDetailVC = MedicineDetailViewController(medicine: medicineList[indexPath.row])
-//        medicineDetailVC.medicine = medicineList[indexPath.row]
-//        medicineDetailVC.medicineId = medicineList[indexPath.row]._id
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.pushViewController(medicineDetailVC, animated: true)
-//        print(indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print(medicineList.count)
         return medicineList.count
     }
     
@@ -91,14 +86,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomeViewController: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        print(medicineList.count)
-//        print(total)
+
         if medicineList.count < total {
             page += 1
             medicinesRequest.getAllMedicinesWithPagination(page: page) { medicines,_ in
                 self.medicineList.append(contentsOf: medicines)
-//                print(self.medicineList)
-//                print(self.medicineList.count)
+
                 DispatchQueue.main.async {
                     self.homeCollectionView.reloadData()
                 }

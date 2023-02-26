@@ -45,7 +45,6 @@ class CarrierViewController: UIViewController {
     
 }
 
-@available(iOS 16.0, *)
 extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,10 +82,14 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
                     "callerId": caller?._id,
                     "calleeId": callee._id,
                     "roomName": room.roomName
-                ]
+                    ]
                 
                 self.mSocket.emit("start-call", data) {
                     print("Emitted Start-call", data)
+                    
+                    let videoVC = VideoCallViewController()
+                    self.navigationController?.pushViewController(videoVC, animated: false)
+                    self.callManager.startCall(id: UUID(), handle: callee.name)
                 }
             }
         }

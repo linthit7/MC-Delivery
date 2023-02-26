@@ -46,7 +46,11 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             }
             navigationController?.pushViewController(viewControllerToPush, animated: true)
         case 1:
-            navigationController?.pushViewController(CarrierViewController(), animated: true)
+            let carrierVC = CarrierViewController()
+//            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+//            navigationController?.navigationBar.tintColor = UIColor.white
+//            navigationController?.pushViewController(medicineDetailVC, animated: true)
+            navigationController?.pushViewController(carrierVC, animated: true)
         default: print("Default case MenuVC didSelectRowAt")
         }
         

@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if CredentialsStore.getCredentials()?.accessToken != "" {
             AppDelegate.loginState = true
             SocketHandler.sharedInstance.establishConnection(token: CredentialsStore.getCredentials()?.accessToken ?? "")
-            let socketEventHandler = SocketEventHandler()
-            socketEventHandler.onCalling()
+//            let socketEventHandler = SocketEventHandler()
+//            socketEventHandler.onCalling()
         }
                 
         return true

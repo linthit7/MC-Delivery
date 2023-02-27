@@ -15,22 +15,24 @@ class HomeViewController: UIViewController {
     private var medicineList = [Medicine]()
     private var total = 0
     private var page = 1
+    var mSocket = SocketHandler.sharedInstance.getSocket()
+    var callManager = CallManager()
+    var room = MCRoom()
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(connectVideoCall), name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
+        
         medicinesRequest.getAllMedicinesWithPagination(page: page) { medicines, total in
             
             self.medicineList.append(contentsOf: medicines)
-//            print(self.medicineList.count)
             self.total = total
             DispatchQueue.main.async {
                 self.homeCollectionView.reloadData()
             }
-//            print(self.medicineList.count)
-//            print(self.total)
         }
         
         DispatchQueue.main.async {
@@ -49,6 +51,19 @@ class HomeViewController: UIViewController {
         }
         customButton.menuButton.target = self
         customButton.menuButton.action = #selector(menuButtonPressed)
+        
+        mSocket.on("calling") { data, ack in
+            
+            let dataDic = data[0] as? NSDictionary
+            let roomName = dataDic?.value(forKey: "roomName") as? String
+            let token = dataDic?.value(forKey: "token") as? String
+            let caller = dataDic?.value(forKey: "caller") as? NSDictionary
+            
+            self.room.roomName = roomName
+            self.room.token = token
+            
+            self.callManager.reportIncomingCall(id: UUID(uuidString: roomName!)!, handle: caller?.value(forKey: "name") as! String)
+        }
     }
     
     @objc
@@ -58,6 +73,12 @@ class HomeViewController: UIViewController {
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         present(menu, animated: true, completion: nil)
+    }
+    
+    @objc
+    private func connectVideoCall() {
+        let videoVC = VideoCallViewController(socketRoom: room)
+        navigationController?.pushViewController(videoVC, animated: true)
     }
 }
 

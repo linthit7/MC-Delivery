@@ -78,8 +78,10 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
                 self.mSocket.emit("start-call", data) {
                     print("Emitted Start-call", data)
                     
-                    let videoVC = VideoCallViewController()
-                    self.navigationController?.pushViewController(videoVC, animated: false)
+                    let videoVC = VideoCallViewController(socketRoom: room)
+                    videoVC.calleeNameLabel.text = callee.name
+                    videoVC.callStateLabel.text = "Calling"
+                    self.navigationController?.pushViewController(videoVC, animated: true)
                     self.callManager.startCall(id: UUID(uuidString: room.roomName)!, handle: callee.name)
                 }
             }

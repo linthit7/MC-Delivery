@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         DispatchQueue.main.async {
             self.view.backgroundColor = CustomColor().backgroundColor
             self.title = "MyanCare Carrier"

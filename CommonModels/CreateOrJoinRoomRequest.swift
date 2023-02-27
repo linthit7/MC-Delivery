@@ -18,7 +18,7 @@ struct CreateOrJoinRoomRequest {
 //        self.roomName = roomName
     }
     
-    func creatOrJoinRoom(completion: @escaping (Room) -> Void) {
+    func creatOrJoinRoom(completion: @escaping (MCRoom) -> Void) {
         
         let creatOrJoinRoomRoute: String = "https://pharmacydelivery-production.up.railway.app/api/rooms"
         
@@ -38,12 +38,12 @@ struct CreateOrJoinRoomRequest {
                     let json: JSON = JSON(data)
                     if json["statusCode"].stringValue == "200" {
                         print(json)
-                        let room = Room.loadRoom(json: JSON(rawValue: json["payload"].dictionaryValue)!)
+                        let mcRoom = MCRoom.loadRoom(json: JSON(rawValue: json["payload"].dictionaryValue)!)
 //                        print(response.payload.existingRoom.sid)
 //                        print(response.payload.token)
 //                        print(response.payload.existingRoom.statusCallback)
 //                        print(response.payload.existingRoom.links.recording_rules)
-                        completion(room)
+                        completion(mcRoom)
                     }
                 case .none: print("No data in CreateOrJoinRoomRequest")
                 }

@@ -11,32 +11,32 @@ struct RoomResponse {
     
     var statusCode: Int!
     var message: String!
-    var payload: Room!
+    var payload: MCRoom!
     
     static func loadRoomResponse(json: JSON) -> RoomResponse {
         
         var roomResponse = RoomResponse()
         roomResponse.statusCode = json["statusCode"].intValue
         roomResponse.message = json["message"].stringValue
-        roomResponse.payload = Room.loadRoom(json: JSON(rawValue: json["payload"].dictionaryValue)!)
+        roomResponse.payload = MCRoom.loadRoom(json: JSON(rawValue: json["payload"].dictionaryValue)!)
         return roomResponse
     }
     
 }
 
-struct Room {
+struct MCRoom {
     
     var roomName: String!
     var roomSid: String!
     var token: String!
     
-    static func loadRoom(json: JSON) -> Room {
+    static func loadRoom(json: JSON) -> MCRoom {
         
-        var room = Room()
-        room.roomName = json["roomName"].stringValue
-        room.roomSid = json["roomSid"].stringValue
-        room.token = json["token"].stringValue
-        return room
+        var mcroom = MCRoom()
+        mcroom.roomName = json["roomName"].stringValue
+        mcroom.roomSid = json["roomSid"].stringValue
+        mcroom.token = json["token"].stringValue
+        return mcroom
     }
 }
 

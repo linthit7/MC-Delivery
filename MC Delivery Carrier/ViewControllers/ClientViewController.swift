@@ -79,8 +79,8 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
                     print("Emitted Start-call", data)
                     
                     let videoVC = VideoCallViewController()
-                    self.navigationController?.pushViewController(videoVC, animated: false)
                     self.callManager.startCall(id: UUID(uuidString: room.roomName)!, handle: callee.name)
+                    self.navigationController?.pushViewController(videoVC, animated: true)
                 }
             }
         }

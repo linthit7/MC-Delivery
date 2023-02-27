@@ -51,10 +51,23 @@ class CallManager: NSObject, CXProviderDelegate {
             if let error = error {
                 print(error)
             } else {
-                
                 print("Started calling UI")
             }
         }
     }
     
+    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
+        print(action, provider)
+    }
+    
+    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+        
+        print(action, provider)
+    }
+    
+    func provider(_ provider: CXProvider, perform action: CXSetMutedCallAction) {
+        print(action, provider)
+    }
+   
 }

@@ -78,7 +78,7 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
                 self.mSocket.emit("start-call", data) {
                     print("Emitted Start-call", data)
                     
-                    let videoVC = VideoCallViewController()
+                    let videoVC = VideoCallViewController(socketRoom: room)
                     self.callManager.startCall(id: UUID(uuidString: room.roomName)!, handle: callee.name)
                     self.navigationController?.pushViewController(videoVC, animated: true)
                 }

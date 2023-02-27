@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     var mSocket = SocketHandler.sharedInstance.getSocket()
     var callManager = CallManager()
     var room = MCRoom()
+    var calleeName = ""
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
@@ -61,6 +62,7 @@ class HomeViewController: UIViewController {
             
             self.room.roomName = roomName
             self.room.token = token
+            self.calleeName = (caller?.value(forKey: "name") as? String)!
             
             self.callManager.reportIncomingCall(id: UUID(uuidString: roomName!)!, handle: caller?.value(forKey: "name") as! String)
         }

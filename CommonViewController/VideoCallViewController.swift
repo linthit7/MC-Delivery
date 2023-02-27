@@ -10,6 +10,8 @@ import TwilioVideo
 
 class VideoCallViewController: UIViewController {
     
+    var audioDevice: DefaultAudioDevice = DefaultAudioDevice()
+    
     var room: Room?
     
     var socketRoom: MCRoom?
@@ -47,17 +49,18 @@ class VideoCallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        TwilioVideoSDK.audioDevice = self.audioDevice
         
-        self.startPreview()
-        self.connectToRoom()
         self.micButton.isHidden = true
         self.endButoon.isHidden = true
-        
+        self.startPreview()
+        self.connectToRoom()
     }
 
     @IBAction func endButtonPressed(_ sender: UIButton) {
         
-//        self.navigationController?.popViewController(animated: true)
+        callManager.performEndCallAction(uuid: UUID(uuidString: (socketRoom?.roomName)!)!)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func connectToRoom() {
@@ -71,6 +74,29 @@ class VideoCallViewController: UIViewController {
             // Use the local media that we prepared earlier.
             builder.audioTracks = self.localAudioTrack != nil ? [self.localAudioTrack!] : [LocalAudioTrack]()
             builder.videoTracks = self.localVideoTrack != nil ? [self.localVideoTrack!] : [LocalVideoTrack]()
+            
+            // Use the preferred audio codec
+            if let preferredAudioCodec = Settings.shared.audioCodec {
+                builder.preferredAudioCodecs = [preferredAudioCodec]
+            }
+
+            // Use Adpative Simulcast by setting builer.videoEncodingMode to .auto if preferredVideoCodec is .auto (default). The videoEncodingMode API is mutually exclusive with existing codec management APIs EncodingParameters.maxVideoBitrate and preferredVideoCodecs
+            let preferredVideoCodec = Settings.shared.videoCodec
+            if preferredVideoCodec == .auto {
+                builder.videoEncodingMode = .auto
+            } else if let codec = preferredVideoCodec.codec {
+                builder.preferredVideoCodecs = [codec]
+            }
+
+            // Use the preferred encoding parameters
+            if let encodingParameters = Settings.shared.getEncodingParameters() {
+                builder.encodingParameters = encodingParameters
+            }
+
+            // Use the preferred signaling region
+            if let signalingRegion = Settings.shared.signalingRegion {
+                builder.region = signalingRegion
+            }
             
             // The name of the Room where the Client will attempt to connect to. Please note that if you pass an empty
             // Room `name`, the Client will create one for you. You can get the name or sid from any connected Room.
@@ -184,9 +210,10 @@ class VideoCallViewController: UIViewController {
 
 // MARK:- RoomDelegate
 extension VideoCallViewController : RoomDelegate {
+    
     func roomDidConnect(room: Room) {
         logMessage(messageText: "Connected to room \(room.name) as \(room.localParticipant?.identity ?? "")")
-
+        audioDevice.isEnabled = true
         // This example only renders 1 RemoteVideoTrack at a time. Listen for all events to decide which track to render.
         for remoteParticipant in room.remoteParticipants {
             remoteParticipant.delegate = self
@@ -228,6 +255,7 @@ extension VideoCallViewController : RoomDelegate {
         logMessage(messageText: "Room \(room.name), Participant \(participant.identity) disconnected")
 
         // Nothing to do in this example. Subscription events are used to add/remove renderers.
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

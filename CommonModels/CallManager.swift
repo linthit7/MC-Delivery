@@ -13,7 +13,6 @@ class CallManager: NSObject, CXProviderDelegate {
 
     func providerDidReset(_ provider: CXProvider) {}
     
-    
     let provider = CXProvider(configuration: CXProviderConfiguration())
     let callController = CXCallController()
     
@@ -56,15 +55,29 @@ class CallManager: NSObject, CXProviderDelegate {
         }
     }
     
+    func performEndCallAction(uuid: UUID) {
+        let endCallAction = CXEndCallAction(call: uuid)
+        let transaction = CXTransaction(action: endCallAction)
+
+        callController.request(transaction) { error in
+            if let error = error {
+                NSLog("EndCallAction transaction request failed: \(error.localizedDescription).")
+                return
+            }
+
+            NSLog("EndCallAction transaction request successful")
+        }
+    }
+    
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
         print(action, provider)
     }
     
-    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-        
-        print(action, provider)
-    }
+//    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+//
+//        print(action, provider)
+//    }
     
     func provider(_ provider: CXProvider, perform action: CXSetMutedCallAction) {
         print(action, provider)

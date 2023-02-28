@@ -30,12 +30,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        switch indexPath.row {
-//        case 0: navigationController?.pushViewController(LoginViewController(), animated: true)
-//        case 1: navigationController?.pushViewController(CarrierViewController(), animated: true)
-//        default: print("Default case MenuVC didSelectRowAt")
-//        }
-        
         switch indexPath.row {
         case 0:
             var viewControllerToPush = UIViewController()
@@ -47,9 +41,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(viewControllerToPush, animated: true)
         case 1:
             let carrierVC = CarrierViewController()
-//            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-//            navigationController?.navigationBar.tintColor = UIColor.white
-//            navigationController?.pushViewController(medicineDetailVC, animated: true)
             navigationController?.pushViewController(carrierVC, animated: true)
         default: print("Default case MenuVC didSelectRowAt")
         }

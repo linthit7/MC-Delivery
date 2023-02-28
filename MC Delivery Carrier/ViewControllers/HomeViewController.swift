@@ -45,6 +45,13 @@ class HomeViewController: UIViewController {
             
             self.callManager.reportIncomingCall(id: UUID(uuidString: roomName!)!, handle: caller?.value(forKey: "name") as! String)
         }
+        mSocket.on("acceptCall") { data, ack in
+
+            let dataDic = data[0] as? NSDictionary
+            let roomName = dataDic?.value(forKey: "roomName") as? String
+
+//            self.callManager.performAnswerCallAction(id: UUID(uuidString: roomName!)!)
+        }
     }
     
     @objc
@@ -58,6 +65,20 @@ class HomeViewController: UIViewController {
     
     @objc
     private func connectVideoCall() {
+        
+        let caller = CredentialsStore.getCredentials()?.user
+        let callee =
+        CalleeStore.getCallee()
+            
+        let data = [
+            "callerId": callee?._id,
+            "calleeId": caller?._id,
+            "roomName": room.roomName
+        ]
+        
+        mSocket.emit("acceptCall", data) {
+        }
+        
         let videoVC = VideoCallViewController(socketRoom: room)
         navigationController?.pushViewController(videoVC, animated: true)
     }

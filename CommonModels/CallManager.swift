@@ -16,12 +16,12 @@ class CallManager: NSObject, CXProviderDelegate {
     
     let provider = CXProvider(configuration: CXProviderConfiguration())
     let callController = CXCallController()
+    let mSocket = SocketHandler.sharedInstance.getSocket()
     
     override init() {
         super.init()
         
         provider.setDelegate(self, queue: nil)
-        
     }
     
     func reportIncomingCall(id: UUID, handle: String) {
@@ -55,13 +55,14 @@ class CallManager: NSObject, CXProviderDelegate {
             }
             action.fulfill(withDateStarted: Date())
         }
+        print("PerformStartCallAction", id)
     }
     
     func performAnswerCallAction(id: UUID) {
-        
+
         let action = CXAnswerCallAction(call: id)
         let transaction = CXTransaction(action: action)
-        
+
         callController.request(transaction) { error in
             if let error = error {
                 print(error)
@@ -70,6 +71,7 @@ class CallManager: NSObject, CXProviderDelegate {
             }
             action.fulfill(withDateConnected: Date())
         }
+        print("PerformAnswerCallAction", id)
     }
     
     func performEndCallAction(id: UUID) {
@@ -87,33 +89,31 @@ class CallManager: NSObject, CXProviderDelegate {
         }
     }
     
-    
-    
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-        
-        print("Answer Call", action)
+        print("Answer Call From Call Manager")
         action.fulfill(withDateConnected: Date())
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
+        
     }
     
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-        print("End Call", action)
+        print("End Call From Call Manager")
         action.fulfill(withDateEnded: Date())
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "EndCall"), object: nil)
 
     }
     
     func provider(_ provider: CXProvider, perform action: CXSetMutedCallAction) {
-        print("Muted Call", action)
+        print("Muted Call From Call Manager")
         action.fulfill()
     }
     
     func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
-        print("Audio Session Enabled", audioSession)
+        print("Audio Session Enabled From Call Manager")
     }
     
     func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
-        print("Audio Session Disabled", audioSession)
+        print("Audio Session Disabled From Call Manager")
     }
    
 }

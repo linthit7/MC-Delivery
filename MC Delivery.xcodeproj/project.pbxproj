@@ -59,6 +59,8 @@
 		F975A84A29ABA94E006EE0E7 /* VideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */; };
 		F975A84C29AC9415006EE0E7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84B29AC9415006EE0E7 /* Settings.swift */; };
 		F975A84D29AC9415006EE0E7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84B29AC9415006EE0E7 /* Settings.swift */; };
+		F995FC9729ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
+		F995FC9829ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -128,6 +130,7 @@
 		F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCallViewController.xib; sourceTree = "<group>"; };
 		F975A84B29AC9415006EE0E7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalleeStore.swift; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 			children = (
 				F932AE8C29A65E0700DFB859 /* AuthRequest.swift */,
 				F975A81929A86A21006EE0E7 /* CredentialsStore.swift */,
+				F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */,
 				F975A81B29A87965006EE0E7 /* SocketHandler.swift */,
 				F975A81F29A9164B006EE0E7 /* CallManager.swift */,
 				F932AE9029A6705700DFB859 /* UserRequest.swift */,
@@ -559,6 +563,7 @@
 				F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */,
 				F9E4619829A337300050BF0F /* CustomColor.swift in Sources */,
 				F975A82029A9164B006EE0E7 /* CallManager.swift in Sources */,
+				F995FC9729ADEC4E003E9C44 /* CalleeStore.swift in Sources */,
 				F975A81C29A87965006EE0E7 /* SocketHandler.swift in Sources */,
 				F975A84C29AC9415006EE0E7 /* Settings.swift in Sources */,
 				F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */,
@@ -571,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F975A82C29AA0A26006EE0E7 /* LoginViewController.swift in Sources */,
+				F995FC9829ADEC4E003E9C44 /* CalleeStore.swift in Sources */,
 				F975A83929AA3256006EE0E7 /* ClientViewController.swift in Sources */,
 				F975A83E29AA37FE006EE0E7 /* UserRequest.swift in Sources */,
 				F9E461A529A360F20050BF0F /* CustomNavigationBar.swift in Sources */,

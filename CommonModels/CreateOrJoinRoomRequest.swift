@@ -11,11 +11,9 @@ import Alamofire
 struct CreateOrJoinRoomRequest {
     
     var accessToken: String
-//    var roomName: String
     
     init(accessToken: String) {
         self.accessToken = accessToken
-//        self.roomName = roomName
     }
     
     func creatOrJoinRoom(completion: @escaping (MCRoom) -> Void) {
@@ -25,11 +23,7 @@ struct CreateOrJoinRoomRequest {
         let headers: HTTPHeaders = [
             .authorization(accessToken)
         ]
-        
-//        let params: Parameters = [
-//            "roomName": roomName
-//        ]
-        
+
         DispatchQueue.global(qos: .userInitiated).async {
             
             AF.request(creatOrJoinRoomRoute, method: .post, encoding: JSONEncoding.default, headers: headers).response { response in
@@ -39,10 +33,6 @@ struct CreateOrJoinRoomRequest {
                     if json["statusCode"].stringValue == "200" {
                         print(json)
                         let mcRoom = MCRoom.loadRoom(json: JSON(rawValue: json["payload"].dictionaryValue)!)
-//                        print(response.payload.existingRoom.sid)
-//                        print(response.payload.token)
-//                        print(response.payload.existingRoom.statusCallback)
-//                        print(response.payload.existingRoom.links.recording_rules)
                         completion(mcRoom)
                     }
                 case .none: print("No data in CreateOrJoinRoomRequest")

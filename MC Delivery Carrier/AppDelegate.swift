@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         if CredentialsStore.getCredentials()?.accessToken != nil{
+            
+//            print(CredentialsStore.getCredentials()?.accessToken)
             AppDelegate.loginState = true
             SocketHandler.sharedInstance.establishConnection(token: CredentialsStore.getCredentials()?.accessToken ?? "")
         }

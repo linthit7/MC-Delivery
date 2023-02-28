@@ -58,7 +58,6 @@ extension MedicineDetailViewController: UITableViewDataSource, UITableViewDelega
             return UITableViewCell()
         }
         cell.createMedicineDetail(medicine: medicine)
-//        print(medicine)
         return cell
     }
     

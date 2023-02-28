@@ -32,13 +32,7 @@ struct AuthRequest {
                 switch response.data {
                 case .some(let data):
                     let json: JSON = JSON(data)
-//                    print(json)
-//                    print(LoginResponse.loadLoginResponse(json: json))
                     let loginResponse = LoginResponse.loadLoginResponse(json: json)
-//                    print(loginResponse)
-//                    print(loginResponse.payload.user._id)
-//                    print(loginResponse.payload.user.picPublicIds[0].stringValue)
-//                    print(loginResponse.payload.accessToken)
                     completion(loginResponse)
                 case .none: print("No response from login route.")
                 }

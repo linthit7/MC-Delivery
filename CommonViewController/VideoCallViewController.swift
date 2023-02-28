@@ -22,6 +22,7 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     var remoteParticipant: RemoteParticipant?
     
     var callManager = CallManager()
+    var mSocket = SocketHandler.sharedInstance.getSocket()
 
     @IBOutlet weak var previewView: VideoView!
     @IBOutlet weak var remoteView: VideoView!
@@ -35,7 +36,7 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
         self.socketRoom = socketRoom
         
         TwilioVideoSDK.audioDevice = self.audioDevice
-
+        
         super.init(nibName: nil, bundle: nil)
         }
 
@@ -53,9 +54,9 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(callKitEndCallAction), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
-                    
+        
         self.micButton.isHidden = true
         self.endButoon.isHidden = true
         self.startPreview()
@@ -64,13 +65,11 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     
     @objc
     private func callKitEndCallAction() {
-        room?.disconnect()
-        self.navigationController?.popViewController(animated: true)
+        print("Call Kit End Call Action From Video Call Viewcontroller")
     }
 
     @IBAction func endButtonPressed(_ sender: UIButton) {
-        room?.disconnect()
-        self.navigationController?.popViewController(animated: true)
+        print("End Button Pressed From Video Call Viewcontroller")
     }
     
     func connectToRoom() {
@@ -135,7 +134,6 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     }
     
     func prepareLocalMedia() {
-//        audioDevice.isEnabled = true
         // We will share local audio and video when we connect to the Room.
         // Create an audio track.
         if (localAudioTrack == nil) {
@@ -223,7 +221,7 @@ extension VideoCallViewController : RoomDelegate {
     func roomDidConnect(room: Room) {
         logMessage(messageText: "Connected to room \(room.name) as \(room.localParticipant?.identity ?? "")")
         audioDevice.isEnabled = true
-                
+        
         if let localParticipant = room.localParticipant {
             localParticipant.delegate = self
         }
@@ -231,6 +229,7 @@ extension VideoCallViewController : RoomDelegate {
         for remoteParticipant in room.remoteParticipants {
             remoteParticipant.delegate = self
         }
+        
     }
 
     func roomDidDisconnect(room: Room, error: Error?) {
@@ -260,7 +259,7 @@ extension VideoCallViewController : RoomDelegate {
     func participantDidConnect(room: Room, participant: RemoteParticipant) {
         // Listen for events from all Participants to decide which RemoteVideoTrack to render.
         participant.delegate = self
-
+        callManager.performAnswerCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
         logMessage(messageText: "Participant \(participant.identity) connected with \(participant.remoteAudioTracks.count) audio and \(participant.remoteVideoTracks.count) video tracks")
         
     }
@@ -269,8 +268,7 @@ extension VideoCallViewController : RoomDelegate {
         logMessage(messageText: "Room \(room.name), Participant \(participant.identity) disconnected")
 
         // Nothing to do in this example. Subscription events are used to add/remove renderers.
-        room.disconnect()
-        self.navigationController?.popViewController(animated: true)
+        
     }
 }
 

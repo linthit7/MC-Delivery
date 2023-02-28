@@ -12,7 +12,7 @@ class ClientViewController: UIViewController {
     
     private var existingUserList = [ExistingUser]()
     var mSocket = SocketHandler.sharedInstance.getSocket()
-    var callManager = CallManager()
+    let callManager = CallManager()
     
     @IBOutlet weak var clientTableView: UITableView!
 
@@ -66,6 +66,7 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
             let token = CredentialsStore.getCredentials()?.accessToken
             let caller = CredentialsStore.getCredentials()?.user
             let callee = existingUserList[indexPath.row]
+            CalleeStore.storeCallee(callee: callee)
             
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
                 
@@ -75,8 +76,7 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
                     "roomName": room.roomName
                     ]
                 
-                self.mSocket.emit("start-call", data) {
-//                    print(room.roomName)
+                self.mSocket.emit("startCall", data) {
                     
                     self.callManager.performStartCallAction(id: UUID(uuidString: room.roomName)!, handle: callee.name)
 

@@ -11,7 +11,7 @@ class CarrierViewController: UIViewController {
     
     private var existingUserList = [ExistingUser]()
     var mSocket = SocketHandler.sharedInstance.getSocket()
-    var callManager = CallManager()
+    let callManager = CallManager()
     
     @IBOutlet weak var carrierTableView: UITableView!
     
@@ -66,6 +66,7 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
             let token = CredentialsStore.getCredentials()?.accessToken
             let caller = CredentialsStore.getCredentials()?.user
             let callee = existingUserList[indexPath.row]
+            CalleeStore.storeCallee(callee: callee)
             
             CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom() { room in
                 
@@ -75,9 +76,8 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
                     "roomName": room.roomName
                     ]
                 
-                self.mSocket.emit("start-call", data) {
+                self.mSocket.emit("startCall", data) {
                     
-                    print(room.roomName)
                     self.callManager.performStartCallAction(id: UUID(uuidString: room.roomName)!, handle: callee.name)
 
                     let videoVC = VideoCallViewController(socketRoom: room)

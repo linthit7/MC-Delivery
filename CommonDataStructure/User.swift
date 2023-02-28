@@ -25,7 +25,7 @@ struct UserResponse {
     }
 }
 
-struct ExistingUser {
+struct ExistingUser: Codable {
     
     var _id: String!
     var id: String!

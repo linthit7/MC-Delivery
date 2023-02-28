@@ -62,7 +62,6 @@ class HomeViewController: UIViewController {
             
             self.room.roomName = roomName
             self.room.token = token
-            self.calleeName = (caller?.value(forKey: "name") as? String)!
             
             self.callManager.reportIncomingCall(id: UUID(uuidString: roomName!)!, handle: caller?.value(forKey: "name") as! String)
         }

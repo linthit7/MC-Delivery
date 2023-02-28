@@ -7,8 +7,9 @@
 
 import UIKit
 import TwilioVideo
+import CallKit
 
-class VideoCallViewController: UIViewController {
+class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     
     var audioDevice: DefaultAudioDevice = DefaultAudioDevice()
     
@@ -32,6 +33,9 @@ class VideoCallViewController: UIViewController {
     
     init(socketRoom: MCRoom) {
         self.socketRoom = socketRoom
+        
+        TwilioVideoSDK.audioDevice = self.audioDevice
+
         super.init(nibName: nil, bundle: nil)
         }
 
@@ -40,6 +44,7 @@ class VideoCallViewController: UIViewController {
         }
     
     deinit {
+                
         if let camera = self.camera {
             camera.stopCapture()
             self.camera = nil
@@ -49,17 +54,22 @@ class VideoCallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TwilioVideoSDK.audioDevice = self.audioDevice
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(callKitEndCallAction), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
+                    
         self.micButton.isHidden = true
         self.endButoon.isHidden = true
         self.startPreview()
         self.connectToRoom()
     }
+    
+    @objc
+    private func callKitEndCallAction() {
+        room?.disconnect()
+        self.navigationController?.popViewController(animated: true)
+    }
 
     @IBAction func endButtonPressed(_ sender: UIButton) {
-        
-        callManager.performEndCallAction(uuid: UUID(uuidString: (socketRoom?.roomName)!)!)
+        room?.disconnect()
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -101,6 +111,8 @@ class VideoCallViewController: UIViewController {
             // The name of the Room where the Client will attempt to connect to. Please note that if you pass an empty
             // Room `name`, the Client will create one for you. You can get the name or sid from any connected Room.
             builder.roomName = self.socketRoom?.roomName
+            
+            builder.uuid = UUID(uuidString: (self.socketRoom?.roomName)!)
         }
         
         // Connect to the Room using the options we provided.
@@ -116,7 +128,6 @@ class VideoCallViewController: UIViewController {
         
         self.micButton.isHidden = !inRoom
         self.endButoon.isHidden = !inRoom
-        self.navigationController?.setNavigationBarHidden(inRoom, animated: true)
         UIApplication.shared.isIdleTimerDisabled = inRoom
 
         // Show / hide the automatic home indicator on modern iPhones.
@@ -124,9 +135,8 @@ class VideoCallViewController: UIViewController {
     }
     
     func prepareLocalMedia() {
-
+//        audioDevice.isEnabled = true
         // We will share local audio and video when we connect to the Room.
-
         // Create an audio track.
         if (localAudioTrack == nil) {
             localAudioTrack = LocalAudioTrack(options: nil, enabled: true, name: "Microphone")
@@ -201,7 +211,6 @@ class VideoCallViewController: UIViewController {
 
     func cleanupRemoteParticipant() {
         if self.remoteParticipant != nil {
-//            self.remoteView?.removeFromSuperview()
             self.remoteView = nil
             self.remoteParticipant = nil
         }
@@ -214,6 +223,10 @@ extension VideoCallViewController : RoomDelegate {
     func roomDidConnect(room: Room) {
         logMessage(messageText: "Connected to room \(room.name) as \(room.localParticipant?.identity ?? "")")
         audioDevice.isEnabled = true
+                
+        if let localParticipant = room.localParticipant {
+            localParticipant.delegate = self
+        }
         // This example only renders 1 RemoteVideoTrack at a time. Listen for all events to decide which track to render.
         for remoteParticipant in room.remoteParticipants {
             remoteParticipant.delegate = self
@@ -222,11 +235,11 @@ extension VideoCallViewController : RoomDelegate {
 
     func roomDidDisconnect(room: Room, error: Error?) {
         logMessage(messageText: "Disconnected from room \(room.name), error = \(String(describing: error))")
-        
+                
         self.cleanupRemoteParticipant()
         self.room = nil
-        
         self.showRoomUI(inRoom: false)
+        
     }
 
     func roomDidFailToConnect(room: Room, error: Error) {
@@ -249,12 +262,14 @@ extension VideoCallViewController : RoomDelegate {
         participant.delegate = self
 
         logMessage(messageText: "Participant \(participant.identity) connected with \(participant.remoteAudioTracks.count) audio and \(participant.remoteVideoTracks.count) video tracks")
+        
     }
 
     func participantDidDisconnect(room: Room, participant: RemoteParticipant) {
         logMessage(messageText: "Room \(room.name), Participant \(participant.identity) disconnected")
 
         // Nothing to do in this example. Subscription events are used to add/remove renderers.
+        room.disconnect()
         self.navigationController?.popViewController(animated: true)
     }
 }

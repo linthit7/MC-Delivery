@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFAudio
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -16,9 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if CredentialsStore.getCredentials()?.accessToken != "" {
             AppDelegate.loginState = true
             SocketHandler.sharedInstance.establishConnection(token: CredentialsStore.getCredentials()?.accessToken ?? "")
-//            let socketEventHandler = SocketEventHandler()
-//            socketEventHandler.onCalling()
         }
+        
+        // Get the singleton instance.
+        let audioSession = AVAudioSession.sharedInstance()
+            do {
+                // Set the audio session category, mode, and options.
+                try audioSession.setCategory(.playback, mode: .default, options: [])
+            } catch {
+                print("Failed to set audio session category.")
+            }
                 
         return true
     }

@@ -6,6 +6,7 @@
 //
 
 import CallKit
+import AVFAudio
 
 class CallManager: NSObject, CXProviderDelegate {
     
@@ -20,6 +21,7 @@ class CallManager: NSObject, CXProviderDelegate {
         super.init()
         
         provider.setDelegate(self, queue: nil)
+        
     }
     
     func reportIncomingCall(id: UUID, handle: String) {
@@ -33,13 +35,12 @@ class CallManager: NSObject, CXProviderDelegate {
             if let error = error {
                 print(error)
             } else {
-                print("Call reported")
+                print("Report incoming call", id)
             }
         }
-        
     }
     
-    func startCall(id: UUID, handle: String) {
+    func performStartCallAction(id: UUID, handle: String) {
         
         let handle = CXHandle(type: .generic, value: handle)
         let action = CXStartCallAction(call: id, handle: handle)
@@ -52,35 +53,67 @@ class CallManager: NSObject, CXProviderDelegate {
             } else {
                 print("Started calling UI")
             }
+            action.fulfill(withDateStarted: Date())
         }
     }
     
-    func performEndCallAction(uuid: UUID) {
-        let endCallAction = CXEndCallAction(call: uuid)
-        let transaction = CXTransaction(action: endCallAction)
-
+    func performAnswerCallAction(id: UUID) {
+        
+        let action = CXAnswerCallAction(call: id)
+        let transaction = CXTransaction(action: action)
+        
         callController.request(transaction) { error in
             if let error = error {
-                NSLog("EndCallAction transaction request failed: \(error.localizedDescription).")
-                return
+                print(error)
+            } else {
+                print("Answer call action", id)
             }
-
-            NSLog("EndCallAction transaction request successful")
+            action.fulfill(withDateConnected: Date())
         }
     }
     
-    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
-        print(action, provider)
+    func performEndCallAction(id: UUID) {
+        
+        let action = CXEndCallAction(call: id)
+        let transaction = CXTransaction(action: action)
+        
+        callController.request(transaction) { error in
+            if let error = error {
+                print(error)
+            } else {
+                print("End call action", id)
+            }
+            action.fulfill(withDateEnded: Date())
+        }
     }
     
-//    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-//
-//        print(action, provider)
-//    }
+    
+    
+    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+        
+        print("Answer Call", action)
+        action.fulfill(withDateConnected: Date())
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
+    }
+    
+    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+        print("End Call", action)
+        action.fulfill(withDateEnded: Date())
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "EndCall"), object: nil)
+
+    }
     
     func provider(_ provider: CXProvider, perform action: CXSetMutedCallAction) {
-        print(action, provider)
+        print("Muted Call", action)
+        action.fulfill()
+    }
+    
+    func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
+        print("Audio Session Enabled", audioSession)
+    }
+    
+    func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
+        print("Audio Session Disabled", audioSession)
     }
    
 }

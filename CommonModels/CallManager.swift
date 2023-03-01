@@ -10,6 +10,8 @@ import AVFAudio
 
 class CallManager: NSObject, CXProviderDelegate {
     
+    static let sharedInstance = CallManager()
+    
     //MARK: - Delegate
 
     func providerDidReset(_ provider: CXProvider) {}
@@ -58,22 +60,6 @@ class CallManager: NSObject, CXProviderDelegate {
         print("PerformStartCallAction", id)
     }
     
-    func performAnswerCallAction(id: UUID) {
-
-        let action = CXAnswerCallAction(call: id)
-        let transaction = CXTransaction(action: action)
-
-        callController.request(transaction) { error in
-            if let error = error {
-                print(error)
-            } else {
-                print("Answer call action", id)
-            }
-            action.fulfill(withDateConnected: Date())
-        }
-        print("PerformAnswerCallAction", id)
-    }
-    
     func performEndCallAction(id: UUID) {
         
         let action = CXEndCallAction(call: id)
@@ -87,6 +73,38 @@ class CallManager: NSObject, CXProviderDelegate {
             }
             action.fulfill(withDateEnded: Date())
         }
+    }
+    
+    func performMuteCallAction(id: UUID) {
+            
+        let action = CXSetMutedCallAction(call: id, muted: true)
+        
+        let transaction = CXTransaction(action: action)
+        
+        callController.request(transaction) { error in
+            if let error = error {
+                print(error)
+            } else {
+                print("Set mute action", id)
+                
+            }
+            action.fulfill()
+        }
+    }
+    
+    func performUnmuteCallAction(id: UUID) {
+        
+        let action = CXSetMutedCallAction(call: id, muted: false)
+        let transaction = CXTransaction(action: action)
+        
+        callController.request(transaction) { error in
+            if let error = error {
+                print(error)
+            } else {
+                print("Set umute action", id)
+            }
+        }
+        action.fulfill()
     }
     
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {

@@ -29,7 +29,7 @@
                     <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-aN-ZhN">
-                            <rect key="frame" x="140.5" y="0.0" width="133.5" height="48"/>
+                            <rect key="frame" x="140.5" y="0.0" width="133.5" height="43.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CalleeNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTq-Yo-psy">
                                     <rect key="frame" x="0.0" y="0.0" width="133.5" height="20.5"/>
@@ -37,26 +37,26 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CallStateLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2o-Ku-W4Z">
-                                    <rect key="frame" x="0.0" y="27.5" width="133.5" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CallStateLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2o-Ku-W4Z">
+                                    <rect key="frame" x="0.0" y="27.5" width="133.5" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="S6Y-2r-eC4">
-                            <rect key="frame" x="20" y="197" width="374" height="433.5"/>
+                            <rect key="frame" x="20" y="192.5" width="374" height="438"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CU5-fj-QaF" customClass="TVIVideoView">
-                                    <rect key="frame" x="0.0" y="65" width="246" height="304"/>
+                                    <rect key="frame" x="0.0" y="67" width="246" height="304"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="246" id="g7S-ZC-9mK"/>
                                         <constraint firstAttribute="height" constant="304" id="s5d-C0-N0i"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBb-Jg-cR9" customClass="TVIVideoView">
-                                    <rect key="frame" x="254" y="137" width="120" height="160"/>
+                                    <rect key="frame" x="254" y="139" width="120" height="160"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="160" id="AJc-ba-LeA"/>
                                         <constraint firstAttribute="width" constant="120" id="jvO-XW-Axf"/>
@@ -65,15 +65,18 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="2vb-Nf-CbH">
-                            <rect key="frame" x="126.5" y="779.5" width="161" height="34.5"/>
+                            <rect key="frame" x="151" y="779.5" width="112.5" height="34.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTJ-Gi-QXX">
-                                    <rect key="frame" x="0.0" y="0.0" width="63" height="34.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="34.5"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="filled" title="Mute"/>
+                                    <buttonConfiguration key="configuration" style="filled"/>
+                                    <connections>
+                                        <action selector="micButtonPresses:" destination="-1" eventType="touchUpInside" id="w8m-mO-haL"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd9-f1-KfQ">
-                                    <rect key="frame" x="98" y="0.0" width="63" height="34.5"/>
+                                    <rect key="frame" x="59" y="0.0" width="53.5" height="34.5"/>
                                     <color key="tintColor" systemColor="systemRedColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="End"/>
@@ -84,6 +87,9 @@
                             </subviews>
                         </stackView>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="Vsn-aN-ZhN" firstAttribute="top" secondItem="T2r-zZ-IkP" secondAttribute="top" id="gd8-Fi-qbO"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

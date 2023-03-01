@@ -11,7 +11,7 @@ import SideMenu
 class HomeViewController: UIViewController {
     
     var mSocket = SocketHandler.sharedInstance.getSocket()
-    var callManager = CallManager()
+    let callManager = CallManager.sharedInstance
     var room = MCRoom()
     
     private let customButton = CustomButton()
@@ -39,9 +39,11 @@ class HomeViewController: UIViewController {
             let roomName = dataDic?.value(forKey: "roomName") as? String
             let token = dataDic?.value(forKey: "token") as? String
             let caller = dataDic?.value(forKey: "caller") as? NSDictionary
+            let roomSid = dataDic?.value(forKey: "roomSid") as? String
             
             self.room.roomName = roomName
             self.room.token = token
+            self.room.roomSid = roomSid
             
             self.callManager.reportIncomingCall(id: UUID(uuidString: roomName!)!, handle: caller?.value(forKey: "name") as! String)
         }
@@ -50,7 +52,8 @@ class HomeViewController: UIViewController {
             let dataDic = data[0] as? NSDictionary
             let roomName = dataDic?.value(forKey: "roomName") as? String
 
-//            self.callManager.performAnswerCallAction(id: UUID(uuidString: roomName!)!)
+            self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: roomName!)!, connectedAt: Date())
+            print("Accept Call Recieved From HomeViewController MCDC")
         }
     }
     
@@ -73,10 +76,12 @@ class HomeViewController: UIViewController {
         let data = [
             "callerId": callee?._id,
             "calleeId": caller?._id,
-            "roomName": room.roomName
+            "roomName": room.roomName,
+            "roomSid": room.roomSid
         ]
         
         mSocket.emit("acceptCall", data) {
+            print("Emit accept Call from HomeVC", self.room.roomSid)
         }
         
         let videoVC = VideoCallViewController(socketRoom: room)

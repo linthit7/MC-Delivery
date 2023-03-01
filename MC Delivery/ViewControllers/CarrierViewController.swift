@@ -11,7 +11,7 @@ class CarrierViewController: UIViewController {
     
     private var existingUserList = [ExistingUser]()
     var mSocket = SocketHandler.sharedInstance.getSocket()
-    let callManager = CallManager()
+    let callManager = CallManager.sharedInstance
     
     @IBOutlet weak var carrierTableView: UITableView!
     
@@ -73,8 +73,11 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
                 let data = [
                     "callerId": caller?._id,
                     "calleeId": callee._id,
-                    "roomName": room.roomName
+                    "roomName": room.roomName,
+                    "roomSid": room.roomSid
                     ]
+                
+                print("ClientViewController Creat Room", room.roomSid!)
                 
                 self.mSocket.emit("startCall", data) {
                     

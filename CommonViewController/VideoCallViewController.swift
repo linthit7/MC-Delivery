@@ -21,8 +21,8 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     var localAudioTrack: LocalAudioTrack?
     var remoteParticipant: RemoteParticipant?
     
-    var callManager = CallManager()
-    var mSocket = SocketHandler.sharedInstance.getSocket()
+    let callManager = CallManager.sharedInstance
+    let mSocket = SocketHandler.sharedInstance.getSocket()
 
     @IBOutlet weak var previewView: VideoView!
     @IBOutlet weak var remoteView: VideoView!
@@ -65,12 +65,39 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     
     @objc
     private func callKitEndCallAction() {
+        
+        self.room?.disconnect()
+        self.navigationController?.popViewController(animated: true)
         print("Call Kit End Call Action From Video Call Viewcontroller")
     }
 
     @IBAction func endButtonPressed(_ sender: UIButton) {
+        
+        self.callManager.performEndCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
+        self.room?.disconnect()
+        self.navigationController?.popViewController(animated: true)
         print("End Button Pressed From Video Call Viewcontroller")
+        
+        let callerId = CredentialsStore.getCredentials()?.user
+        let calleeId = CalleeStore.getCallee()
+        
+        let data = [
+            "callerId": callerId?._id,
+            "calleeId": calleeId?._id,
+            "roomName": socketRoom?.roomName,
+            "roomSid": socketRoom?.roomSid
+        ]
+        mSocket.emit("callEnded", data) {
+            print(self.socketRoom?.roomSid!)
+            print("Call Ended Emit")
+        }
     }
+    
+    @IBAction func micButtonPresses(_ sender: UIButton) {
+        
+        print("Mute Button Pressed From Video Call Viewcontroller(Muted)")
+    }
+    
     
     func connectToRoom() {
         
@@ -244,7 +271,6 @@ extension VideoCallViewController : RoomDelegate {
     func roomDidFailToConnect(room: Room, error: Error) {
         logMessage(messageText: "Failed to connect to room with error = \(String(describing: error))")
         self.room = nil
-        
         self.showRoomUI(inRoom: false)
     }
 
@@ -259,16 +285,15 @@ extension VideoCallViewController : RoomDelegate {
     func participantDidConnect(room: Room, participant: RemoteParticipant) {
         // Listen for events from all Participants to decide which RemoteVideoTrack to render.
         participant.delegate = self
-        callManager.performAnswerCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
-        logMessage(messageText: "Participant \(participant.identity) connected with \(participant.remoteAudioTracks.count) audio and \(participant.remoteVideoTracks.count) video tracks")
         
+        self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: (socketRoom?.roomName)!)!, connectedAt: Date())
     }
 
     func participantDidDisconnect(room: Room, participant: RemoteParticipant) {
-        logMessage(messageText: "Room \(room.name), Participant \(participant.identity) disconnected")
-
-        // Nothing to do in this example. Subscription events are used to add/remove renderers.
         
+        self.callManager.performEndCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
+        self.room?.disconnect()
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -276,7 +301,6 @@ extension VideoCallViewController : RoomDelegate {
 extension VideoCallViewController : RemoteParticipantDelegate {
 
     func remoteParticipantDidPublishVideoTrack(participant: RemoteParticipant, publication: RemoteVideoTrackPublication) {
-        // Remote Participant has offered to share the video Track.
         
         logMessage(messageText: "Participant \(participant.identity) published \(publication.trackName) video track")
     }

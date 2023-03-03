@@ -15,20 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        if CredentialsStore.getCredentials()?.accessToken != "" {
+        if CredentialsStore.getCredentials()?.accessToken != nil {
             
             AppDelegate.loginState = true
             SocketHandler.sharedInstance.establishConnection(token: CredentialsStore.getCredentials()?.accessToken ?? "")
         }
-
-//        // Get the singleton instance.
-//        let audioSession = AVAudioSession.sharedInstance()
-//            do {
-//                // Set the audio session category, mode, and options.
-//                try audioSession.setCategory(.playback, mode: .default, options: [])
-//            } catch {
-//                print("Failed to set audio session category.")
-//            }
                 
         return true
     }

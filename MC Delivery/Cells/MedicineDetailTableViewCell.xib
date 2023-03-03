@@ -118,6 +118,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addToBasketButton" destination="KGX-Zb-cXW" id="DgC-Gp-q7p"/>
                 <outlet property="itemCountLabel" destination="zSK-CA-e5S" id="77L-PA-pRA"/>
                 <outlet property="medicineImageView" destination="Qle-cl-ZG7" id="tsq-Cd-228"/>
                 <outlet property="medicineInformationLabel" destination="QY0-4A-IDf" id="Hao-WY-SgL"/>

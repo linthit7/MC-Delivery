@@ -9,8 +9,6 @@ import UIKit
 
 class MedicineDetailViewController: UIViewController {
     
-//    var medicine: Medicine!
-//    var medicineId: String!
     private let medicine: Medicine
     
     init(medicine: Medicine) {

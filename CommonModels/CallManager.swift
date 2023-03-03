@@ -7,12 +7,12 @@
 
 import CallKit
 import AVFAudio
+import TwilioVideo
 
 class CallManager: NSObject, CXProviderDelegate {
     
     static let sharedInstance = CallManager()
-    
-    //MARK: - Delegate
+    var audioDevice = DefaultAudioDevice()
 
     func providerDidReset(_ provider: CXProvider) {}
     
@@ -22,7 +22,7 @@ class CallManager: NSObject, CXProviderDelegate {
     
     override init() {
         super.init()
-        
+        TwilioVideoSDK.audioDevice = self.audioDevice
         provider.setDelegate(self, queue: nil)
     }
     
@@ -35,7 +35,7 @@ class CallManager: NSObject, CXProviderDelegate {
         
         provider.reportNewIncomingCall(with: id, update: update) { error in
             if let error = error {
-                print(error)
+                print(error, "incoming")
             } else {
                 print("Report incoming call", id)
             }
@@ -51,7 +51,7 @@ class CallManager: NSObject, CXProviderDelegate {
         
         callController.request(transaction) { error in
             if let error = error {
-                print(error)
+                print(error, "startCall")
             } else {
                 print("Started calling UI")
             }
@@ -67,7 +67,7 @@ class CallManager: NSObject, CXProviderDelegate {
         
         callController.request(transaction) { error in
             if let error = error {
-                print(error)
+                print(error, "endCall")
             } else {
                 print("End call action", id)
             }
@@ -83,7 +83,7 @@ class CallManager: NSObject, CXProviderDelegate {
         
         callController.request(transaction) { error in
             if let error = error {
-                print(error)
+                print(error, "mute")
             } else {
                 print("Set mute action", id)
                 
@@ -99,7 +99,7 @@ class CallManager: NSObject, CXProviderDelegate {
         
         callController.request(transaction) { error in
             if let error = error {
-                print(error)
+                print(error, "unmute")
             } else {
                 print("Set umute action", id)
             }

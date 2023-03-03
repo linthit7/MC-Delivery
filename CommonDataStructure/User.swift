@@ -18,7 +18,7 @@ struct UserResponse {
         
         var userResponse = UserResponse()
         userResponse.statusCode = json["statusCode"].intValue
-//        userResponse.payload = ExistingUser.loadExistingUserArray(jsonArray: json["payload"].arrayValue)
+        userResponse.payload = ExistingUser.loadExistingUserArray(jsonArray: json["payload"].arrayValue)
         userResponse.documentCount = json["documentCount"].intValue
         userResponse.message = json["message"].stringValue
         return userResponse

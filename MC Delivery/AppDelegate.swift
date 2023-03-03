@@ -21,14 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SocketHandler.sharedInstance.establishConnection(token: CredentialsStore.getCredentials()?.accessToken ?? "")
         }
 
-        // Get the singleton instance.
-        let audioSession = AVAudioSession.sharedInstance()
-            do {
-                // Set the audio session category, mode, and options.
-                try audioSession.setCategory(.playback, mode: .default, options: [])
-            } catch {
-                print("Failed to set audio session category.")
-            }
+//        // Get the singleton instance.
+//        let audioSession = AVAudioSession.sharedInstance()
+//            do {
+//                // Set the audio session category, mode, and options.
+//                try audioSession.setCategory(.playback, mode: .default, options: [])
+//            } catch {
+//                print("Failed to set audio session category.")
+//            }
                 
         return true
     }

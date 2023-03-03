@@ -17,9 +17,12 @@ class MedicineDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var itemCountLabel: UILabel!
     
+    
+    @IBOutlet weak var addToBasketButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-    
+        
     }
     
     @IBAction func addToBasketButtonPressed(_ sender: UIButton) {

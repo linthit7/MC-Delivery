@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(connectVideoCall), name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(declineCall), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
         
         DispatchQueue.main.async {
             self.view.backgroundColor = CustomColor().backgroundColor
@@ -81,11 +82,29 @@ class HomeViewController: UIViewController {
         ]
         
         mSocket.emit("acceptCall", data) {
-            print("Emit accept Call from HomeVC", self.room.roomSid)
+            print("Emit accept Call from HomeVC")
         }
         
         let videoVC = VideoCallViewController(socketRoom: room)
         navigationController?.pushViewController(videoVC, animated: true)
+    }
+    
+    @objc
+    private func declineCall() {
+        
+        let caller = CredentialsStore.getCredentials()?.user
+        let callee = CalleeStore.getCallee()
+        
+        let data = [
+            "callerId": callee?._id,
+            "calleeId": caller?._id,
+            "roomName": room.roomName,
+            "roomSid": room.roomSid
+        ]
+        
+        mSocket.emit("declineCall", data) {
+            print("Emit decline Call From HomeVC")
+        }
     }
 
 }

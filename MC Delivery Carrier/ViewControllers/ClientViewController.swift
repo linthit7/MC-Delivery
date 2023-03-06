@@ -40,6 +40,7 @@ class ClientViewController: UIViewController {
         DispatchQueue.main.async {
             self.title = "Client List"
             self.view.backgroundColor = CustomColor().backgroundColor
+            self.clientTableView.backgroundColor = CustomColor().backgroundColor
         }
     }
 

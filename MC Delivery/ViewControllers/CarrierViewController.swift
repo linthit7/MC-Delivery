@@ -40,6 +40,7 @@ class CarrierViewController: UIViewController {
         DispatchQueue.main.async {
             self.title = "Carrier List"
             self.view.backgroundColor = CustomColor().backgroundColor
+            self.carrierTableView.backgroundColor = CustomColor().backgroundColor
         }
     }
     

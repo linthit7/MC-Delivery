@@ -11,6 +11,7 @@
 		4048E5A52CB647CA31529E8E /* Pods_MC_Delivery_Carrier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368835D84D79D47DED9006A8 /* Pods_MC_Delivery_Carrier.framework */; };
 		F91F71E329B59298002EF3E6 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71E129B59298002EF3E6 /* MedicineTableViewCell.swift */; };
 		F91F71E429B59298002EF3E6 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */; };
+		F91F71EA29B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */; };
 		F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */; };
 		F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */; };
 		F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */; };
@@ -94,6 +95,7 @@
 		BE0A5D872F035253E519D132 /* Pods-MC Delivery Carrier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MC Delivery Carrier.release.xcconfig"; path = "Target Support Files/Pods-MC Delivery Carrier/Pods-MC Delivery Carrier.release.xcconfig"; sourceTree = "<group>"; };
 		F91F71E129B59298002EF3E6 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
 		F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
+		F91F71E929B5A44C002EF3E6 /* MC_Delivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MC_Delivery.xcdatamodel; sourceTree = "<group>"; };
 		F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDetailViewController.xib; sourceTree = "<group>"; };
 		F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				F9FF20E229A46EAB002E05A1 /* Models */,
 				F9E461B429A3B8220050BF0F /* ViewControllers */,
 				F9E461B529A3B8320050BF0F /* Cells */,
+				F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */,
 			);
 			path = "MC Delivery";
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				F995FC9729ADEC4E003E9C44 /* CalleeStore.swift in Sources */,
 				F975A81C29A87965006EE0E7 /* SocketHandler.swift in Sources */,
 				F975A84C29AC9415006EE0E7 /* Settings.swift in Sources */,
+				F91F71EA29B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld in Sources */,
 				F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */,
 				F932AE9B29A747E800DFB859 /* CreateOrJoinRoomRequest.swift in Sources */,
 			);
@@ -918,6 +922,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F91F71E929B5A44C002EF3E6 /* MC_Delivery.xcdatamodel */,
+			);
+			currentVersion = F91F71E929B5A44C002EF3E6 /* MC_Delivery.xcdatamodel */;
+			path = MC_Delivery.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F93FAF9029A26E1400786ED4 /* Project object */;
 }

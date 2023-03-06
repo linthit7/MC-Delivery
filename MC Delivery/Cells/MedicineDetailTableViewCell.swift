@@ -26,22 +26,25 @@ class MedicineDetailTableViewCell: UITableViewCell {
     }
     
     @IBAction func addToBasketButtonPressed(_ sender: UIButton) {
-        print("addToBasket")
+        print(MedicineDetailViewController.self, ":Add to bask button pressed.")
     }
     
     @IBAction func plusButtonPressed(_ sender: UIButton) {
-        print("plusPressed")
+        print(MedicineDetailViewController.self, ":Plus button pressed.")
     }
     
     @IBAction func minusButtonPressed(_ sender: UIButton) {
-        print("minusPressed")
+        print(MedicineDetailViewController.self, ":Minus button pressed.")
     }
     
     func createMedicineDetail(medicine: Medicine) {
-        medicineImageView.sd_setImage(with: medicine.pictureUrls[0].url)
-        medicineNameLabel.text = medicine.name
-        medicineInformationLabel.text = medicine.details
-        priceLabel.text = "Ks.\(String(medicine.price))"
+        DispatchQueue.main.async {
+            self.medicineImageView.sd_setImage(with: medicine.pictureUrls[0].url)
+            self.medicineNameLabel.text = medicine.name
+            self.medicineInformationLabel.text = medicine.details
+            self.priceLabel.text = "Ks.\(String(medicine.price))"
+        }
+        
     }
     
     

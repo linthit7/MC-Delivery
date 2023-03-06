@@ -204,6 +204,7 @@
 				F9E461A029A359460050BF0F /* CustomButton.swift */,
 				F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */,
 				F9E4619729A337300050BF0F /* CustomColor.swift */,
+				F9E461AD29A3AED60050BF0F /* CustomLayout.swift */,
 				F93FAF9A29A26E1400786ED4 /* MC Delivery */,
 				F93FAFB429A26E2600786ED4 /* MC Delivery Carrier */,
 				F93FAF9929A26E1400786ED4 /* Products */,
@@ -233,7 +234,6 @@
 				F9FF20E229A46EAB002E05A1 /* Models */,
 				F9E461B429A3B8220050BF0F /* ViewControllers */,
 				F9E461B529A3B8320050BF0F /* Cells */,
-				F9E461AD29A3AED60050BF0F /* CustomLayout.swift */,
 			);
 			path = "MC Delivery";
 			sourceTree = "<group>";

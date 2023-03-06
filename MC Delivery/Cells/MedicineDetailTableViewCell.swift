@@ -44,7 +44,6 @@ class MedicineDetailTableViewCell: UITableViewCell {
             self.medicineInformationLabel.text = medicine.details
             self.priceLabel.text = "Ks.\(String(medicine.price))"
         }
-        
     }
     
     

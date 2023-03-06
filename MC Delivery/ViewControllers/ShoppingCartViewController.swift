@@ -38,16 +38,13 @@ class ShoppingCartViewController: UIViewController {
 extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = shoppingCartTableView.dequeueReusableCell(withIdentifier: MedicineTableViewCell.reuseIdentifier, for: indexPath) as? MedicineTableViewCell else {
             return UITableViewCell()
         }
-        cell.medicineImageView.image = UIImage(systemName: "square.and.arrow.up")
-        cell.titleLabel.text = "Dummy Medicine"
-        cell.priceLabel.text = "7000"
         return cell
     }
     

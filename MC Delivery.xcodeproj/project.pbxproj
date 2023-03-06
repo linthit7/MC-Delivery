@@ -61,6 +61,8 @@
 		F975A84D29AC9415006EE0E7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84B29AC9415006EE0E7 /* Settings.swift */; };
 		F995FC9729ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
 		F995FC9829ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
+		F9B478FA29B58D8D002817F8 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */; };
+		F9B478FB29B58D8D002817F8 /* ShoppingCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -131,6 +133,8 @@
 		F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCallViewController.xib; sourceTree = "<group>"; };
 		F975A84B29AC9415006EE0E7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalleeStore.swift; sourceTree = "<group>"; };
+		F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartViewController.xib; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -309,6 +313,8 @@
 				F975A81629A86229006EE0E7 /* ProfileViewController.xib */,
 				F932AE9629A70F7900DFB859 /* CarrierViewController.swift */,
 				F932AE9729A70F7900DFB859 /* CarrierViewController.xib */,
+				F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */,
+				F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B478FB29B58D8D002817F8 /* ShoppingCartViewController.xib in Resources */,
 				F932AE8B29A6559100DFB859 /* LoginViewController.xib in Resources */,
 				F932AE9929A70F7900DFB859 /* CarrierViewController.xib in Resources */,
 				F975A84429AA56B9006EE0E7 /* VideoCallViewController.xib in Resources */,
@@ -540,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B478FA29B58D8D002817F8 /* ShoppingCartViewController.swift in Sources */,
 				F932AE9829A70F7900DFB859 /* CarrierViewController.swift in Sources */,
 				F932AE8A29A6559100DFB859 /* LoginViewController.swift in Sources */,
 				F975A84329AA56B9006EE0E7 /* VideoCallViewController.swift in Sources */,

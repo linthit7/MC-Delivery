@@ -82,7 +82,6 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGX-Zb-cXW">
                                         <rect key="frame" x="158.33333333333331" y="0.0" width="130.33333333333331" height="34.333333333333336"/>
-                                        <color key="tintColor" red="0.18321963729999999" green="0.42505129419999998" blue="0.15317406589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Add to Basket"/>
                                         <connections>

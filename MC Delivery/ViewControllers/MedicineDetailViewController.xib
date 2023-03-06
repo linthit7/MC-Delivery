@@ -30,8 +30,8 @@
             <constraints>
                 <constraint firstItem="CPL-Of-gfI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6c8-cT-ZLD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CPL-Of-gfI" secondAttribute="trailing" constant="20" id="Bdr-ya-Prl"/>
+                <constraint firstItem="CPL-Of-gfI" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RfY-cC-TXc"/>
                 <constraint firstItem="CPL-Of-gfI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="s7b-mi-Y9A"/>
-                <constraint firstItem="CPL-Of-gfI" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="vIz-5M-pm2"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="-12.053571428571429"/>
         </view>

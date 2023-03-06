@@ -26,6 +26,7 @@ class MedicineDetailViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = CustomColor().backgroundColor
+        medicineDetailTableView.backgroundColor = CustomColor().backgroundColor
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(shoppingCartButtonPressed))
         
         medicineDetailTableView.register(UINib(nibName: MedicineDetailTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineDetailTableViewCell.reuseIdentifier)
@@ -35,7 +36,7 @@ class MedicineDetailViewController: UIViewController {
     
     @objc
     private func shoppingCartButtonPressed() {
-        print("Shopping Cart Button Pressed")
+        navigationController?.pushViewController(ShoppingCartViewController(), animated: true)
     }
     
 }

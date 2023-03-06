@@ -25,11 +25,9 @@ class MedicineCollectionViewCell: UICollectionViewCell {
     
     func createMedicineCell(medicine: Medicine) {
         let url = medicine.pictureUrls[0].url
-        DispatchQueue.main.async {
-            self.medicineImageView.sd_setImage(with: url)
-            self.medicineNameLabel.text = medicine.name
-            self.priceLabel.text = "Ks. \(medicine.price!)"
-        }
+        medicineImageView.sd_setImage(with: url)
+        medicineNameLabel.text = medicine.name
+        priceLabel.text = "Ks. \(medicine.price!)"
     }
 
 }

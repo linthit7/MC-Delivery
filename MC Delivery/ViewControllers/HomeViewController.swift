@@ -48,6 +48,7 @@ class HomeViewController: UIViewController {
             self.homeCollectionView.delegate = self
             self.homeCollectionView.dataSource = self
             self.homeCollectionView.collectionViewLayout = CustomLayout.configureLayout()
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(self.shoppingCartButtonPressed))
             self.navigationItem.leftBarButtonItem = self.customButton.menuButton
         }
         customButton.menuButton.target = self
@@ -124,6 +125,11 @@ class HomeViewController: UIViewController {
         mSocket.emit("declineCall", data) {
             print("Emit decline Call From HomeVC")
         }
+    }
+    
+    @objc
+    private func shoppingCartButtonPressed() {
+        navigationController?.pushViewController(ShoppingCartViewController(), animated: true)
     }
 }
 

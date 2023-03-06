@@ -29,7 +29,7 @@ class ShoppingCartViewController: UIViewController {
     }
 
     @IBAction func proccedToCheckoutButtonPressed(_ sender: UIButton) {
-        
+        print(ShoppingCartViewController.self, "Proceed to checkout button pressed.")
     }
 }
 

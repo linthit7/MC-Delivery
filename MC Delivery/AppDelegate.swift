@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-//        print(url!)
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        print(url!)
+        
+        CoreDataManager.sharedManager.prepare()
         
         if CredentialsStore.getCredentials()?.accessToken != nil {
         

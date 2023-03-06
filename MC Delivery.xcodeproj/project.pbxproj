@@ -13,6 +13,7 @@
 		F91F71E429B59298002EF3E6 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */; };
 		F91F71EA29B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */; };
 		F91F71EC29B5ACFC002EF3E6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */; };
+		F91F71F829B5CB8A002EF3E6 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71F729B5CB8A002EF3E6 /* ShoppingCart.swift */; };
 		F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */; };
 		F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */; };
 		F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */; };
@@ -83,6 +84,8 @@
 		F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */; };
 		F9E461BE29A3C3090050BF0F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E461BC29A3C3090050BF0F /* MenuViewController.swift */; };
 		F9E461BF29A3C3090050BF0F /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E461BD29A3C3090050BF0F /* MenuViewController.xib */; };
+		F9F58CA429B5E72F00D3B904 /* Med+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F58CA229B5E72F00D3B904 /* Med+CoreDataClass.swift */; };
+		F9F58CA529B5E72F00D3B904 /* Med+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F58CA329B5E72F00D3B904 /* Med+CoreDataProperties.swift */; };
 		F9FF20E629A4735D002E05A1 /* MedicinesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF20E529A4735D002E05A1 /* MedicinesRequest.swift */; };
 		F9FF20EB29A4CE02002E05A1 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF20EA29A4CE02002E05A1 /* Medicine.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +101,7 @@
 		F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
 		F91F71E929B5A44C002EF3E6 /* MC_Delivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MC_Delivery.xcdatamodel; sourceTree = "<group>"; };
 		F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F91F71F729B5CB8A002EF3E6 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDetailViewController.xib; sourceTree = "<group>"; };
 		F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 		F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineCollectionViewCell.xib; sourceTree = "<group>"; };
 		F9E461BC29A3C3090050BF0F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F9E461BD29A3C3090050BF0F /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		F9F58CA229B5E72F00D3B904 /* Med+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Med+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		F9F58CA329B5E72F00D3B904 /* Med+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Med+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		F9FF20E529A4735D002E05A1 /* MedicinesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesRequest.swift; sourceTree = "<group>"; };
 		F9FF20EA29A4CE02002E05A1 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,7 +208,10 @@
 		F91F71ED29B5C76E002EF3E6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				F9F58CA229B5E72F00D3B904 /* Med+CoreDataClass.swift */,
+				F9F58CA329B5E72F00D3B904 /* Med+CoreDataProperties.swift */,
 				F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */,
+				F91F71F729B5CB8A002EF3E6 /* ShoppingCart.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -228,13 +237,13 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		F91F71F129B5C810002EF3E6 /* Storeage */ = {
+		F91F71F129B5C810002EF3E6 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				F975A81929A86A21006EE0E7 /* CredentialsStore.swift */,
 				F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */,
 			);
-			path = Storeage;
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		F91F71F229B5C835002EF3E6 /* CallKit */ = {
@@ -356,7 +365,7 @@
 				F91F71F429B5C85F002EF3E6 /* Socket */,
 				F91F71F329B5C84D002EF3E6 /* Twilio */,
 				F91F71F229B5C835002EF3E6 /* CallKit */,
-				F91F71F129B5C810002EF3E6 /* Storeage */,
+				F91F71F129B5C810002EF3E6 /* Storage */,
 				F91F71F029B5C7FB002EF3E6 /* Networking */,
 			);
 			path = CommonModels;
@@ -630,6 +639,7 @@
 				F975A84329AA56B9006EE0E7 /* VideoCallViewController.swift in Sources */,
 				F932AE9D29A74B8C00DFB859 /* Room.swift in Sources */,
 				F9E461B229A3B1160050BF0F /* MedicineCollectionViewCell.swift in Sources */,
+				F9F58CA429B5E72F00D3B904 /* Med+CoreDataClass.swift in Sources */,
 				F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
 				F9E461AE29A3AED60050BF0F /* CustomLayout.swift in Sources */,
 				F975A81729A86229006EE0E7 /* ProfileViewController.swift in Sources */,
@@ -638,8 +648,10 @@
 				F9E461BE29A3C3090050BF0F /* MenuViewController.swift in Sources */,
 				F932AE8F29A6621400DFB859 /* Auth.swift in Sources */,
 				F9FF20E629A4735D002E05A1 /* MedicinesRequest.swift in Sources */,
+				F9F58CA529B5E72F00D3B904 /* Med+CoreDataProperties.swift in Sources */,
 				F91F71EC29B5ACFC002EF3E6 /* CoreDataManager.swift in Sources */,
 				F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */,
+				F91F71F829B5CB8A002EF3E6 /* ShoppingCart.swift in Sources */,
 				F932AE8D29A65E0700DFB859 /* AuthRequest.swift in Sources */,
 				F9E461A129A359460050BF0F /* CustomButton.swift in Sources */,
 				F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */,

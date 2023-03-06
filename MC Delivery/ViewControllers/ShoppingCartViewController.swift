@@ -8,6 +8,8 @@
 import UIKit
 
 class ShoppingCartViewController: UIViewController {
+    
+    var shoppingCartItem: [Med]!
 
     @IBOutlet weak var shoppingCartTableView: UITableView!
     @IBOutlet weak var totalAmountLabel: UILabel!
@@ -19,12 +21,15 @@ class ShoppingCartViewController: UIViewController {
         shoppingCartTableView.register(UINib(nibName: MedicineTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineTableViewCell.reuseIdentifier)
         shoppingCartTableView.delegate = self
         shoppingCartTableView.dataSource = self
+        shoppingCartItem = ShoppingCart.sharedInstance.fetchAllItem()
+        shoppingCartTableView.reloadData()
     }
     
     private func setupUI() {
         DispatchQueue.main.async {
             self.title = "Shopping Cart"
             self.view.backgroundColor = CustomColor().backgroundColor
+            self.shoppingCartTableView.backgroundColor = CustomColor().backgroundColor
         }
     }
 
@@ -38,16 +43,16 @@ class ShoppingCartViewController: UIViewController {
 extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return shoppingCartItem.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = shoppingCartTableView.dequeueReusableCell(withIdentifier: MedicineTableViewCell.reuseIdentifier, for: indexPath) as? MedicineTableViewCell else {
             return UITableViewCell()
         }
+        cell.createMedicineCell(medicine: shoppingCartItem[indexPath.row])
         return cell
     }
-    
     
 }
 

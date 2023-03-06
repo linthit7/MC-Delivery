@@ -32,8 +32,6 @@ class CarrierViewController: UIViewController {
                 }
             }
         }
-        
-        
     }
     
     private func setupUI() {
@@ -77,9 +75,7 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
                     "roomName": room.roomName,
                     "roomSid": room.roomSid
                     ]
-                
-                print("ClientViewController Creat Room", room.roomSid!)
-                
+                                
                 self.mSocket.emit("startCall", data) {
                     
                     self.callManager.performStartCallAction(id: UUID(uuidString: room.roomName)!, handle: callee.name)

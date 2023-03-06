@@ -11,6 +11,8 @@ class MedicineDetailTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = String(describing: MedicineDetailTableViewCell.self)
     
+    private var medicine: Medicine!
+    
     @IBOutlet weak var medicineImageView: UIImageView!
     @IBOutlet weak var medicineNameLabel: UILabel!
     @IBOutlet weak var medicineInformationLabel: UILabel!
@@ -22,11 +24,11 @@ class MedicineDetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+    
     }
     
     @IBAction func addToBasketButtonPressed(_ sender: UIButton) {
-        print(MedicineDetailViewController.self, ":Add to bask button pressed.")
+        ShoppingCart.sharedInstance.saveItemToPersistentStore(item: medicine)
     }
     
     @IBAction func plusButtonPressed(_ sender: UIButton) {
@@ -44,6 +46,7 @@ class MedicineDetailTableViewCell: UITableViewCell {
             self.medicineInformationLabel.text = medicine.details
             self.priceLabel.text = "Ks.\(String(medicine.price))"
         }
+        self.medicine = medicine
     }
     
     

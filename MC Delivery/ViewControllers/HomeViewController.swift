@@ -77,6 +77,10 @@ class HomeViewController: UIViewController {
             self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: roomName!)!, connectedAt: Date())
             print("Accept Call Recieved From Home View Controller MCD")
         }
+        
+        mSocket.on("missedCall") {_,_ in
+            print("Missed Call")
+        }
     }
     
     @objc

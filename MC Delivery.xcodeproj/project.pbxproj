@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A871279AE9160D0C35ACFA1 /* Pods_MC_Delivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9C1E602AA88B4385238787 /* Pods_MC_Delivery.framework */; };
 		4048E5A52CB647CA31529E8E /* Pods_MC_Delivery_Carrier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368835D84D79D47DED9006A8 /* Pods_MC_Delivery_Carrier.framework */; };
+		F91F71E329B59298002EF3E6 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71E129B59298002EF3E6 /* MedicineTableViewCell.swift */; };
+		F91F71E429B59298002EF3E6 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */; };
 		F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */; };
 		F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */; };
 		F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */; };
@@ -90,6 +92,8 @@
 		7C9C1E602AA88B4385238787 /* Pods_MC_Delivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MC_Delivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFCAEA7BB4AFC2B380C7DC4 /* Pods-MC Delivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MC Delivery.debug.xcconfig"; path = "Target Support Files/Pods-MC Delivery/Pods-MC Delivery.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0A5D872F035253E519D132 /* Pods-MC Delivery Carrier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MC Delivery Carrier.release.xcconfig"; path = "Target Support Files/Pods-MC Delivery Carrier/Pods-MC Delivery Carrier.release.xcconfig"; sourceTree = "<group>"; };
+		F91F71E129B59298002EF3E6 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
+		F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
 		F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDetailViewController.xib; sourceTree = "<group>"; };
 		F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 				F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */,
 				F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */,
 				F932AE8529A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib */,
+				F91F71E129B59298002EF3E6 /* MedicineTableViewCell.swift */,
+				F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 				F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */,
 				F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */,
 				F93FAFA829A26E1500786ED4 /* LaunchScreen.storyboard in Resources */,
+				F91F71E429B59298002EF3E6 /* MedicineTableViewCell.xib in Resources */,
 				F9E461BF29A3C3090050BF0F /* MenuViewController.xib in Resources */,
 				F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */,
 				F975A81829A86229006EE0E7 /* ProfileViewController.xib in Resources */,
@@ -566,6 +573,7 @@
 				F9E461A129A359460050BF0F /* CustomButton.swift in Sources */,
 				F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */,
 				F932AE9129A6705700DFB859 /* UserRequest.swift in Sources */,
+				F91F71E329B59298002EF3E6 /* MedicineTableViewCell.swift in Sources */,
 				F975A81A29A86A21006EE0E7 /* CredentialsStore.swift in Sources */,
 				F932AE9329A6756C00DFB859 /* User.swift in Sources */,
 				F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */,

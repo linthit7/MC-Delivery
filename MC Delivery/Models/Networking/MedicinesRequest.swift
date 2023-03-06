@@ -21,7 +21,6 @@ struct MedicineRequest {
                 case .some(let data):
                     let json: JSON = JSON(data)
                     if json["statusCode"].stringValue == "200" {
-//                        print(json)
                         let medicine = Medicine.loadMedicine(json: JSON(rawValue: json["payload"].dictionaryValue)!)
                         completion(medicine)
                     }
@@ -30,7 +29,6 @@ struct MedicineRequest {
                 }
             }
         }
-//        print(medicineId)
     }
     
     
@@ -41,8 +39,6 @@ struct MedicinesRequest {
     private let allMedicinesRoute: String = "https://pharmacydelivery-production.up.railway.app/api/medicines"
     
     func getAllMedicinesWithPagination(page: Int, limit: Int = 10, completion: @escaping ([Medicine], Int) -> Void) {
-        
-//        print(page)
         
         let medicineRouteWithHTTP = "\(allMedicinesRoute)?page=\(page)&limit=\(limit)"
         
@@ -57,9 +53,7 @@ struct MedicinesRequest {
                         let total = json["total"].intValue
                         completion(medicines, total)
                     }
-//                    print(medicineList[0].categoryDetail.pictureUrls[0].stringValue)
-//                    print(MedicineResponse.loadMedicineResponse(json: json))
-//                    print(json)
+
                 case .none: print("Nothing in response")
                 }
             }

@@ -18,7 +18,6 @@ struct MedicineResponse {
         var medicineResponse = MedicineResponse()
         medicineResponse.statusCode = json["statusCode"].intValue
         medicineResponse.total = json["total"].intValue
-//        medicineResponse.payload = Medicine.loadMedicineArray(jsonArray: json["payload"].arrayValue)
         return medicineResponse
     }
 }

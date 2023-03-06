@@ -199,16 +199,83 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F91F71ED29B5C76E002EF3E6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F91F71EF29B5C7DB002EF3E6 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				F9E461AD29A3AED60050BF0F /* CustomLayout.swift */,
+				F9E4619729A337300050BF0F /* CustomColor.swift */,
+				F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */,
+				F9E461A029A359460050BF0F /* CustomButton.swift */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		F91F71F029B5C7FB002EF3E6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */,
+				F932AE9029A6705700DFB859 /* UserRequest.swift */,
+				F932AE8C29A65E0700DFB859 /* AuthRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F91F71F129B5C810002EF3E6 /* Storeage */ = {
+			isa = PBXGroup;
+			children = (
+				F975A81929A86A21006EE0E7 /* CredentialsStore.swift */,
+				F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */,
+			);
+			path = Storeage;
+			sourceTree = "<group>";
+		};
+		F91F71F229B5C835002EF3E6 /* CallKit */ = {
+			isa = PBXGroup;
+			children = (
+				F975A81F29A9164B006EE0E7 /* CallManager.swift */,
+			);
+			path = CallKit;
+			sourceTree = "<group>";
+		};
+		F91F71F329B5C84D002EF3E6 /* Twilio */ = {
+			isa = PBXGroup;
+			children = (
+				F975A84B29AC9415006EE0E7 /* Settings.swift */,
+			);
+			path = Twilio;
+			sourceTree = "<group>";
+		};
+		F91F71F429B5C85F002EF3E6 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				F975A81B29A87965006EE0E7 /* SocketHandler.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		F91F71F529B5C8A8002EF3E6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F9FF20E529A4735D002E05A1 /* MedicinesRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		F93FAF8F29A26E1400786ED4 = {
 			isa = PBXGroup;
 			children = (
 				F975A84629AB9BFC006EE0E7 /* CommonViewController */,
 				F975A83029AA2C5B006EE0E7 /* CommonDataStructure */,
 				F975A83129AA2C6A006EE0E7 /* CommonModels */,
-				F9E461A029A359460050BF0F /* CustomButton.swift */,
-				F9E461A329A360F20050BF0F /* CustomNavigationBar.swift */,
-				F9E4619729A337300050BF0F /* CustomColor.swift */,
-				F9E461AD29A3AED60050BF0F /* CustomLayout.swift */,
+				F91F71EF29B5C7DB002EF3E6 /* CommonUI */,
 				F93FAF9A29A26E1400786ED4 /* MC Delivery */,
 				F93FAFB429A26E2600786ED4 /* MC Delivery Carrier */,
 				F93FAF9929A26E1400786ED4 /* Products */,
@@ -231,14 +298,13 @@
 			children = (
 				F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */,
 				F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */,
-				F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */,
-				F93FAFA429A26E1500786ED4 /* Assets.xcassets */,
-				F93FAFA629A26E1500786ED4 /* LaunchScreen.storyboard */,
-				F93FAFA929A26E1500786ED4 /* Info.plist */,
 				F9FF20E729A4ACD2002E05A1 /* DataStructure */,
 				F9FF20E229A46EAB002E05A1 /* Models */,
 				F9E461B429A3B8220050BF0F /* ViewControllers */,
 				F9E461B529A3B8320050BF0F /* Cells */,
+				F93FAFA429A26E1500786ED4 /* Assets.xcassets */,
+				F93FAFA629A26E1500786ED4 /* LaunchScreen.storyboard */,
+				F93FAFA929A26E1500786ED4 /* Info.plist */,
 				F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */,
 			);
 			path = "MC Delivery";
@@ -287,14 +353,11 @@
 		F975A83129AA2C6A006EE0E7 /* CommonModels */ = {
 			isa = PBXGroup;
 			children = (
-				F932AE8C29A65E0700DFB859 /* AuthRequest.swift */,
-				F975A81929A86A21006EE0E7 /* CredentialsStore.swift */,
-				F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */,
-				F975A81B29A87965006EE0E7 /* SocketHandler.swift */,
-				F975A81F29A9164B006EE0E7 /* CallManager.swift */,
-				F932AE9029A6705700DFB859 /* UserRequest.swift */,
-				F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */,
-				F975A84B29AC9415006EE0E7 /* Settings.swift */,
+				F91F71F429B5C85F002EF3E6 /* Socket */,
+				F91F71F329B5C84D002EF3E6 /* Twilio */,
+				F91F71F229B5C835002EF3E6 /* CallKit */,
+				F91F71F129B5C810002EF3E6 /* Storeage */,
+				F91F71F029B5C7FB002EF3E6 /* Networking */,
 			);
 			path = CommonModels;
 			sourceTree = "<group>";
@@ -345,7 +408,8 @@
 		F9FF20E229A46EAB002E05A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F9FF20E529A4735D002E05A1 /* MedicinesRequest.swift */,
+				F91F71F529B5C8A8002EF3E6 /* Networking */,
+				F91F71ED29B5C76E002EF3E6 /* CoreData */,
 			);
 			path = Models;
 			sourceTree = "<group>";

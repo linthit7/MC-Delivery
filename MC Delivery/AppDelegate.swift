@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+//        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+//        print(url!)
+        
         if CredentialsStore.getCredentials()?.accessToken != nil {
         
             AppDelegate.loginState = true

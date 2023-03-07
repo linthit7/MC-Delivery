@@ -30,7 +30,7 @@ class ShoppingCartViewController: UIViewController {
             self.title = "Shopping Cart"
             self.view.backgroundColor = CustomColor().backgroundColor
             self.shoppingCartTableView.backgroundColor = CustomColor().backgroundColor
-            self.totalAmountLabel.text = "Total Amount: Ks. \(ShoppingCartLogic.totalAmount(meds: self.shoppingCartItem))"
+            self.totalAmountLabel.text = "Total Amount: \(ShoppingCartLogic.totalAmount(meds: self.shoppingCartItem)) Ks"
         }
     }
 
@@ -69,7 +69,7 @@ extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource
                 self.shoppingCartItem.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 tableView.endUpdates()
-                totalAmountLabel.text = "Total Amount: Ks. \(ShoppingCartLogic.totalAmount(meds: self.shoppingCartItem))"
+                totalAmountLabel.text = "Total Amount: \(ShoppingCartLogic.totalAmount(meds: self.shoppingCartItem)) Ks"
         }
     }
     

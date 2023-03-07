@@ -14,24 +14,34 @@ struct ShoppingCart {
     
     let managedContext = CoreDataManager.sharedManager.context
     
-    func saveItemToPersistentStore(item: Medicine, quantity: Int = 1) {
+    func saveItemToPersistentStore(item: Medicine, quantity: Int) {
         
-        let pictureUrl = item.pictureUrls[0].stringValue
-
-        guard let medEntity = NSEntityDescription.entity(forEntityName: "Med", in: managedContext) else {return}
-
-        let nsMed = NSManagedObject(entity: medEntity, insertInto: managedContext)
-        nsMed.setValue(item._id, forKey: "id")
-        nsMed.setValue(item.name, forKey: "name")
-        nsMed.setValue(item.price, forKey: "price")
-        nsMed.setValue(quantity, forKey: "quantity")
-        nsMed.setValue(pictureUrl, forKey: "pictureUrls")
-
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Med")
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "id = %@", "\(item._id!)")
+        
         do {
+            guard let result = try managedContext.fetch(fetchRequest) as? [Med] else {return}
+            
+            if result.isEmpty {
+                let pictureUrl = item.pictureUrls[0].stringValue
+                guard let medEntity = NSEntityDescription.entity(forEntityName: "Med", in: managedContext) else {return}
+                let nsMed = NSManagedObject(entity: medEntity, insertInto: managedContext)
+                nsMed.setValue(item._id, forKey: "id")
+                nsMed.setValue(item.name, forKey: "name")
+                nsMed.setValue(item.price, forKey: "price")
+                nsMed.setValue(quantity, forKey: "quantity")
+                nsMed.setValue(pictureUrl, forKey: "pictureUrls")
+            } else {
+                guard let medObject = result.first else {return}
+                medObject.quantity += Int16(quantity)
+            }
+            
             try managedContext.save()
         } catch let error {
             print(error)
         }
+        
     }
     
     func removeItemFromPersistentStore(item: Med) {

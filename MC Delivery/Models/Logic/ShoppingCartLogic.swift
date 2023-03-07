@@ -13,9 +13,10 @@ struct ShoppingCartLogic {
         
         var totalAmount = 0
         
-        if meds.isEmpty == false {
+        if !meds.isEmpty {
             for med in meds {
-                totalAmount += Int(med.price)
+                let totalCostOfSameMed = Int(med.price) * Int(med.quantity)
+                totalAmount += Int(totalCostOfSameMed)
             }
         }
         return String(totalAmount)

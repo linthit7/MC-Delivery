@@ -31,11 +31,10 @@ class MedicineDetailTableViewCell: UITableViewCell {
     }
     
     @IBAction func addToBasketButtonPressed(_ sender: UIButton) {
-//        ShoppingCart.sharedInstance.saveItemToPersistentStore(item: medicine, quantity: )
+        ShoppingCart.sharedInstance.saveItemToPersistentStore(item: medicine, quantity: count)
     }
     
     @IBAction func plusButtonPressed(_ sender: UIButton) {
-        print(medicine.orderCount)
         if count < medicine.orderCount {
             count += 1
             DispatchQueue.main.async {

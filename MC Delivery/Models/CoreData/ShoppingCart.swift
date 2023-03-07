@@ -17,16 +17,16 @@ struct ShoppingCart {
     func saveItemToPersistentStore(item: Medicine, quantity: Int = 1) {
         
         let pictureUrl = item.pictureUrls[0].stringValue
-        
+
         guard let medEntity = NSEntityDescription.entity(forEntityName: "Med", in: managedContext) else {return}
-        
+
         let nsMed = NSManagedObject(entity: medEntity, insertInto: managedContext)
         nsMed.setValue(item._id, forKey: "id")
         nsMed.setValue(item.name, forKey: "name")
         nsMed.setValue(item.price, forKey: "price")
         nsMed.setValue(quantity, forKey: "quantity")
         nsMed.setValue(pictureUrl, forKey: "pictureUrls")
-        
+
         do {
             try managedContext.save()
         } catch let error {
@@ -45,9 +45,7 @@ struct ShoppingCart {
             guard let item = result.first else {return}
             managedContext.delete(item)
             
-            do {
-                try managedContext.save()
-            }
+            try managedContext.save()
         } catch let error {
             print(error)
         }

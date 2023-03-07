@@ -67,7 +67,7 @@ extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource
                 ShoppingCart.sharedInstance.removeItemFromPersistentStore(item: shoppingCartItem[indexPath.row])
                 tableView.beginUpdates()
                 self.shoppingCartItem.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.deleteRows(at: [indexPath], with: .fade)
                 tableView.endUpdates()
                 totalAmountLabel.text = "Total Amount: Ks. \(ShoppingCartLogic.totalAmount(meds: self.shoppingCartItem))"
         }

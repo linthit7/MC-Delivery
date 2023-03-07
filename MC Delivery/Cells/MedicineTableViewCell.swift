@@ -9,6 +9,9 @@ import UIKit
 
 class MedicineTableViewCell: UITableViewCell {
     
+    private var medicine: Med!
+    private var currentIndexPath: IndexPath!
+    
     static let reuseIdentifier = String(describing: MedicineTableViewCell.self)
 
     @IBOutlet weak var medicineImageView: UIImageView!
@@ -21,15 +24,14 @@ class MedicineTableViewCell: UITableViewCell {
         
     }
     
-    @IBAction func removeButtonPressed(_ sender: UIButton) {
-        print(MedicineTableViewCell.self, ":Remove button pressed.")
-    }
-    
-    func createMedicineCell(medicine: Med) {
+    func createMedicineCell(medicine: Med, currentIndexPath: IndexPath) {
         let url = medicine.pictureUrls!
         medicineImageView.sd_setImage(with: URL(string: url))
         titleLabel.text = medicine.name
         priceLabel.text = "Ks. \(medicine.price)"
-        quantityLabel.text = "\(medicine.quantity)"
+        quantityLabel.text = "Quantity: \(medicine.quantity)"
+        
+        self.medicine = medicine
+        self.currentIndexPath = currentIndexPath
     }
 }

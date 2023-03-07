@@ -36,6 +36,7 @@ class ShoppingCartViewController: UIViewController {
     @IBAction func proccedToCheckoutButtonPressed(_ sender: UIButton) {
         print(ShoppingCartViewController.self, "Proceed to checkout button pressed.")
     }
+    
 }
 
 //MARK: - UITableViewDelegate & DataSource Methods
@@ -47,11 +48,27 @@ extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = shoppingCartTableView.dequeueReusableCell(withIdentifier: MedicineTableViewCell.reuseIdentifier, for: indexPath) as? MedicineTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MedicineTableViewCell.reuseIdentifier, for: indexPath) as? MedicineTableViewCell else {
             return UITableViewCell()
         }
-        cell.createMedicineCell(medicine: shoppingCartItem[indexPath.row])
+        cell.createMedicineCell(medicine: shoppingCartItem[indexPath.row], currentIndexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+                ShoppingCart.sharedInstance.removeItemFromPersistentStore(item: shoppingCartItem[indexPath.row])
+                tableView.beginUpdates()
+                self.shoppingCartItem.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.endUpdates()
+        }
     }
     
 }

@@ -34,6 +34,25 @@ struct ShoppingCart {
         }
     }
     
+    func removeItemFromPersistentStore(item: Med) {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Med")
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "id = %@", "\(item.id!)")
+        
+        do {
+            guard let result = try managedContext.fetch(fetchRequest) as? [Med] else {return}
+            guard let item = result.first else {return}
+            managedContext.delete(item)
+            
+            do {
+                try managedContext.save()
+            }
+        } catch let error {
+            print(error)
+        }
+    }
+    
     func fetchAllItem() -> [Med]? {
         
         let  fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Med")

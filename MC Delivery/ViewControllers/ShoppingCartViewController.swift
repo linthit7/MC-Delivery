@@ -14,6 +14,8 @@ class ShoppingCartViewController: UIViewController {
     @IBOutlet weak var shoppingCartTableView: UITableView!
     @IBOutlet weak var totalAmountLabel: UILabel!
     
+    @IBOutlet weak var proceedToCheckoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +33,7 @@ class ShoppingCartViewController: UIViewController {
             self.view.backgroundColor = CustomColor().backgroundColor
             self.shoppingCartTableView.backgroundColor = CustomColor().backgroundColor
             self.totalAmountLabel.text = "Total Amount: \(ShoppingCartLogic.totalAmount(meds: self.shoppingCartItem)) Ks"
+            self.proceedToCheckoutButton.tintColor = CustomColor().buttonColor
         }
     }
 

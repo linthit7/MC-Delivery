@@ -10,9 +10,11 @@ import UIKit
 struct CustomColor {
     
     let backgroundColor: UIColor!
+    let buttonColor: UIColor!
     
     init() {
         backgroundColor = UIColor(rgb: 0x02AF5C)
+        buttonColor = UIColor(red: 57, green: 220, blue: 69)
     }
 }
 

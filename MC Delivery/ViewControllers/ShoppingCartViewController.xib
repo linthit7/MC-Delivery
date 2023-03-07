@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShoppingCartViewController" customModule="MC_Delivery" customModuleProvider="target">
             <connections>
+                <outlet property="proceedToCheckoutButton" destination="L2R-3U-WeT" id="UbM-k9-z1F"/>
                 <outlet property="shoppingCartTableView" destination="aLb-VI-MM8" id="wN0-Qw-cjV"/>
                 <outlet property="totalAmountLabel" destination="OkD-qK-o3Q" id="8Z7-AO-4JN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,16 +26,20 @@
                     <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aLb-VI-MM8">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="693"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="677.5"/>
                         </tableView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkD-qK-o3Q">
-                            <rect key="frame" x="10" y="723" width="394" height="26.5"/>
+                            <rect key="frame" x="10" y="707.5" width="394" height="26.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2R-3U-WeT">
-                            <rect key="frame" x="10" y="779.5" width="394" height="34.5"/>
+                            <rect key="frame" x="10" y="764" width="394" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="7Ee-Hv-82Q"/>
+                            </constraints>
+                            <color key="tintColor" red="0.41176474089999998" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Proceed To Checkout"/>
                             <connections>

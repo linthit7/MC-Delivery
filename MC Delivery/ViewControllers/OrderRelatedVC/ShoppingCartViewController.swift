@@ -11,6 +11,7 @@ import Toast_Swift
 class ShoppingCartViewController: UIViewController {
     
     var shoppingCartItem: [Med]!
+    var address: String!
 
     @IBOutlet weak var shoppingCartTableView: UITableView!
     @IBOutlet weak var totalAmountLabel: UILabel!
@@ -19,7 +20,7 @@ class ShoppingCartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
         shoppingCartTableView.register(UINib(nibName: MedicineTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineTableViewCell.reuseIdentifier)
         shoppingCartTableView.delegate = self
@@ -29,30 +30,42 @@ class ShoppingCartViewController: UIViewController {
     }
 
     @IBAction func proccedToCheckoutButtonPressed(_ sender: UIButton) {
-        DispatchQueue.main.async {
-            self.view.makeToastActivity(.center)
-            self.view.alpha = 0.8
-        }
-        view.isUserInteractionEnabled = false
-        navigationController?.view.isUserInteractionEnabled = false
         
-        let accessToken = (CredentialsStore.getCredentials()?.accessToken)!
-        ShoppingCartLogic.medToOrder(meds: shoppingCartItem) { order in
-            OrderRequest(accessToken: accessToken).placeOrder(order: order) {
-                ShoppingCartLogic.orderCleanUp {
-                    DispatchQueue.main.async {
-                        self.view.hideToastActivity()
+        if proceedToCheckoutButton.titleLabel?.text == "Proceed To Checkout" {
+            let locationVC = LocationViewController()
+            locationVC.delegate = self
+            present(locationVC, animated: true)
+        } else {
+            DispatchQueue.main.async {
+                self.view.makeToastActivity(.center)
+                self.view.alpha = 0.8
+            }
+            view.isUserInteractionEnabled = false
+            navigationController?.view.isUserInteractionEnabled = false
+            
+            let accessToken = (CredentialsStore.getCredentials()?.accessToken)!
+            ShoppingCartLogic.medToOrder(meds: shoppingCartItem) { [self] order in
+                
+                OrderRequest(accessToken: accessToken).placeOrder(order: order, address: address) {
+                    
+                    ShoppingCartLogic.orderCleanUp {
+                        
+                        DispatchQueue.main.async {
+                            self.view.hideToastActivity()
+                        }
+                        self.view.isUserInteractionEnabled = true
+                        self.navigationController?.view.isUserInteractionEnabled = true
                     }
-                    self.view.isUserInteractionEnabled = true
-                    self.navigationController?.view.isUserInteractionEnabled = true
                 }
             }
         }
+        
     }
     
     private func setupUI() {
         DispatchQueue.main.async {
             self.title = "Shopping Cart"
+            self.proceedToCheckoutButton.setTitle("Proceed To Checkout", for: .normal)
             self.view.backgroundColor = CustomColor().backgroundColor
             self.shoppingCartTableView.backgroundColor = CustomColor().backgroundColor
             self.totalAmountLabel.text = "Total Amount: \(ShoppingCartLogic.totalAmount(meds: self.shoppingCartItem)) Ks"
@@ -97,3 +110,15 @@ extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource
     
 }
 
+extension ShoppingCartViewController: MyDataSendingDelegateProtocol {
+    
+    func sendDataToFirstViewController(myData: String) {
+        
+        DispatchQueue.main.async {
+            self.proceedToCheckoutButton.setTitle("Place Order", for: .normal)
+        }
+        address = myData
+    }
+    
+    
+}

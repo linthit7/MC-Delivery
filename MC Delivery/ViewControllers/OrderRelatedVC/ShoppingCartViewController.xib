@@ -41,7 +41,7 @@
                             </constraints>
                             <color key="tintColor" red="0.41176474089999998" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Proceed To Checkout"/>
+                            <buttonConfiguration key="configuration" style="filled"/>
                             <connections>
                                 <action selector="proccedToCheckoutButtonPressed:" destination="-1" eventType="touchUpInside" id="DbI-V3-GOW"/>
                             </connections>

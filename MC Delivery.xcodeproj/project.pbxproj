@@ -13,6 +13,8 @@
 		F900949429B6FB740031A016 /* ShoppingCartLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F900949329B6FB740031A016 /* ShoppingCartLogic.swift */; };
 		F900949629B725740031A016 /* OrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F900949529B725740031A016 /* OrderRequest.swift */; };
 		F900949829B735A20031A016 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F900949729B735A20031A016 /* Order.swift */; };
+		F91A475129B84C61005C2E93 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A474F29B84C61005C2E93 /* LocationViewController.swift */; };
+		F91A475229B84C61005C2E93 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91A475029B84C61005C2E93 /* LocationViewController.xib */; };
 		F91F71E329B59298002EF3E6 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71E129B59298002EF3E6 /* MedicineTableViewCell.swift */; };
 		F91F71E429B59298002EF3E6 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */; };
 		F91F71EA29B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */; };
@@ -105,6 +107,8 @@
 		F900949329B6FB740031A016 /* ShoppingCartLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartLogic.swift; sourceTree = "<group>"; };
 		F900949529B725740031A016 /* OrderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequest.swift; sourceTree = "<group>"; };
 		F900949729B735A20031A016 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		F91A474F29B84C61005C2E93 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		F91A475029B84C61005C2E93 /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 		F91F71E129B59298002EF3E6 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
 		F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
 		F91F71E929B5A44C002EF3E6 /* MC_Delivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MC_Delivery.xcdatamodel; sourceTree = "<group>"; };
@@ -227,6 +231,61 @@
 				F900949329B6FB740031A016 /* ShoppingCartLogic.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		F91A474A29B84B48005C2E93 /* MedicineRelatedVC */ = {
+			isa = PBXGroup;
+			children = (
+				F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */,
+				F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */,
+				F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */,
+				F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */,
+			);
+			path = MedicineRelatedVC;
+			sourceTree = "<group>";
+		};
+		F91A474B29B84B6A005C2E93 /* OrderRelatedVC */ = {
+			isa = PBXGroup;
+			children = (
+				F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */,
+				F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */,
+				F91A474F29B84C61005C2E93 /* LocationViewController.swift */,
+				F91A475029B84C61005C2E93 /* LocationViewController.xib */,
+			);
+			path = OrderRelatedVC;
+			sourceTree = "<group>";
+		};
+		F91A474C29B84B7C005C2E93 /* CustomerRelatedVC */ = {
+			isa = PBXGroup;
+			children = (
+				F932AE8829A6559100DFB859 /* LoginViewController.swift */,
+				F932AE8929A6559100DFB859 /* LoginViewController.xib */,
+				F975A81529A86229006EE0E7 /* ProfileViewController.swift */,
+				F975A81629A86229006EE0E7 /* ProfileViewController.xib */,
+			);
+			path = CustomerRelatedVC;
+			sourceTree = "<group>";
+		};
+		F91A474D29B84BDD005C2E93 /* CarrierRelatedVC */ = {
+			isa = PBXGroup;
+			children = (
+				F932AE9629A70F7900DFB859 /* CarrierViewController.swift */,
+				F932AE9729A70F7900DFB859 /* CarrierViewController.xib */,
+			);
+			path = CarrierRelatedVC;
+			sourceTree = "<group>";
+		};
+		F91A474E29B84C11005C2E93 /* MedicineRelatedCell */ = {
+			isa = PBXGroup;
+			children = (
+				F9E461B029A3B1160050BF0F /* MedicineCollectionViewCell.swift */,
+				F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */,
+				F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */,
+				F932AE8529A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib */,
+				F91F71E129B59298002EF3E6 /* MedicineTableViewCell.swift */,
+				F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */,
+			);
+			path = MedicineRelatedCell;
 			sourceTree = "<group>";
 		};
 		F91F71ED29B5C76E002EF3E6 /* CoreData */ = {
@@ -408,20 +467,12 @@
 		F9E461B429A3B8220050BF0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */,
-				F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */,
+				F91A474D29B84BDD005C2E93 /* CarrierRelatedVC */,
+				F91A474C29B84B7C005C2E93 /* CustomerRelatedVC */,
+				F91A474A29B84B48005C2E93 /* MedicineRelatedVC */,
+				F91A474B29B84B6A005C2E93 /* OrderRelatedVC */,
 				F9E461BC29A3C3090050BF0F /* MenuViewController.swift */,
 				F9E461BD29A3C3090050BF0F /* MenuViewController.xib */,
-				F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */,
-				F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */,
-				F932AE8829A6559100DFB859 /* LoginViewController.swift */,
-				F932AE8929A6559100DFB859 /* LoginViewController.xib */,
-				F975A81529A86229006EE0E7 /* ProfileViewController.swift */,
-				F975A81629A86229006EE0E7 /* ProfileViewController.xib */,
-				F932AE9629A70F7900DFB859 /* CarrierViewController.swift */,
-				F932AE9729A70F7900DFB859 /* CarrierViewController.xib */,
-				F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */,
-				F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -429,12 +480,7 @@
 		F9E461B529A3B8320050BF0F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F9E461B029A3B1160050BF0F /* MedicineCollectionViewCell.swift */,
-				F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */,
-				F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */,
-				F932AE8529A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib */,
-				F91F71E129B59298002EF3E6 /* MedicineTableViewCell.swift */,
-				F91F71E229B59298002EF3E6 /* MedicineTableViewCell.xib */,
+				F91A474E29B84C11005C2E93 /* MedicineRelatedCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -555,6 +601,7 @@
 				F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */,
 				F975A81829A86229006EE0E7 /* ProfileViewController.xib in Resources */,
 				F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */,
+				F91A475229B84C61005C2E93 /* LocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +723,7 @@
 				F9FF20EB29A4CE02002E05A1 /* Medicine.swift in Sources */,
 				F9E461BE29A3C3090050BF0F /* MenuViewController.swift in Sources */,
 				F932AE8F29A6621400DFB859 /* Auth.swift in Sources */,
+				F91A475129B84C61005C2E93 /* LocationViewController.swift in Sources */,
 				F9FF20E629A4735D002E05A1 /* MedicinesRequest.swift in Sources */,
 				F9F58CA529B5E72F00D3B904 /* Med+CoreDataProperties.swift in Sources */,
 				F91F71EC29B5ACFC002EF3E6 /* CoreDataManager.swift in Sources */,

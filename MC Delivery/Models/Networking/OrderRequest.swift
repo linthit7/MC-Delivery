@@ -18,7 +18,7 @@ struct OrderRequest {
         self.accessToken = accessToken
     }
     
-    func placeOrder(order: [[String: Any]], completion: @escaping() -> Void) {
+    func placeOrder(order: [[String: Any]], address: String, completion: @escaping() -> Void) {
         
         let headers: HTTPHeaders = [
             .authorization(accessToken)
@@ -26,7 +26,7 @@ struct OrderRequest {
         
         let params: Parameters = [
             "orderDetails": order,
-            "address": "insein"
+            "address": address
         ]
         
         DispatchQueue.global(qos: .userInitiated).async {

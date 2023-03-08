@@ -38,7 +38,12 @@ class ShoppingCartViewController: UIViewController {
     }
 
     @IBAction func proccedToCheckoutButtonPressed(_ sender: UIButton) {
-        print(ShoppingCartViewController.self, "Proceed to checkout button pressed.")
+
+        let accessToken = (CredentialsStore.getCredentials()?.accessToken)!
+        ShoppingCartLogic.medToOrder(meds: shoppingCartItem) { order in
+            OrderRequest(accessToken: accessToken).placeOrder(order: order)
+        }
+        
     }
     
 }

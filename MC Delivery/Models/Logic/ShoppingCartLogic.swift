@@ -21,4 +21,15 @@ struct ShoppingCartLogic {
         }
         return String(totalAmount)
     }
+    
+    static func medToOrder(meds: [Med], completion: @escaping ([[String: Any]]) -> Void) {
+        
+        var order = [[String: Any]]()
+        
+        for med in meds {
+            let med_quan = Order.loadOrder(medicine: med).medicine_quantity
+            order.append(med_quan!)
+        }
+        completion(order)
+    }
 }

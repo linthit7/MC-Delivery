@@ -10,6 +10,8 @@ import Alamofire
 
 struct CreateOrJoinRoomRequest {
     
+    let creatOrJoinRoomRoute: String = "https://pharmacydelivery-production.up.railway.app/api/rooms"
+    
     var accessToken: String
     
     init(accessToken: String) {
@@ -17,8 +19,6 @@ struct CreateOrJoinRoomRequest {
     }
     
     func creatOrJoinRoom(completion: @escaping (MCRoom) -> Void) {
-        
-        let creatOrJoinRoomRoute: String = "https://pharmacydelivery-production.up.railway.app/api/rooms"
         
         let headers: HTTPHeaders = [
             .authorization(accessToken)

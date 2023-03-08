@@ -14,7 +14,7 @@ struct CustomColor {
     
     init() {
         backgroundColor = UIColor(rgb: 0x02AF5C)
-        buttonColor = UIColor(red: 57, green: 220, blue: 69)
+        buttonColor = UIColor(red: 11, green: 133, blue: 21)
     }
 }
 

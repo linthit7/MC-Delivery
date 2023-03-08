@@ -35,7 +35,7 @@ class MedicineDetailTableViewCell: UITableViewCell {
     }
     
     @IBAction func plusButtonPressed(_ sender: UIButton) {
-        if count < medicine.orderCount {
+        if count < medicine.stocks {
             count += 1
             DispatchQueue.main.async {
                 self.itemCountLabel.text = String(self.count)
@@ -58,7 +58,8 @@ class MedicineDetailTableViewCell: UITableViewCell {
             self.medicineNameLabel.text = medicine.name
             self.medicineInformationLabel.text = medicine.details
             self.priceLabel.text = "Ks.\(String(medicine.price))"
-            if medicine.orderCount == 0 {
+            self.addToBasketButton.tintColor = CustomColor().buttonColor
+            if medicine.stocks == 0 {
                 self.itemCountLabel.text = "Out of stock"
                 self.itemCountLabel.textColor = UIColor.red
                 self.plusButton.isHidden = true

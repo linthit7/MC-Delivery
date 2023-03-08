@@ -31,7 +31,9 @@ class MedicineDetailTableViewCell: UITableViewCell {
     }
     
     @IBAction func addToBasketButtonPressed(_ sender: UIButton) {
-        ShoppingCart.sharedInstance.saveItemToPersistentStore(item: medicine, quantity: count)
+        ShoppingCart.sharedInstance.saveItemToPersistentStore(item: medicine, quantity: count) {
+            NotificationCenter.default.post(name: ShoppingCart.Alert.addedToPersistentStore.rawValue, object: nil)
+        }
     }
     
     @IBAction func plusButtonPressed(_ sender: UIButton) {

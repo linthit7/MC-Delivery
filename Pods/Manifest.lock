@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.6.4)
+  - BadgeHub (1.0.0)
   - SDWebImage (5.14.2):
     - SDWebImage/Core (= 5.14.2)
   - SDWebImage/Core (5.14.2)
@@ -13,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BadgeHub
   - SDWebImage (~> 5.0)
   - SideMenu
   - Socket.IO-Client-Swift (~> 15.2.0)
@@ -23,6 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BadgeHub
     - SDWebImage
     - SideMenu
     - Socket.IO-Client-Swift
@@ -33,6 +36,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  BadgeHub: b227771329f78c37a2dae7502607ec6d00a50bd4
   SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
@@ -41,6 +45,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TwilioVideo: 4da3eb08eb3a318584c48de58a2cf144c02dc5fd
 
-PODFILE CHECKSUM: 82e733d8fec1f01f9ff900c193451ce2098ae1e4
+PODFILE CHECKSUM: 46ecaa5eccb6d96f09bad5cef651d23135efe4bc
 
 COCOAPODS: 1.11.3

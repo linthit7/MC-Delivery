@@ -13,6 +13,7 @@ target 'MC Delivery' do
  pod 'Socket.IO-Client-Swift', '~> 15.2.0'
  pod 'TwilioVideo', '~> 5'
  pod 'Toast-Swift', '~> 5.0.1'
+ pod 'BadgeHub'
  
 end
 

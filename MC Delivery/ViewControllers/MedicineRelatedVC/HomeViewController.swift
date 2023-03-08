@@ -7,6 +7,7 @@
 
 import UIKit
 import SideMenu
+//import BadgeHub
 
 class HomeViewController: UIViewController {
     
@@ -156,7 +157,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let medicineDetailVC = MedicineDetailViewController(medicine: medicineList[indexPath.row])
+        let medicineDetailVC = MedicineDetailViewController(medicineId: medicineList[indexPath.row]._id)
         navigationController?.pushViewController(medicineDetailVC, animated: true)
     }
     

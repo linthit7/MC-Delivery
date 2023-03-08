@@ -14,7 +14,7 @@ struct ShoppingCart {
     
     let managedContext = CoreDataManager.sharedManager.context
     
-    func saveItemToPersistentStore(item: Medicine, quantity: Int) {
+    func saveItemToPersistentStore(item: Medicine, quantity: Int, completion: @escaping() -> Void) {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Med")
         fetchRequest.fetchLimit = 1
@@ -41,7 +41,7 @@ struct ShoppingCart {
         } catch let error {
             print(error)
         }
-        
+        completion()
     }
     
     func removeItemFromPersistentStore(item: Med) {
@@ -90,5 +90,11 @@ struct ShoppingCart {
         }
         return nil
     }
+}
+
+extension ShoppingCart {
     
+    enum Alert: Notification.Name {
+        case addedToPersistentStore = "Added To Persistent Store"
+    }
 }

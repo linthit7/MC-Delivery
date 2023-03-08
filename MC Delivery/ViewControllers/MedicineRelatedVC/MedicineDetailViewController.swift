@@ -9,10 +9,11 @@ import UIKit
 
 class MedicineDetailViewController: UIViewController {
     
-    private let medicine: Medicine
+    private let medicineId: String
+    private var medicine: Medicine!
     
-    init(medicine: Medicine) {
-        self.medicine = medicine
+    init(medicineId: String) {
+        self.medicineId = medicineId
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,19 +26,38 @@ class MedicineDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNotificationCenter()
+        
         view.backgroundColor = CustomColor().backgroundColor
         medicineDetailTableView.backgroundColor = CustomColor().backgroundColor
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(shoppingCartButtonPressed))
         
-        medicineDetailTableView.register(UINib(nibName: MedicineDetailTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineDetailTableViewCell.reuseIdentifier)
-        medicineDetailTableView.dataSource = self
-        medicineDetailTableView.delegate = self
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        MedicineRequest.getMedicineById(medicineId: medicineId) { [self] medicine in
+            self.medicine = medicine
+            DispatchQueue.main.async { [self] in
+                medicineDetailTableView.register(UINib(nibName: MedicineDetailTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineDetailTableViewCell.reuseIdentifier)
+                medicineDetailTableView.dataSource = self
+                medicineDetailTableView.delegate = self
+                medicineDetailTableView.reloadData()
+            }
+        }
     }
     
     @objc
     private func shoppingCartButtonPressed() {
         navigationController?.pushViewController(ShoppingCartViewController(), animated: true)
+    }
+    
+    private func setupNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(addToBasketButtonPressed), name: ShoppingCart.Alert.addedToPersistentStore.rawValue, object: nil)
+    }
+    
+    @objc
+    private func addToBasketButtonPressed() {
+        navigationController?.popViewController(animated: true)
     }
     
 }

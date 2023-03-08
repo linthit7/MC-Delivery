@@ -37,8 +37,8 @@ class MedicineDetailTableViewCell: UITableViewCell {
     @IBAction func plusButtonPressed(_ sender: UIButton) {
         if count < medicine.stocks {
             count += 1
-            DispatchQueue.main.async {
-                self.itemCountLabel.text = String(self.count)
+            DispatchQueue.main.async { [self] in
+                itemCountLabel.text = String(count)
             }
         }
     }
@@ -46,27 +46,27 @@ class MedicineDetailTableViewCell: UITableViewCell {
     @IBAction func minusButtonPressed(_ sender: UIButton) {
         if count > 1 {
             count -= 1
-            DispatchQueue.main.async {
-                self.itemCountLabel.text = String(self.count)
+            DispatchQueue.main.async { [self] in
+                itemCountLabel.text = String(count)
             }
         }
     }
     
     func createMedicineDetail(medicine: Medicine) {
-        DispatchQueue.main.async {
-            self.medicineImageView.sd_setImage(with: medicine.pictureUrls[0].url)
-            self.medicineNameLabel.text = medicine.name
-            self.medicineInformationLabel.text = medicine.details
-            self.priceLabel.text = "Ks.\(String(medicine.price))"
-            self.addToBasketButton.tintColor = CustomColor().buttonColor
+        DispatchQueue.main.async { [self] in
+            medicineImageView.sd_setImage(with: medicine.pictureUrls[0].url)
+            medicineNameLabel.text = medicine.name
+            medicineInformationLabel.text = medicine.details
+            priceLabel.text = "Ks.\(String(medicine.price))"
+            addToBasketButton.tintColor = CustomColor().buttonColor
             if medicine.stocks == 0 {
-                self.itemCountLabel.text = "Out of stock"
-                self.itemCountLabel.textColor = UIColor.red
-                self.plusButton.isHidden = true
-                self.minusButton.isHidden = true
-                self.addToBasketButton.isHidden = true
+                itemCountLabel.text = "Out of stock"
+                itemCountLabel.textColor = UIColor.red
+                plusButton.isHidden = true
+                minusButton.isHidden = true
+                addToBasketButton.isHidden = true
             } else {
-                self.itemCountLabel.text = String(self.count)
+                itemCountLabel.text = String(count)
             }
         }
         self.medicine = medicine

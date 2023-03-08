@@ -115,7 +115,7 @@ extension ShoppingCartViewController: MyDataSendingDelegateProtocol {
     func sendDataToFirstViewController(myData: String) {
         
         DispatchQueue.main.async {
-            self.proceedToCheckoutButton.setTitle("Place Order", for: .normal)
+            self.proceedToCheckoutButton.setTitle("Checkout", for: .normal)
         }
         address = myData
     }

@@ -36,20 +36,20 @@ class HomeViewController: UIViewController {
             }
         }
         
-        DispatchQueue.main.async {
-            self.view.backgroundColor = CustomColor().backgroundColor
-            self.title = "MyanCare Pharmacy"
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-            self.navigationController?.navigationBar.standardAppearance = CustomNavigationBar().navBar
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            self.navigationController?.navigationBar.tintColor = UIColor.white
-            self.homeCollectionView.register(UINib(nibName: MedicineCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MedicineCollectionViewCell.reuseIdentifier)
-            self.homeCollectionView.backgroundColor = CustomColor().backgroundColor
-            self.homeCollectionView.delegate = self
-            self.homeCollectionView.dataSource = self
-            self.homeCollectionView.collectionViewLayout = CustomLayout.configureLayout()
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(self.shoppingCartButtonPressed))
-            self.navigationItem.leftBarButtonItem = self.customButton.menuButton
+        DispatchQueue.main.async { [self] in
+            view.backgroundColor = CustomColor().backgroundColor
+            title = "MyanCare Pharmacy"
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.standardAppearance = CustomNavigationBar().navBar
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            navigationController?.navigationBar.tintColor = UIColor.white
+            homeCollectionView.register(UINib(nibName: MedicineCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MedicineCollectionViewCell.reuseIdentifier)
+            homeCollectionView.backgroundColor = CustomColor().backgroundColor
+            homeCollectionView.delegate = self
+            homeCollectionView.dataSource = self
+            homeCollectionView.collectionViewLayout = CustomLayout.configureLayout()
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(self.shoppingCartButtonPressed))
+            navigationItem.leftBarButtonItem = customButton.menuButton
         }
         customButton.menuButton.target = self
         customButton.menuButton.action = #selector(menuButtonPressed)

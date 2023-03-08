@@ -40,6 +40,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             }
             navigationController?.pushViewController(viewControllerToPush, animated: true)
         case 1:
+            let orderVC = OrderViewController()
+            navigationController?.pushViewController(orderVC, animated: true)
+        case 2:
             let carrierVC = CarrierViewController()
             navigationController?.pushViewController(carrierVC, animated: true)
         default: print("Default case MenuVC didSelectRowAt")
@@ -49,7 +52,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch AppDelegate.loginState {
-        case true: return 2
+        case true: return 3
         case false: return 1
         }
     }
@@ -60,11 +63,18 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 let cell = UITableViewCell()
-                cell.textLabel?.text = "My Account"
+                cell.textLabel?.text = "Profile"
+                cell.imageView?.image = UIImage(systemName: "person.crop.square")
                 return cell
             case 1:
                 let cell = UITableViewCell()
+                cell.textLabel?.text = "Orders"
+                cell.imageView?.image = UIImage(systemName: "doc.plaintext")
+                return cell
+            case 2:
+                let cell = UITableViewCell()
                 cell.textLabel?.text = "Carriers"
+                cell.imageView?.image = UIImage(systemName: "person.3")
                 return cell
             default: return UITableViewCell()
             }

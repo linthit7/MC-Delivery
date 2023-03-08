@@ -18,7 +18,7 @@ struct OrderRequest {
         self.accessToken = accessToken
     }
     
-    func placeOrder(order: [[String: Any]]) {
+    func placeOrder(order: [[String: Any]], completion: @escaping() -> Void) {
         
         let headers: HTTPHeaders = [
             .authorization(accessToken)
@@ -38,6 +38,7 @@ struct OrderRequest {
                     
                     if json["statusCode"].stringValue == "201" {
                         print(json)
+                        completion()
                     }
                 case .none: print("Nothing in response")
                 }

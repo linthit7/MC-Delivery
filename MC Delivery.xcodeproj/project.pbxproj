@@ -442,8 +442,8 @@
 		F9FF20E229A46EAB002E05A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F900949229B6FB540031A016 /* Logic */,
 				F900948F29B6EA600031A016 /* Extension */,
+				F900949229B6FB540031A016 /* Logic */,
 				F91F71F529B5C8A8002EF3E6 /* Networking */,
 				F91F71ED29B5C76E002EF3E6 /* CoreData */,
 			);

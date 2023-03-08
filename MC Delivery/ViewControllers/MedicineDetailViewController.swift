@@ -32,6 +32,7 @@ class MedicineDetailViewController: UIViewController {
         medicineDetailTableView.register(UINib(nibName: MedicineDetailTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineDetailTableViewCell.reuseIdentifier)
         medicineDetailTableView.dataSource = self
         medicineDetailTableView.delegate = self
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     @objc

@@ -8,6 +8,7 @@ PODS:
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
   - SwiftyJSON (4.3.0)
+  - Toast-Swift (5.0.1)
   - TwilioVideo (5.5.0)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - SideMenu
   - Socket.IO-Client-Swift (~> 15.2.0)
   - SwiftyJSON (~> 4.0)
+  - Toast-Swift (~> 5.0.1)
   - TwilioVideo (~> 5)
 
 SPEC REPOS:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - Socket.IO-Client-Swift
     - Starscream
     - SwiftyJSON
+    - Toast-Swift
     - TwilioVideo
 
 SPEC CHECKSUMS:
@@ -35,8 +38,9 @@ SPEC CHECKSUMS:
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TwilioVideo: 4da3eb08eb3a318584c48de58a2cf144c02dc5fd
 
-PODFILE CHECKSUM: 8583cbbda87b72681572821619393aae26852639
+PODFILE CHECKSUM: 82e733d8fec1f01f9ff900c193451ce2098ae1e4
 
 COCOAPODS: 1.11.3

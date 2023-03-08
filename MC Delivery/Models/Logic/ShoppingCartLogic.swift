@@ -32,4 +32,18 @@ struct ShoppingCartLogic {
         }
         completion(order)
     }
+    
+    static func orderCleanUp(completion: @escaping() -> Void) {
+        ShoppingCart.sharedInstance.removeAllItemFromPersistentStore {
+            NotificationCenter.default.post(name: Alert.orderSuccessAndCleanUpDone.rawValue, object: nil)
+        }
+        completion()
+    }
+}
+
+extension ShoppingCartLogic {
+    
+    enum Alert: NSNotification.Name {
+        case orderSuccessAndCleanUpDone = "Order and Cleanup successful"
+    }
 }

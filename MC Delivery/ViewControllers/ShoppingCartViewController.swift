@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class ShoppingCartViewController: UIViewController {
     
@@ -26,6 +27,28 @@ class ShoppingCartViewController: UIViewController {
         shoppingCartItem = ShoppingCart.sharedInstance.fetchAllItem()
         shoppingCartTableView.reloadData()
     }
+
+    @IBAction func proccedToCheckoutButtonPressed(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            self.view.makeToastActivity(.center)
+            self.view.alpha = 0.8
+        }
+        view.isUserInteractionEnabled = false
+        navigationController?.view.isUserInteractionEnabled = false
+        
+        let accessToken = (CredentialsStore.getCredentials()?.accessToken)!
+        ShoppingCartLogic.medToOrder(meds: shoppingCartItem) { order in
+            OrderRequest(accessToken: accessToken).placeOrder(order: order) {
+                ShoppingCartLogic.orderCleanUp {
+                    DispatchQueue.main.async {
+                        self.view.hideToastActivity()
+                    }
+                    self.view.isUserInteractionEnabled = true
+                    self.navigationController?.view.isUserInteractionEnabled = true
+                }
+            }
+        }
+    }
     
     private func setupUI() {
         DispatchQueue.main.async {
@@ -37,15 +60,6 @@ class ShoppingCartViewController: UIViewController {
         }
     }
 
-    @IBAction func proccedToCheckoutButtonPressed(_ sender: UIButton) {
-
-        let accessToken = (CredentialsStore.getCredentials()?.accessToken)!
-        ShoppingCartLogic.medToOrder(meds: shoppingCartItem) { order in
-            OrderRequest(accessToken: accessToken).placeOrder(order: order)
-        }
-        
-    }
-    
 }
 
 //MARK: - UITableViewDelegate & DataSource Methods

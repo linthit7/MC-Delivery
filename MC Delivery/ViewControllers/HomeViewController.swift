@@ -24,8 +24,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(connectVideoCall), name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(declineCall), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
+        
+        setupNotificationCenter()
         
         medicinesRequest.getAllMedicinesWithPagination(page: page) { medicines, total in
             
@@ -135,6 +135,21 @@ class HomeViewController: UIViewController {
     private func shoppingCartButtonPressed() {
         navigationController?.pushViewController(ShoppingCartViewController(), animated: true)
     }
+    
+    private func setupNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(connectVideoCall), name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(declineCall), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(showToastAndPopToRootVC), name: ShoppingCartLogic.Alert.orderSuccessAndCleanUpDone.rawValue, object: nil)
+    }
+    
+    @objc
+    private func showToastAndPopToRootVC() {
+        DispatchQueue.main.async {
+            self.view.makeToast("Order successful", position: .top)
+        }
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {

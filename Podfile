@@ -12,6 +12,7 @@ target 'MC Delivery' do
  pod 'SDWebImage', '~> 5.0'
  pod 'Socket.IO-Client-Swift', '~> 15.2.0'
  pod 'TwilioVideo', '~> 5'
+ pod 'Toast-Swift', '~> 5.0.1'
  
 end
 
@@ -26,4 +27,6 @@ target 'MC Delivery Carrier' do
   pod 'SDWebImage', '~> 5.0'
   pod 'Socket.IO-Client-Swift', '~> 15.2.0'
   pod 'TwilioVideo', '~> 5'
+  pod 'Toast-Swift', '~> 5.0.1'
+  
 end

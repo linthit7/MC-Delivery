@@ -61,6 +61,23 @@ struct ShoppingCart {
         }
     }
     
+    func removeAllItemFromPersistentStore(completion: @escaping() -> Void) {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Med")
+        
+        do {
+            guard let result = try managedContext.fetch(fetchRequest) as? [Med] else {return}
+            result.forEach { med in
+                managedContext.delete(med)
+            }
+            
+            try managedContext.save()
+        } catch let error {
+            print(error)
+        }
+        completion()
+    }
+    
     func fetchAllItem() -> [Med]? {
         
         let  fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Med")

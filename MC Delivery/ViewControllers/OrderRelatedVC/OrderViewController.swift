@@ -57,6 +57,7 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.reuseIdentifier, for: indexPath) as? OrderTableViewCell else {
             return UITableViewCell()
         }
+        cell.createOrderHistoryCell(orderHistory: orderHistoryList[indexPath.row])
         return cell
     }
     

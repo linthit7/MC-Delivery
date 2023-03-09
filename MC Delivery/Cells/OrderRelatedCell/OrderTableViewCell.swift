@@ -19,6 +19,21 @@ class OrderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
+    func createOrderHistoryCell(orderHistory: OrderHistory) {
+        DispatchQueue.main.async { [self] in
+            pharmacyLabel.text = "MyanCare Pharmacy"
+            totalPriceLabel.text = "MMK \(String(describing: orderHistory.totalPrice!))"
+            if orderHistory.status == "cancel" {
+                let url = URL(string: orderHistory.orderDetails[0].medicine.pictureUrls[0].stringValue)
+                medicineImageView.sd_setImage(with: url)
+                medicineImageView.alpha = 0.1
+            } else {
+                let url = URL(string: orderHistory.orderDetails[0].medicine.pictureUrls[0].stringValue)
+                medicineImageView.sd_setImage(with: url)
+            }
+            
+        }
+    }
     
 }

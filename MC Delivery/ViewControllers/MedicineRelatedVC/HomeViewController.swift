@@ -22,12 +22,13 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
+    @IBOutlet weak var onGoingUIView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         setupNotificationCenter()
-        
         medicinesRequest.getAllMedicinesWithPagination(page: page) { medicines, total in
             
             self.medicineList.append(contentsOf: medicines)

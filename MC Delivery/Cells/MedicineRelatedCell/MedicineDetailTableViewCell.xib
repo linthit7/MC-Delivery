@@ -21,25 +21,25 @@
                         <rect key="frame" x="10" y="10" width="300" height="567"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qle-cl-ZG7">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="4ZG-ov-RH8"/>
+                                    <constraint firstAttribute="height" constant="250" id="4ZG-ov-RH8"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Medicine Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzM-iz-pKg">
-                                <rect key="frame" x="0.0" y="310" width="300" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Medicine Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzM-iz-pKg">
+                                <rect key="frame" x="0.0" y="260" width="300" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Product Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3B-7m-h2Y">
-                                <rect key="frame" x="0.0" y="344" width="300" height="20.333333333333314"/>
+                                <rect key="frame" x="0.0" y="294" width="300" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Medicine Information" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QY0-4A-IDf">
-                                <rect key="frame" x="0.0" y="374.33333333333331" width="300" height="112"/>
+                                <rect key="frame" x="0.0" y="324.33333333333331" width="300" height="162"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -97,15 +97,21 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pzM-iz-pKg" secondAttribute="trailing" id="0U6-Bk-5xk"/>
+                            <constraint firstItem="t7m-jp-DHW" firstAttribute="top" secondItem="uG0-qE-Ccg" secondAttribute="bottom" constant="10" id="2SB-Kk-ItO"/>
                             <constraint firstAttribute="trailing" secondItem="uG0-qE-Ccg" secondAttribute="trailing" id="3nD-Yl-m6U"/>
                             <constraint firstAttribute="trailing" secondItem="O3B-7m-h2Y" secondAttribute="trailing" id="5dZ-UP-VF3"/>
                             <constraint firstAttribute="trailing" secondItem="QY0-4A-IDf" secondAttribute="trailing" id="63J-ZM-vxu"/>
+                            <constraint firstItem="uG0-qE-Ccg" firstAttribute="top" secondItem="QY0-4A-IDf" secondAttribute="bottom" constant="10" id="7Q0-qV-A9N"/>
+                            <constraint firstItem="pzM-iz-pKg" firstAttribute="top" secondItem="Qle-cl-ZG7" secondAttribute="bottom" constant="10" id="8BA-5A-nw2"/>
+                            <constraint firstAttribute="bottom" secondItem="t7m-jp-DHW" secondAttribute="bottom" id="DEE-Q3-3db"/>
                             <constraint firstItem="pzM-iz-pKg" firstAttribute="leading" secondItem="GQL-nh-93f" secondAttribute="leading" id="Kud-5i-qFO"/>
+                            <constraint firstItem="O3B-7m-h2Y" firstAttribute="top" secondItem="pzM-iz-pKg" secondAttribute="bottom" constant="10" id="Wz5-ue-ihB"/>
                             <constraint firstItem="O3B-7m-h2Y" firstAttribute="leading" secondItem="GQL-nh-93f" secondAttribute="leading" id="cIu-4S-b6S"/>
                             <constraint firstItem="Qle-cl-ZG7" firstAttribute="top" secondItem="GQL-nh-93f" secondAttribute="top" id="eOw-1I-mEc"/>
                             <constraint firstItem="uG0-qE-Ccg" firstAttribute="leading" secondItem="GQL-nh-93f" secondAttribute="leading" id="fDu-rj-Sbc"/>
                             <constraint firstItem="Qle-cl-ZG7" firstAttribute="leading" secondItem="GQL-nh-93f" secondAttribute="leading" id="iZQ-ED-QwY"/>
                             <constraint firstItem="QY0-4A-IDf" firstAttribute="leading" secondItem="GQL-nh-93f" secondAttribute="leading" id="mho-8y-N2w"/>
+                            <constraint firstItem="QY0-4A-IDf" firstAttribute="top" secondItem="O3B-7m-h2Y" secondAttribute="bottom" constant="10" id="o6P-Xh-RJc"/>
                             <constraint firstAttribute="trailing" secondItem="Qle-cl-ZG7" secondAttribute="trailing" id="o7X-OL-85x"/>
                         </constraints>
                     </stackView>

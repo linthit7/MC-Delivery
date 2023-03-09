@@ -21,15 +21,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-Ih-86q">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-Ih-86q">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="866"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ERh-Kt-Qgu">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="438"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="408"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9cN-rh-Nhw">
-                            <rect key="frame" x="0.0" y="458" width="414" height="438"/>
+                            <rect key="frame" x="0.0" y="458" width="414" height="408"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
@@ -38,7 +38,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="QGH-Ih-86q" secondAttribute="bottom" id="ClO-lV-UIy"/>
+                <constraint firstAttribute="bottom" secondItem="QGH-Ih-86q" secondAttribute="bottom" constant="30" id="ClO-lV-UIy"/>
                 <constraint firstItem="QGH-Ih-86q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FyG-kB-fFP"/>
                 <constraint firstItem="QGH-Ih-86q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Zx5-Qi-rkp"/>
                 <constraint firstItem="QGH-Ih-86q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tjR-aX-WMg"/>

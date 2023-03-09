@@ -10,9 +10,9 @@ import UIKit
 class OrderViewController: UIViewController {
 
     private var orderHistoryList = [OrderHistory]()
+    private var pendingOrderList = [OrderHistory]()
     
     @IBOutlet weak var orderTableView: UITableView!
-    
     @IBOutlet weak var pendingTableView: UITableView!
     
     override func viewDidLoad() {
@@ -27,6 +27,13 @@ class OrderViewController: UIViewController {
                 self.orderHistoryList.append(contentsOf: orderHistory)
                 DispatchQueue.main.async {
                     self.orderTableView.reloadData()
+                }
+            }
+            OrderRequest(accessToken: token!).getPendingOrder { [self] pendingOrder in
+                
+                self.pendingOrderList.append(contentsOf: pendingOrder)
+                DispatchQueue.main.async {
+                    self.pendingTableView.reloadData()
                 }
             }
         }
@@ -67,7 +74,7 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == orderTableView {
             return orderHistoryList.count
         } else {
-            return 1
+            return pendingOrderList.count
         }
         
     }
@@ -80,10 +87,9 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.reuseIdentifier, for: indexPath) as? OrderTableViewCell else {return UITableViewCell()}
-            cell.medicineLabel.text = "dummy"
+            cell.createOrderHistoryCell(orderHistory: pendingOrderList[indexPath.row])
             return cell
         }
-        return UITableViewCell()
     }
     
     

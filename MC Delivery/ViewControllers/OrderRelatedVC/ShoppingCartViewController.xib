@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShoppingCartViewController" customModule="MC_Delivery" customModuleProvider="target">
             <connections>
+                <outlet property="nothingLabel" destination="5WU-an-Dcx" id="a4u-fb-2iL"/>
                 <outlet property="proceedToCheckoutButton" destination="L2R-3U-WeT" id="UbM-k9-z1F"/>
                 <outlet property="shoppingCartTableView" destination="aLb-VI-MM8" id="wN0-Qw-cjV"/>
                 <outlet property="totalAmountLabel" destination="OkD-qK-o3Q" id="8Z7-AO-4JN"/>
@@ -22,6 +23,12 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing in Shopping Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WU-an-Dcx">
+                    <rect key="frame" x="86.333333333333329" y="410" width="217.33333333333337" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                    <color key="textColor" systemColor="systemGray6Color"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3T9-U3-QSr">
                     <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                     <subviews>
@@ -63,7 +70,9 @@
             <constraints>
                 <constraint firstItem="3T9-U3-QSr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0LP-a4-4zi"/>
                 <constraint firstItem="3T9-U3-QSr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8YS-br-Tor"/>
+                <constraint firstItem="5WU-an-Dcx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ORr-pX-Q28"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3T9-U3-QSr" secondAttribute="bottom" id="V5F-2B-YH0"/>
+                <constraint firstItem="5WU-an-Dcx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ZEg-06-gja"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3T9-U3-QSr" secondAttribute="trailing" id="pKb-gj-gUj"/>
             </constraints>
             <point key="canvasLocation" x="128.98550724637681" y="-11.383928571428571"/>
@@ -72,6 +81,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

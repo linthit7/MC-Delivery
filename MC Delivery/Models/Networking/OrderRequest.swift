@@ -71,6 +71,33 @@ struct OrderRequest {
                 
             }
         }
+    }
+    
+    func getPendingOrder(limit: Int = 10, completion: @escaping([OrderHistory]) -> Void) {
         
+        let getOrderRoute: String = "https://pharmacydelivery-production.up.railway.app/api/orders/me?limit=\(limit)&status=pending"
+        
+        let headers: HTTPHeaders = [
+            .authorization(accessToken)
+        ]
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            AF.request(getOrderRoute, method: .get, encoding: JSONEncoding.prettyPrinted, headers: headers).response { response in
+                switch response.data {
+                case .some(let data):
+                    let json = JSON(data)
+                    
+                    if json["statusCode"].stringValue == "200" {
+                        let payload = OrderHistory.loadOrderHistoryArray(jsonArray: json["payload"].arrayValue)
+                        completion(payload)
+                    }
+
+                case .none:
+                    print("Nothing in response")
+                }
+                
+            }
+        }
     }
 }

@@ -44,6 +44,8 @@
 		F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FAFB729A26E2600786ED4 /* SceneDelegate.swift */; };
 		F93FAFBF29A26E2600786ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFBE29A26E2600786ED4 /* Assets.xcassets */; };
 		F93FAFC229A26E2600786ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFC029A26E2600786ED4 /* LaunchScreen.storyboard */; };
+		F9516FE329B9901F00BA447C /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9516FE129B9901F00BA447C /* OrderTableViewCell.swift */; };
+		F9516FE429B9901F00BA447C /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */; };
 		F975A81729A86229006EE0E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81529A86229006EE0E7 /* ProfileViewController.swift */; };
 		F975A81829A86229006EE0E7 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A81629A86229006EE0E7 /* ProfileViewController.xib */; };
 		F975A81A29A86A21006EE0E7 /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81929A86A21006EE0E7 /* CredentialsStore.swift */; };
@@ -144,6 +146,8 @@
 		F93FAFBE29A26E2600786ED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F93FAFC129A26E2600786ED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F93FAFC329A26E2600786ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9516FE129B9901F00BA447C /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		F975A81529A86229006EE0E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F975A81629A86229006EE0E7 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		F975A81929A86A21006EE0E7 /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
@@ -422,6 +426,15 @@
 			path = "MC Delivery Carrier";
 			sourceTree = "<group>";
 		};
+		F9516FE029B98FA300BA447C /* OrderRelatedCell */ = {
+			isa = PBXGroup;
+			children = (
+				F9516FE129B9901F00BA447C /* OrderTableViewCell.swift */,
+				F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */,
+			);
+			path = OrderRelatedCell;
+			sourceTree = "<group>";
+		};
 		F975A82529AA0564006EE0E7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +499,7 @@
 		F9E461B529A3B8320050BF0F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F9516FE029B98FA300BA447C /* OrderRelatedCell */,
 				F91A474E29B84C11005C2E93 /* MedicineRelatedCell */,
 			);
 			path = Cells;
@@ -600,6 +614,7 @@
 				F975A84429AA56B9006EE0E7 /* VideoCallViewController.xib in Resources */,
 				F932AE8729A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib in Resources */,
 				F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */,
+				F9516FE429B9901F00BA447C /* OrderTableViewCell.xib in Resources */,
 				F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */,
 				F91A475629B87750005C2E93 /* OrderViewController.xib in Resources */,
 				F93FAFA829A26E1500786ED4 /* LaunchScreen.storyboard in Resources */,
@@ -739,6 +754,7 @@
 				F91F71F829B5CB8A002EF3E6 /* ShoppingCart.swift in Sources */,
 				F932AE8D29A65E0700DFB859 /* AuthRequest.swift in Sources */,
 				F9E461A129A359460050BF0F /* CustomButton.swift in Sources */,
+				F9516FE329B9901F00BA447C /* OrderTableViewCell.swift in Sources */,
 				F900949129B6EA840031A016 /* NotificationEnum.swift in Sources */,
 				F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */,
 				F932AE9129A6705700DFB859 /* UserRequest.swift in Sources */,

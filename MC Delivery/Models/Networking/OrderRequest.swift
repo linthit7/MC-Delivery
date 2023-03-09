@@ -10,7 +10,7 @@ import SwiftyJSON
 
 struct OrderRequest {
     
-    let placeOrderRoute: String = "https://pharmacydelivery-production.up.railway.app/api/orders"
+    private let placeOrderRoute: String = "https://pharmacydelivery-production.up.railway.app/api/orders"
     
     var accessToken: String
     
@@ -37,12 +37,40 @@ struct OrderRequest {
                     let json: JSON = JSON(data)
                     
                     if json["statusCode"].stringValue == "201" {
-                        print(json)
                         completion()
                     }
                 case .none: print("Nothing in response")
                 }
             }
         }
+    }
+    
+    func getPastOrderWithCompleteAndCancel(limit: Int = 2, completion: @escaping([OrderHistory]) -> Void) {
+        
+        let getOrderRoute: String = "https://pharmacydelivery-production.up.railway.app/api/orders/me?limit=\(limit)&status=cancel&status=complete"
+        
+        let headers: HTTPHeaders = [
+            .authorization(accessToken)
+        ]
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            AF.request(getOrderRoute, method: .get, encoding: JSONEncoding.prettyPrinted, headers: headers).response { response in
+                switch response.data {
+                case .some(let data):
+                    let json = JSON(data)
+                    
+                    if json["statusCode"].stringValue == "200" {
+                        let payload = OrderHistory.loadOrderHistoryArray(jsonArray: json["payload"].arrayValue)
+                        completion(payload)
+                    }
+
+                case .none:
+                    print("Nothing in response")
+                }
+                
+            }
+        }
+        
     }
 }

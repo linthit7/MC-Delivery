@@ -27,7 +27,11 @@ class OrderTableViewCell: UITableViewCell {
             if orderHistory.status == "cancel" {
                 let url = URL(string: orderHistory.orderDetails[0].medicine.pictureUrls[0].stringValue)
                 medicineImageView.sd_setImage(with: url)
-                medicineImageView.alpha = 0.1
+                let frontImg = UIImage(named: "cancellation.jpg")
+                let frontView = UIImageView(image: frontImg)
+                frontView.frame = medicineImageView.frame
+                frontView.alpha = 0.5
+                medicineImageView.addSubview(frontView)
             } else {
                 let url = URL(string: orderHistory.orderDetails[0].medicine.pictureUrls[0].stringValue)
                 medicineImageView.sd_setImage(with: url)

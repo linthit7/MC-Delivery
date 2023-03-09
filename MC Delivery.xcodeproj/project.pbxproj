@@ -47,6 +47,7 @@
 		F9516FE329B9901F00BA447C /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9516FE129B9901F00BA447C /* OrderTableViewCell.swift */; };
 		F9516FE429B9901F00BA447C /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */; };
 		F9516FE629B9C54100BA447C /* OrderHistoryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9516FE529B9C54100BA447C /* OrderHistoryLogic.swift */; };
+		F9516FE829B9DB7A00BA447C /* cancellation.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9516FE729B9DB7A00BA447C /* cancellation.jpg */; };
 		F975A81729A86229006EE0E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81529A86229006EE0E7 /* ProfileViewController.swift */; };
 		F975A81829A86229006EE0E7 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A81629A86229006EE0E7 /* ProfileViewController.xib */; };
 		F975A81A29A86A21006EE0E7 /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81929A86A21006EE0E7 /* CredentialsStore.swift */; };
@@ -150,6 +151,7 @@
 		F9516FE129B9901F00BA447C /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		F9516FE529B9C54100BA447C /* OrderHistoryLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryLogic.swift; sourceTree = "<group>"; };
+		F9516FE729B9DB7A00BA447C /* cancellation.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cancellation.jpg; sourceTree = "<group>"; };
 		F975A81529A86229006EE0E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F975A81629A86229006EE0E7 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		F975A81929A86A21006EE0E7 /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				F9E461B429A3B8220050BF0F /* ViewControllers */,
 				F9E461B529A3B8320050BF0F /* Cells */,
 				F93FAFA429A26E1500786ED4 /* Assets.xcassets */,
+				F9516FE729B9DB7A00BA447C /* cancellation.jpg */,
 				F93FAFA629A26E1500786ED4 /* LaunchScreen.storyboard */,
 				F93FAFA929A26E1500786ED4 /* Info.plist */,
 				F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */,
@@ -616,6 +619,7 @@
 				F932AE9929A70F7900DFB859 /* CarrierViewController.xib in Resources */,
 				F975A84429AA56B9006EE0E7 /* VideoCallViewController.xib in Resources */,
 				F932AE8729A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib in Resources */,
+				F9516FE829B9DB7A00BA447C /* cancellation.jpg in Resources */,
 				F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */,
 				F9516FE429B9901F00BA447C /* OrderTableViewCell.xib in Resources */,
 				F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */,

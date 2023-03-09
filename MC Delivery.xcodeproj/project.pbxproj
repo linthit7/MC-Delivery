@@ -46,6 +46,7 @@
 		F93FAFC229A26E2600786ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FAFC029A26E2600786ED4 /* LaunchScreen.storyboard */; };
 		F9516FE329B9901F00BA447C /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9516FE129B9901F00BA447C /* OrderTableViewCell.swift */; };
 		F9516FE429B9901F00BA447C /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */; };
+		F9516FE629B9C54100BA447C /* OrderHistoryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9516FE529B9C54100BA447C /* OrderHistoryLogic.swift */; };
 		F975A81729A86229006EE0E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81529A86229006EE0E7 /* ProfileViewController.swift */; };
 		F975A81829A86229006EE0E7 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A81629A86229006EE0E7 /* ProfileViewController.xib */; };
 		F975A81A29A86A21006EE0E7 /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81929A86A21006EE0E7 /* CredentialsStore.swift */; };
@@ -148,6 +149,7 @@
 		F93FAFC329A26E2600786ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9516FE129B9901F00BA447C /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
+		F9516FE529B9C54100BA447C /* OrderHistoryLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryLogic.swift; sourceTree = "<group>"; };
 		F975A81529A86229006EE0E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F975A81629A86229006EE0E7 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		F975A81929A86A21006EE0E7 /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				F900949329B6FB740031A016 /* ShoppingCartLogic.swift */,
+				F9516FE529B9C54100BA447C /* OrderHistoryLogic.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				F932AE9829A70F7900DFB859 /* CarrierViewController.swift in Sources */,
 				F932AE8A29A6559100DFB859 /* LoginViewController.swift in Sources */,
 				F975A84329AA56B9006EE0E7 /* VideoCallViewController.swift in Sources */,
+				F9516FE629B9C54100BA447C /* OrderHistoryLogic.swift in Sources */,
 				F91A475529B87750005C2E93 /* OrderViewController.swift in Sources */,
 				F932AE9D29A74B8C00DFB859 /* Room.swift in Sources */,
 				F9E461B229A3B1160050BF0F /* MedicineCollectionViewCell.swift in Sources */,

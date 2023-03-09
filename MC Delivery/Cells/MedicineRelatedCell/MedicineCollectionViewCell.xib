@@ -42,6 +42,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="UA9-Lj-DD9" firstAttribute="leading" secondItem="RLh-27-WEb" secondAttribute="leading" constant="10" id="Eh4-D6-CFj"/>
+                                    <constraint firstAttribute="trailing" secondItem="UA9-Lj-DD9" secondAttribute="trailing" constant="10" id="UIf-CV-IsJ"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.40904873139182474" green="0.79607844350000001" blue="0.42016682400017891" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

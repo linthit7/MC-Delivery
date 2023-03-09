@@ -27,7 +27,7 @@ class MedicineCollectionViewCell: UICollectionViewCell {
         let url = medicine.pictureUrls[0].url
         medicineImageView.sd_setImage(with: url)
         medicineNameLabel.text = medicine.name
-        priceLabel.text = "Ks. \(medicine.price!)"
+        priceLabel.text = "MMK \(medicine.price!)"
     }
 
 }

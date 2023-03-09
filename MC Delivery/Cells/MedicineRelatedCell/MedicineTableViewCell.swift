@@ -28,7 +28,7 @@ class MedicineTableViewCell: UITableViewCell {
         let url = medicine.pictureUrls!
         medicineImageView.sd_setImage(with: URL(string: url))
         titleLabel.text = medicine.name
-        priceLabel.text = "Ks. \(medicine.price)"
+        priceLabel.text = "MMK \(medicine.price)"
         quantityLabel.text = "Quantity: \(medicine.quantity)"
         
         self.medicine = medicine

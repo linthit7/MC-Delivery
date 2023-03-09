@@ -45,7 +45,7 @@ struct OrderRequest {
         }
     }
     
-    func getPastOrderWithCompleteAndCancel(limit: Int = 2, completion: @escaping([OrderHistory]) -> Void) {
+    func getPastOrderWithCompleteAndCancel(limit: Int = 10, completion: @escaping([OrderHistory]) -> Void) {
         
         let getOrderRoute: String = "https://pharmacydelivery-production.up.railway.app/api/orders/me?limit=\(limit)&status=cancel&status=complete"
         

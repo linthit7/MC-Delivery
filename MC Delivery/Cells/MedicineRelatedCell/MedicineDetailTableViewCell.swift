@@ -59,7 +59,7 @@ class MedicineDetailTableViewCell: UITableViewCell {
             medicineImageView.sd_setImage(with: medicine.pictureUrls[0].url)
             medicineNameLabel.text = medicine.name
             medicineInformationLabel.text = medicine.details
-            priceLabel.text = "Ks.\(String(medicine.price))"
+            priceLabel.text = "MMK\(String(medicine.price))"
             addToBasketButton.tintColor = CustomColor().buttonColor
             if medicine.stocks == 0 {
                 itemCountLabel.text = "Out of stock"

@@ -32,7 +32,7 @@ class OrderTableViewCell: UITableViewCell {
                 let url = URL(string: orderHistory.orderDetails[0].medicine.pictureUrls[0].stringValue)
                 medicineImageView.sd_setImage(with: url)
             }
-            
+            medicineLabel.text = OrderHistoryLogic().getAllMedicineName(orderHistory: orderHistory).joined(separator: ", ")
         }
     }
     

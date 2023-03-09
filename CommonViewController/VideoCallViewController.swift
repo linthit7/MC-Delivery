@@ -34,7 +34,6 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     
     init(socketRoom: MCRoom) {
         self.socketRoom = socketRoom
-        
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -62,6 +61,12 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
             self.callManager.performEndCallAction(id: UUID(uuidString: (self.socketRoom?.roomName)!)!)
             self.room?.disconnect()
 //            self.navigationController?.popViewController(animated: true)
+        }
+        mSocket.on("callEnded") { data, ack in
+            
+            print("Call ended received")
+            self.callManager.performEndCallAction(id: UUID(uuidString: (self.socketRoom?.roomName)!)!)
+            self.room?.disconnect()
         }
         
         self.micButton.isHidden = true
@@ -100,7 +105,13 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     }
     
     @IBAction func micButtonPresses(_ sender: UIButton) {
-        
+        if micButton.titleLabel!.text == "Mute" {
+            micButton.setTitle("Unmute", for: .normal)
+            self.callManager.performMuteCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
+        } else {
+            micButton.setTitle("Mute", for: .normal)
+            self.callManager.performUnmuteCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
+        }
         print("Mute Button Pressed From Video Call Viewcontroller(Muted)")
     }
     
@@ -158,6 +169,7 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     // Update our UI based upon if we are in a Room or not
     func showRoomUI(inRoom: Bool) {
         
+        self.micButton.setTitle("Mute", for: .normal)
         self.micButton.isHidden = !inRoom
         self.endButoon.isHidden = !inRoom
         UIApplication.shared.isIdleTimerDisabled = inRoom
@@ -267,7 +279,6 @@ extension VideoCallViewController : RoomDelegate {
         self.cleanupRemoteParticipant()
         self.room = nil
         self.showRoomUI(inRoom: false)
-//        self.navigationController?.popViewController(animated: true)
     }
     
     func roomDidFailToConnect(room: Room, error: Error) {
@@ -291,12 +302,7 @@ extension VideoCallViewController : RoomDelegate {
         self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: (socketRoom?.roomName)!)!, connectedAt: Date())
     }
     
-    func participantDidDisconnect(room: Room, participant: RemoteParticipant) {
-        
-        self.callManager.performEndCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
-        self.room?.disconnect()
-        self.navigationController?.popViewController(animated: true)
-    }
+    func participantDidDisconnect(room: Room, participant: RemoteParticipant) {}
 }
 
 // MARK:- RemoteParticipantDelegate

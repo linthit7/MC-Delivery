@@ -30,7 +30,7 @@ class OrderTableViewCell: UITableViewCell {
                 let frontImg = UIImage(named: "cancellation.jpg")
                 let frontView = UIImageView(image: frontImg)
                 frontView.frame = medicineImageView.frame
-                frontView.alpha = 0.5
+                frontView.alpha = 0.4
                 medicineImageView.addSubview(frontView)
             } else {
                 let url = URL(string: orderHistory.orderDetails[0].medicine.pictureUrls[0].stringValue)

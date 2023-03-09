@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderViewController" customModule="MC_Delivery" customModuleProvider="target">
             <connections>
                 <outlet property="orderTableView" destination="ERh-Kt-Qgu" id="1Gi-d4-Jzj"/>
+                <outlet property="pendingTableView" destination="9cN-rh-Nhw" id="k4o-3z-XIB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,18 +21,27 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ERh-Kt-Qgu">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-Ih-86q">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ERh-Kt-Qgu">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="438"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9cN-rh-Nhw">
+                            <rect key="frame" x="0.0" y="458" width="414" height="438"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ERh-Kt-Qgu" secondAttribute="bottom" id="Mcl-hK-wr0"/>
-                <constraint firstItem="ERh-Kt-Qgu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Y46-0h-88U"/>
-                <constraint firstItem="ERh-Kt-Qgu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bdf-Pp-khz"/>
-                <constraint firstItem="ERh-Kt-Qgu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yCv-t3-KW2"/>
+                <constraint firstAttribute="bottom" secondItem="QGH-Ih-86q" secondAttribute="bottom" id="ClO-lV-UIy"/>
+                <constraint firstItem="QGH-Ih-86q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FyG-kB-fFP"/>
+                <constraint firstItem="QGH-Ih-86q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Zx5-Qi-rkp"/>
+                <constraint firstItem="QGH-Ih-86q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tjR-aX-WMg"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="-12.053571428571429"/>
         </view>

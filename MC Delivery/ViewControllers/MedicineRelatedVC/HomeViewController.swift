@@ -41,7 +41,6 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async { [self] in
             view.backgroundColor = CustomColor().backgroundColor
             title = "MyanCare Pharmacy"
-            navigationController?.navigationBar.prefersLargeTitles = true
             navigationController?.navigationBar.standardAppearance = CustomNavigationBar().navBar
             navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             navigationController?.navigationBar.tintColor = UIColor.white

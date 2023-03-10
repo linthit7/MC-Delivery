@@ -82,6 +82,8 @@
 		F9B478FB29B58D8D002817F8 /* ShoppingCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */; };
 		F9C6C6EE29BAD65800D41CE3 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6C6EC29BAD65800D41CE3 /* OrderDetailViewController.swift */; };
 		F9C6C6EF29BAD65800D41CE3 /* OrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6ED29BAD65800D41CE3 /* OrderDetailViewController.xib */; };
+		F9C6C6F229BAE70D00D41CE3 /* FirstOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6C6F029BAE70D00D41CE3 /* FirstOrderTableViewCell.swift */; };
+		F9C6C6F329BAE70D00D41CE3 /* FirstOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6F129BAE70D00D41CE3 /* FirstOrderTableViewCell.xib */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -175,6 +177,8 @@
 		F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartViewController.xib; sourceTree = "<group>"; };
 		F9C6C6EC29BAD65800D41CE3 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		F9C6C6ED29BAD65800D41CE3 /* OrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailViewController.xib; sourceTree = "<group>"; };
+		F9C6C6F029BAE70D00D41CE3 /* FirstOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOrderTableViewCell.swift; sourceTree = "<group>"; };
+		F9C6C6F129BAE70D00D41CE3 /* FirstOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstOrderTableViewCell.xib; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -443,6 +447,8 @@
 			children = (
 				F9516FE129B9901F00BA447C /* OrderTableViewCell.swift */,
 				F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */,
+				F9C6C6F029BAE70D00D41CE3 /* FirstOrderTableViewCell.swift */,
+				F9C6C6F129BAE70D00D41CE3 /* FirstOrderTableViewCell.xib */,
 			);
 			path = OrderRelatedCell;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 				F9E461BF29A3C3090050BF0F /* MenuViewController.xib in Resources */,
 				F93FAFA529A26E1500786ED4 /* Assets.xcassets in Resources */,
 				F975A81829A86229006EE0E7 /* ProfileViewController.xib in Resources */,
+				F9C6C6F329BAE70D00D41CE3 /* FirstOrderTableViewCell.xib in Resources */,
 				F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */,
 				F91A475229B84C61005C2E93 /* LocationViewController.xib in Resources */,
 			);
@@ -768,6 +775,7 @@
 				F91F71EC29B5ACFC002EF3E6 /* CoreDataManager.swift in Sources */,
 				F93FAF9E29A26E1400786ED4 /* SceneDelegate.swift in Sources */,
 				F91F71F829B5CB8A002EF3E6 /* ShoppingCart.swift in Sources */,
+				F9C6C6F229BAE70D00D41CE3 /* FirstOrderTableViewCell.swift in Sources */,
 				F932AE8D29A65E0700DFB859 /* AuthRequest.swift in Sources */,
 				F9E461A129A359460050BF0F /* CustomButton.swift in Sources */,
 				F9516FE329B9901F00BA447C /* OrderTableViewCell.swift in Sources */,

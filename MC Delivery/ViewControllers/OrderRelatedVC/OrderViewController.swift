@@ -92,5 +92,20 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if tableView == orderTableView {
+            let orderDetailVC = OrderDetailViewController(orderId: orderHistoryList[indexPath.row]._id)
+            navigationController?.pushViewController(orderDetailVC, animated: true)
+        } else {
+            let orderDetailVC = OrderDetailViewController(orderId: pendingOrderList[indexPath.row]._id)
+            navigationController?.pushViewController(orderDetailVC, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     
 }

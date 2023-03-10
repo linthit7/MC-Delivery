@@ -100,4 +100,30 @@ struct OrderRequest {
             }
         }
     }
+    
+    func getOrderByOrderId(orderId: String, completion: @escaping(OrderHistory) -> Void) {
+        
+        let getOrderByOrderId: String = "https://pharmacydelivery-production.up.railway.app/api/orders/orderId/\(orderId)"
+        
+        let headers: HTTPHeaders = [
+            .authorization(accessToken)
+        ]
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            AF.request(getOrderByOrderId, method: .get, encoding: JSONEncoding.prettyPrinted, headers: headers).response { response in
+                switch response.data {
+                case .some(let data):
+                    let json = JSON(data)
+                    
+                    if json["statusCode"].stringValue == "200" {
+                        let payload = OrderHistory.loadOrderHistory(json: JSON(rawValue: json["payload"].dictionaryValue)!)
+                        completion(payload)
+                    }
+                case .none:
+                    print("Nothing in repsonse")
+                }
+            }
+        }
+    }
 }

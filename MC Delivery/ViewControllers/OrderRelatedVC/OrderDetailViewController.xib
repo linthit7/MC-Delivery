@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderDetailViewController" customModule="MC_Delivery" customModuleProvider="target">
             <connections>
+                <outlet property="cancelOrderView" destination="d8c-Kt-Lnh" id="zTq-zS-pIM"/>
                 <outlet property="orderDetailTableView" destination="wcL-Bj-PiE" id="WBJ-VF-9Cp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,13 +25,39 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8c-Kt-Lnh">
+                    <rect key="frame" x="0.0" y="806" width="414" height="90"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVY-dG-7KE">
+                            <rect key="frame" x="10" y="27.5" width="394" height="35"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Cancel Order">
+                                <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="cancelOrderButtonPressed:" destination="-1" eventType="touchUpInside" id="6dg-nJ-WIl"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zVY-dG-7KE" secondAttribute="trailing" constant="10" id="8yd-wY-NCe"/>
+                        <constraint firstItem="zVY-dG-7KE" firstAttribute="centerY" secondItem="d8c-Kt-Lnh" secondAttribute="centerY" id="C6E-i5-47F"/>
+                        <constraint firstItem="zVY-dG-7KE" firstAttribute="centerX" secondItem="d8c-Kt-Lnh" secondAttribute="centerX" id="bcu-mG-v1z"/>
+                        <constraint firstAttribute="height" constant="90" id="eNy-Do-LUi"/>
+                        <constraint firstItem="zVY-dG-7KE" firstAttribute="leading" secondItem="d8c-Kt-Lnh" secondAttribute="leading" constant="10" id="hV7-eQ-gkV"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="wcL-Bj-PiE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="2bt-5I-coy"/>
                 <constraint firstAttribute="bottom" secondItem="wcL-Bj-PiE" secondAttribute="bottom" id="6ZN-r0-pnD"/>
+                <constraint firstAttribute="bottom" secondItem="d8c-Kt-Lnh" secondAttribute="bottom" id="WrN-rK-1kl"/>
+                <constraint firstItem="d8c-Kt-Lnh" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ykh-OT-iiN"/>
                 <constraint firstItem="wcL-Bj-PiE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gWr-2n-8RV"/>
+                <constraint firstItem="d8c-Kt-Lnh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xz4-hF-5oy"/>
                 <constraint firstItem="wcL-Bj-PiE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zXQ-3o-ZbK"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="-11.383928571428571"/>
@@ -39,6 +66,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

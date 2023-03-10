@@ -77,6 +77,7 @@ class ShoppingCartViewController: UIViewController {
                 self.shoppingCartTableView.alpha = 0
                 self.nothingLabel.isHidden = false
             }
+            self.proceedToCheckoutButton.layer.shadowOpacity = 0.15
         }
     }
 

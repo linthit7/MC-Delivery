@@ -29,7 +29,7 @@ class OrderTotalBillTableViewCell: UITableViewCell {
             let discount = Int(Double(orderHistory.totalPrice!)/3)
             discountPriceLabel.layer.cornerRadius = 10
             discountPriceLabel.text = "- MMK \(discount)"
-            finalPriceLabel.text = "MMK \(orderHistory.totalPrice! - discount)"
+            finalPriceLabel.text = "MMK \((orderHistory.totalPrice! - discount) + 500)"
         }
     }
 }

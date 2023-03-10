@@ -13,6 +13,7 @@ class OrderDetailViewController: UIViewController {
     private var orderHistory = OrderHistory()
 
     @IBOutlet weak var orderDetailTableView: UITableView!
+    @IBOutlet weak var cancelOrderView: UIView!
     
     init(orderId: String) {
         self.orderId = orderId
@@ -48,8 +49,15 @@ class OrderDetailViewController: UIViewController {
         DispatchQueue.main.async { [self] in
             orderDetailTableView.backgroundColor = CustomColor().backgroundColor
             orderDetailTableView.separatorColor = UIColor.clear
+            navigationController?.navigationBar.prefersLargeTitles = true
+            cancelOrderView.layer.shadowOpacity = 0.2
+            cancelOrderView.backgroundColor = CustomColor().backgroundColor
         }
     }
+    @IBAction func cancelOrderButtonPressed(_ sender: UIButton) {
+        
+    }
+    
 }
 
 //MARK: - UITableViewDelegate & UITableViewDataSource

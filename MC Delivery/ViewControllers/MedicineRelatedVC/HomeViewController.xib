@@ -44,16 +44,16 @@
                                     <rect key="frame" x="147" y="0.0" width="247" height="110"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="L5o-l2-UOl">
-                                            <rect key="frame" x="0.0" y="0.0" width="247" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="247" height="20.333333333333332"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pharmacy Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFH-X9-fWq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPd-M5-kx9">
-                                                    <rect key="frame" x="167" y="0.0" width="80" height="20.5"/>
+                                                    <rect key="frame" x="167" y="0.0" width="80" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -61,13 +61,13 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdv-nt-vck">
-                                            <rect key="frame" x="0.0" y="32.5" width="247" height="31"/>
+                                            <rect key="frame" x="0.0" y="32.333333333333371" width="247" height="31.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92q-kZ-fNU">
-                                            <rect key="frame" x="0.0" y="75.5" width="247" height="34.5"/>
+                                            <rect key="frame" x="0.0" y="75.666666666666629" width="247" height="34.333333333333343"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="gray" title="View Order"/>
                                         </button>
@@ -97,6 +97,11 @@
                 <constraint firstAttribute="bottom" secondItem="sOF-Pk-17R" secondAttribute="bottom" id="cnh-F7-ggN"/>
                 <constraint firstItem="ZiV-69-6a3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vF5-S2-60z"/>
             </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="sOF-Pk-17R"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="120.28985507246378" y="-11.383928571428571"/>
         </view>
     </objects>

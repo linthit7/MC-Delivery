@@ -60,7 +60,6 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
             print("Decline call received VideoCallViewController")
             self.callManager.performEndCallAction(id: UUID(uuidString: (self.socketRoom?.roomName)!)!)
             self.room?.disconnect()
-//            self.navigationController?.popViewController(animated: true)
         }
         mSocket.on("callEnded") { data, ack in
             

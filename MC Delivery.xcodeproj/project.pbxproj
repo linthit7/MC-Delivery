@@ -80,6 +80,8 @@
 		F995FC9829ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
 		F9B478FA29B58D8D002817F8 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */; };
 		F9B478FB29B58D8D002817F8 /* ShoppingCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */; };
+		F9C6C6EE29BAD65800D41CE3 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6C6EC29BAD65800D41CE3 /* OrderDetailViewController.swift */; };
+		F9C6C6EF29BAD65800D41CE3 /* OrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6ED29BAD65800D41CE3 /* OrderDetailViewController.xib */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -171,6 +173,8 @@
 		F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalleeStore.swift; sourceTree = "<group>"; };
 		F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartViewController.xib; sourceTree = "<group>"; };
+		F9C6C6EC29BAD65800D41CE3 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
+		F9C6C6ED29BAD65800D41CE3 /* OrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailViewController.xib; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 				F91A475029B84C61005C2E93 /* LocationViewController.xib */,
 				F91A475329B87750005C2E93 /* OrderViewController.swift */,
 				F91A475429B87750005C2E93 /* OrderViewController.xib */,
+				F9C6C6EC29BAD65800D41CE3 /* OrderDetailViewController.swift */,
+				F9C6C6ED29BAD65800D41CE3 /* OrderDetailViewController.xib */,
 			);
 			path = OrderRelatedVC;
 			sourceTree = "<group>";
@@ -616,6 +622,7 @@
 			files = (
 				F9B478FB29B58D8D002817F8 /* ShoppingCartViewController.xib in Resources */,
 				F932AE8B29A6559100DFB859 /* LoginViewController.xib in Resources */,
+				F9C6C6EF29BAD65800D41CE3 /* OrderDetailViewController.xib in Resources */,
 				F932AE9929A70F7900DFB859 /* CarrierViewController.xib in Resources */,
 				F975A84429AA56B9006EE0E7 /* VideoCallViewController.xib in Resources */,
 				F932AE8729A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib in Resources */,
@@ -741,6 +748,7 @@
 				F932AE9829A70F7900DFB859 /* CarrierViewController.swift in Sources */,
 				F932AE8A29A6559100DFB859 /* LoginViewController.swift in Sources */,
 				F975A84329AA56B9006EE0E7 /* VideoCallViewController.swift in Sources */,
+				F9C6C6EE29BAD65800D41CE3 /* OrderDetailViewController.swift in Sources */,
 				F9516FE629B9C54100BA447C /* OrderHistoryLogic.swift in Sources */,
 				F91A475529B87750005C2E93 /* OrderViewController.swift in Sources */,
 				F932AE9D29A74B8C00DFB859 /* Room.swift in Sources */,

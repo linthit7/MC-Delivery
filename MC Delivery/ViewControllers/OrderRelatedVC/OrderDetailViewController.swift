@@ -35,6 +35,7 @@ class OrderDetailViewController: UIViewController {
                 self.orderHistory = orderHistory
                 orderDetailTableView.register(UINib(nibName: FirstOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: FirstOrderTableViewCell.reuseIdentifier)
                 orderDetailTableView.register(UINib(nibName: MedicineOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineOrderTableViewCell.reuseIdentifier)
+                orderDetailTableView.register(UINib(nibName: OrderTotalBillTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: OrderTotalBillTableViewCell.reuseIdentifier)
                 orderDetailTableView.dataSource = self
                 orderDetailTableView.delegate = self
                 orderDetailTableView.reloadData()
@@ -55,9 +56,14 @@ class OrderDetailViewController: UIViewController {
 
 extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return orderHistory.orderDetails.count + 1
+        case 1: return 1
         default: return 0
         }
     }
@@ -77,6 +83,10 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.createMedicineOrderCell(orderDetail:                 orderHistory.orderDetails[indexPath.row - 1])
                 return cell
             }
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTotalBillTableViewCell.reuseIdentifier, for: indexPath) as? OrderTotalBillTableViewCell else {return UITableViewCell()}
+            cell.createOrderTotalBillCell(orderHistory: orderHistory)
+            return cell
         default: return UITableViewCell()
         }
     }

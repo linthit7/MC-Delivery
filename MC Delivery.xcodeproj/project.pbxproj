@@ -86,6 +86,8 @@
 		F9C6C6F329BAE70D00D41CE3 /* FirstOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6F129BAE70D00D41CE3 /* FirstOrderTableViewCell.xib */; };
 		F9C6C6F629BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6C6F429BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift */; };
 		F9C6C6F729BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6F529BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib */; };
+		F9C6C6FA29BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6C6F829BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift */; };
+		F9C6C6FB29BB0AA700D41CE3 /* OrderTotalBillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6F929BB0AA700D41CE3 /* OrderTotalBillTableViewCell.xib */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -183,6 +185,8 @@
 		F9C6C6F129BAE70D00D41CE3 /* FirstOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstOrderTableViewCell.xib; sourceTree = "<group>"; };
 		F9C6C6F429BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineOrderTableViewCell.swift; sourceTree = "<group>"; };
 		F9C6C6F529BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineOrderTableViewCell.xib; sourceTree = "<group>"; };
+		F9C6C6F829BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTotalBillTableViewCell.swift; sourceTree = "<group>"; };
+		F9C6C6F929BB0AA700D41CE3 /* OrderTotalBillTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTotalBillTableViewCell.xib; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -455,6 +459,8 @@
 				F9C6C6F129BAE70D00D41CE3 /* FirstOrderTableViewCell.xib */,
 				F9C6C6F429BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift */,
 				F9C6C6F529BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib */,
+				F9C6C6F829BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift */,
+				F9C6C6F929BB0AA700D41CE3 /* OrderTotalBillTableViewCell.xib */,
 			);
 			path = OrderRelatedCell;
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 				F9516FE429B9901F00BA447C /* OrderTableViewCell.xib in Resources */,
 				F9E461B329A3B1160050BF0F /* MedicineCollectionViewCell.xib in Resources */,
 				F91A475629B87750005C2E93 /* OrderViewController.xib in Resources */,
+				F9C6C6FB29BB0AA700D41CE3 /* OrderTotalBillTableViewCell.xib in Resources */,
 				F93FAFA829A26E1500786ED4 /* LaunchScreen.storyboard in Resources */,
 				F91F71E429B59298002EF3E6 /* MedicineTableViewCell.xib in Resources */,
 				F9E461BF29A3C3090050BF0F /* MenuViewController.xib in Resources */,
@@ -788,6 +795,7 @@
 				F9516FE329B9901F00BA447C /* OrderTableViewCell.swift in Sources */,
 				F900949129B6EA840031A016 /* NotificationEnum.swift in Sources */,
 				F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */,
+				F9C6C6FA29BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift in Sources */,
 				F932AE9129A6705700DFB859 /* UserRequest.swift in Sources */,
 				F91F71E329B59298002EF3E6 /* MedicineTableViewCell.swift in Sources */,
 				F975A81A29A86A21006EE0E7 /* CredentialsStore.swift in Sources */,

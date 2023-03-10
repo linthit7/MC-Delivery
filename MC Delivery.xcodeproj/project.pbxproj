@@ -84,6 +84,8 @@
 		F9C6C6EF29BAD65800D41CE3 /* OrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6ED29BAD65800D41CE3 /* OrderDetailViewController.xib */; };
 		F9C6C6F229BAE70D00D41CE3 /* FirstOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6C6F029BAE70D00D41CE3 /* FirstOrderTableViewCell.swift */; };
 		F9C6C6F329BAE70D00D41CE3 /* FirstOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6F129BAE70D00D41CE3 /* FirstOrderTableViewCell.xib */; };
+		F9C6C6F629BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6C6F429BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift */; };
+		F9C6C6F729BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6F529BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -179,6 +181,8 @@
 		F9C6C6ED29BAD65800D41CE3 /* OrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailViewController.xib; sourceTree = "<group>"; };
 		F9C6C6F029BAE70D00D41CE3 /* FirstOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOrderTableViewCell.swift; sourceTree = "<group>"; };
 		F9C6C6F129BAE70D00D41CE3 /* FirstOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstOrderTableViewCell.xib; sourceTree = "<group>"; };
+		F9C6C6F429BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineOrderTableViewCell.swift; sourceTree = "<group>"; };
+		F9C6C6F529BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineOrderTableViewCell.xib; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -449,6 +453,8 @@
 				F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */,
 				F9C6C6F029BAE70D00D41CE3 /* FirstOrderTableViewCell.swift */,
 				F9C6C6F129BAE70D00D41CE3 /* FirstOrderTableViewCell.xib */,
+				F9C6C6F429BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift */,
+				F9C6C6F529BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib */,
 			);
 			path = OrderRelatedCell;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C6C6F729BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib in Resources */,
 				F9B478FB29B58D8D002817F8 /* ShoppingCartViewController.xib in Resources */,
 				F932AE8B29A6559100DFB859 /* LoginViewController.xib in Resources */,
 				F9C6C6EF29BAD65800D41CE3 /* OrderDetailViewController.xib in Resources */,
@@ -795,6 +802,7 @@
 				F91F71EA29B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld in Sources */,
 				F900949829B735A20031A016 /* Order.swift in Sources */,
 				F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */,
+				F9C6C6F629BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift in Sources */,
 				F932AE9B29A747E800DFB859 /* CreateOrJoinRoomRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

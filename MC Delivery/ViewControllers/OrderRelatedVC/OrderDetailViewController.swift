@@ -34,6 +34,7 @@ class OrderDetailViewController: UIViewController {
                 
                 self.orderHistory = orderHistory
                 orderDetailTableView.register(UINib(nibName: FirstOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: FirstOrderTableViewCell.reuseIdentifier)
+                orderDetailTableView.register(UINib(nibName: MedicineOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineOrderTableViewCell.reuseIdentifier)
                 orderDetailTableView.dataSource = self
                 orderDetailTableView.delegate = self
                 orderDetailTableView.reloadData()
@@ -45,6 +46,7 @@ class OrderDetailViewController: UIViewController {
         
         DispatchQueue.main.async { [self] in
             orderDetailTableView.backgroundColor = CustomColor().backgroundColor
+            orderDetailTableView.separatorColor = UIColor.clear
         }
     }
 }
@@ -55,8 +57,7 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-//        case 0: return orderHistory.orderDetails.count + 1
-        case 0: return 1
+        case 0: return orderHistory.orderDetails.count + 1
         default: return 0
         }
     }
@@ -70,7 +71,11 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstOrderTableViewCell.reuseIdentifier, for: indexPath) as? FirstOrderTableViewCell else {return UITableViewCell()}
                 cell.createFirstOrderCell(orderHistory: orderHistory)
                 return cell
-            default: return UITableViewCell()
+            default:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: MedicineOrderTableViewCell.reuseIdentifier, for: indexPath) as?
+                        MedicineOrderTableViewCell else {return UITableViewCell()}
+                cell.createMedicineOrderCell(orderDetail:                 orderHistory.orderDetails[indexPath.row - 1])
+                return cell
             }
         default: return UITableViewCell()
         }

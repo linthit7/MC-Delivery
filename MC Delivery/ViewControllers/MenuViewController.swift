@@ -17,11 +17,11 @@ class MenuViewController: UIViewController {
         menuListTableView.dataSource = self
         menuListTableView.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccesshandler), name: NSNotification.Name("Login Successful"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessHandler), name: NSNotification.Name("Login Successful"), object: nil)
     }
     
     @objc
-    private func loginSuccesshandler() {
+    private func loginSuccessHandler() {
         menuListTableView.reloadData()
     }
 }
@@ -52,7 +52,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch AppDelegate.loginState {
-        case true: return 3
+        case true: return 2
         case false: return 1
         }
     }
@@ -70,11 +70,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = UITableViewCell()
                 cell.textLabel?.text = "Orders"
                 cell.imageView?.image = UIImage(systemName: "doc.plaintext")
-                return cell
-            case 2:
-                let cell = UITableViewCell()
-                cell.textLabel?.text = "Carriers"
-                cell.imageView?.image = UIImage(systemName: "person.3")
                 return cell
             default: return UITableViewCell()
             }

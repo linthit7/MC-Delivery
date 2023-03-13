@@ -14,6 +14,7 @@ target 'MC Delivery' do
  pod 'TwilioVideo', '~> 5'
  pod 'Toast-Swift', '~> 5.0.1'
  pod 'BadgeHub'
+ pod 'BottomSheet', :git => 'https://github.com/joomcode/BottomSheet'
  
 end
 

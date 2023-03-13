@@ -7,9 +7,9 @@
 
 import UIKit
 import SideMenu
-//import BadgeHub
+import BottomSheet
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UISheetPresentationControllerDelegate {
     
     private let customButton = CustomButton()
     private var medicinesRequest = MedicinesRequest()
@@ -21,13 +21,13 @@ class HomeViewController: UIViewController {
     var room = MCRoom()
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
-    
     @IBOutlet weak var onGoingUIView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        customizedSheet()
+
         setupNotificationCenter()
         medicinesRequest.getAllMedicinesWithPagination(page: page) { medicines, total in
             
@@ -76,7 +76,6 @@ class HomeViewController: UIViewController {
             let roomName = dataDic?.value(forKey: "roomName") as? String
             
             self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: roomName!)!, connectedAt: Date())
-            print("Accept Call Recieved From Home View Controller MCD")
         }
         
         mSocket.on("missedCall") {_,_ in
@@ -97,8 +96,7 @@ class HomeViewController: UIViewController {
     private func connectVideoCall() {
         
         let caller = CredentialsStore.getCredentials()?.user
-        let callee =
-            CalleeStore.getCallee()
+        let callee = CalleeStore.getCallee()
         
         let data = [
             "callerId": callee?._id,
@@ -150,7 +148,6 @@ class HomeViewController: UIViewController {
             self.view.makeToast("Order successful", position: .top)
             self.navigationController?.popToRootViewController(animated: true)
         }
-        
     }
     
     @objc
@@ -158,6 +155,34 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async {
             self.view.makeToast("Order canceled", position: .top)
             self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
+    func customizedSheet() {
+        let viewControllerToPresent = UINavigationController(rootViewController: OngoingOrderViewController())
+        viewControllerToPresent.isModalInPresentation = true
+
+        if #available(iOS 15.0, *) {
+            if let sheet = viewControllerToPresent.sheetPresentationController {
+                sheet.delegate = self
+                if #available(iOS 16.0, *) {
+                    sheet.detents = [.custom(identifier: UISheetPresentationController.Detent.Identifier("Notify Ongoing Bottom Sheet"), resolver: { context in
+                        return 250
+                    }), .custom(identifier: UISheetPresentationController.Detent.Identifier("Hide Ongoing Bottom Sheet"), resolver: { context in
+                        return 15
+                    }), .medium()]
+                } else {
+                    // Fallback on earlier versions
+                }
+                sheet.largestUndimmedDetentIdentifier = UISheetPresentationController.Detent.Identifier("Notify Ongoing Bottom Sheet")
+                sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+                sheet.prefersEdgeAttachedInCompactHeight = true
+                sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+                sheet.prefersGrabberVisible = true
+            }
+            present(viewControllerToPresent, animated: true)
+        } else {
+            // Fallback on earlier versions
         }
     }
     

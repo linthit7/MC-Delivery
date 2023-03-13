@@ -54,6 +54,8 @@ class OrderDetailViewController: UIViewController {
             orderDetailTableView.separatorColor = UIColor.clear
             cancelOrderView.layer.shadowOpacity = 0.2
             cancelOrderView.backgroundColor = CustomColor().backgroundColor
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            self.navigationController?.navigationBar.tintColor = UIColor.white
         }
     }
     @IBAction func cancelOrderButtonPressed(_ sender: UIButton) {

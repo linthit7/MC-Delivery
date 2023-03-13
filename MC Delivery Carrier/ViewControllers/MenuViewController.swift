@@ -48,7 +48,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch AppDelegate.loginState {
-        case true: return 2
+        case true: return 1
         case false: return 1
         }
     }
@@ -60,10 +60,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 let cell = UITableViewCell()
                 cell.textLabel?.text = "My Account"
-                return cell
-            case 1:
-                let cell = UITableViewCell()
-                cell.textLabel?.text = "Clients"
                 return cell
             default: return UITableViewCell()
             }

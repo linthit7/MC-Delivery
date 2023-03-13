@@ -57,7 +57,6 @@
 		F975A82429AA055D006EE0E7 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A82229AA055D006EE0E7 /* MenuViewController.xib */; };
 		F975A82C29AA0A26006EE0E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A82A29AA0A26006EE0E7 /* LoginViewController.swift */; };
 		F975A82D29AA0A26006EE0E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A82B29AA0A26006EE0E7 /* LoginViewController.xib */; };
-		F975A82E29AA2C28006EE0E7 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8C29A65E0700DFB859 /* AuthRequest.swift */; };
 		F975A82F29AA2C46006EE0E7 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8E29A6621400DFB859 /* Auth.swift */; };
 		F975A83229AA2E51006EE0E7 /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A81929A86A21006EE0E7 /* CredentialsStore.swift */; };
 		F975A83529AA3151006EE0E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A83329AA3151006EE0E7 /* ProfileViewController.swift */; };
@@ -76,6 +75,9 @@
 		F975A84A29ABA94E006EE0E7 /* VideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */; };
 		F975A84C29AC9415006EE0E7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84B29AC9415006EE0E7 /* Settings.swift */; };
 		F975A84D29AC9415006EE0E7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84B29AC9415006EE0E7 /* Settings.swift */; };
+		F987C5DD29BEE313001A5B58 /* OngoingOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987C5DB29BEE313001A5B58 /* OngoingOrderViewController.swift */; };
+		F987C5DE29BEE313001A5B58 /* OngoingOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F987C5DC29BEE313001A5B58 /* OngoingOrderViewController.xib */; };
+		F987C5E729BF035F001A5B58 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987C5E629BF035F001A5B58 /* AuthRequest.swift */; };
 		F995FC9729ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
 		F995FC9829ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
 		F9B478FA29B58D8D002817F8 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */; };
@@ -176,6 +178,9 @@
 		F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCallViewController.xib; sourceTree = "<group>"; };
 		F975A84B29AC9415006EE0E7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F987C5DB29BEE313001A5B58 /* OngoingOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingOrderViewController.swift; sourceTree = "<group>"; };
+		F987C5DC29BEE313001A5B58 /* OngoingOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OngoingOrderViewController.xib; sourceTree = "<group>"; };
+		F987C5E629BF035F001A5B58 /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthRequest.swift; path = ../../../../../Documents/AuthRequest.swift; sourceTree = "<group>"; };
 		F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalleeStore.swift; sourceTree = "<group>"; };
 		F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartViewController.xib; sourceTree = "<group>"; };
@@ -284,6 +289,8 @@
 				F91A475429B87750005C2E93 /* OrderViewController.xib */,
 				F9C6C6EC29BAD65800D41CE3 /* OrderDetailViewController.swift */,
 				F9C6C6ED29BAD65800D41CE3 /* OrderDetailViewController.xib */,
+				F987C5DB29BEE313001A5B58 /* OngoingOrderViewController.swift */,
+				F987C5DC29BEE313001A5B58 /* OngoingOrderViewController.xib */,
 			);
 			path = OrderRelatedVC;
 			sourceTree = "<group>";
@@ -348,7 +355,6 @@
 			children = (
 				F932AE9A29A747E800DFB859 /* CreateOrJoinRoomRequest.swift */,
 				F932AE9029A6705700DFB859 /* UserRequest.swift */,
-				F932AE8C29A65E0700DFB859 /* AuthRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 		F91F71F529B5C8A8002EF3E6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F932AE8C29A65E0700DFB859 /* AuthRequest.swift */,
 				F9FF20E529A4735D002E05A1 /* MedicinesRequest.swift */,
 				F900949529B725740031A016 /* OrderRequest.swift */,
 			);
@@ -445,6 +452,7 @@
 				F93FAFBE29A26E2600786ED4 /* Assets.xcassets */,
 				F93FAFC029A26E2600786ED4 /* LaunchScreen.storyboard */,
 				F93FAFC329A26E2600786ED4 /* Info.plist */,
+				F987C5E429BF0337001A5B58 /* Models */,
 				F975A82529AA0564006EE0E7 /* ViewControllers */,
 			);
 			path = "MC Delivery Carrier";
@@ -511,6 +519,22 @@
 				F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */,
 			);
 			path = CommonViewController;
+			sourceTree = "<group>";
+		};
+		F987C5E429BF0337001A5B58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F987C5E529BF0345001A5B58 /* Networking */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F987C5E529BF0345001A5B58 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F987C5E629BF035F001A5B58 /* AuthRequest.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		F9E461B429A3B8220050BF0F /* ViewControllers */ = {
@@ -645,6 +669,7 @@
 				F932AE9929A70F7900DFB859 /* CarrierViewController.xib in Resources */,
 				F975A84429AA56B9006EE0E7 /* VideoCallViewController.xib in Resources */,
 				F932AE8729A5C7DC00DFB859 /* MedicineDetailTableViewCell.xib in Resources */,
+				F987C5DE29BEE313001A5B58 /* OngoingOrderViewController.xib in Resources */,
 				F9516FE829B9DB7A00BA447C /* cancellation.jpg in Resources */,
 				F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */,
 				F9516FE429B9901F00BA447C /* OrderTableViewCell.xib in Resources */,
@@ -811,6 +836,7 @@
 				F900949829B735A20031A016 /* Order.swift in Sources */,
 				F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */,
 				F9C6C6F629BAF1C300D41CE3 /* MedicineOrderTableViewCell.swift in Sources */,
+				F987C5DD29BEE313001A5B58 /* OngoingOrderViewController.swift in Sources */,
 				F932AE9B29A747E800DFB859 /* CreateOrJoinRoomRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -838,8 +864,8 @@
 				F975A84029AA38B3006EE0E7 /* Room.swift in Sources */,
 				F975A83529AA3151006EE0E7 /* ProfileViewController.swift in Sources */,
 				F975A82329AA055D006EE0E7 /* MenuViewController.swift in Sources */,
-				F975A82E29AA2C28006EE0E7 /* AuthRequest.swift in Sources */,
 				F975A83D29AA360A006EE0E7 /* CallManager.swift in Sources */,
+				F987C5E729BF035F001A5B58 /* AuthRequest.swift in Sources */,
 				F975A84D29AC9415006EE0E7 /* Settings.swift in Sources */,
 				F975A83F29AA3899006EE0E7 /* CreateOrJoinRoomRequest.swift in Sources */,
 			);

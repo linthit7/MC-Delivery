@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         
-        emailTextField.text = "testscott@gmail.com"
+        emailTextField.text = "testcapybara@gmail.com"
         passwordTextField.text = "test1234"
     }
     

@@ -34,6 +34,9 @@ class OrderDetailViewController: UIViewController {
             OrderRequest(accessToken: token!).getOrderByOrderId(orderId: orderId) { [self] orderHistory in
                 
                 self.orderHistory = orderHistory
+                if orderHistory.status == "pending" {
+                    cancelOrderView.isHidden = false
+                }
                 orderDetailTableView.register(UINib(nibName: FirstOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: FirstOrderTableViewCell.reuseIdentifier)
                 orderDetailTableView.register(UINib(nibName: MedicineOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineOrderTableViewCell.reuseIdentifier)
                 orderDetailTableView.register(UINib(nibName: OrderTotalBillTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: OrderTotalBillTableViewCell.reuseIdentifier)
@@ -49,13 +52,28 @@ class OrderDetailViewController: UIViewController {
         DispatchQueue.main.async { [self] in
             orderDetailTableView.backgroundColor = CustomColor().backgroundColor
             orderDetailTableView.separatorColor = UIColor.clear
-            navigationController?.navigationBar.prefersLargeTitles = true
             cancelOrderView.layer.shadowOpacity = 0.2
             cancelOrderView.backgroundColor = CustomColor().backgroundColor
         }
     }
     @IBAction func cancelOrderButtonPressed(_ sender: UIButton) {
-        
+        DispatchQueue.main.async { [self] in
+            view.makeToastActivity(.center)
+            view.alpha = 0.8
+        }
+        view.isUserInteractionEnabled = false
+        navigationController?.view.isUserInteractionEnabled = false
+
+        let token = CredentialsStore.getCredentials()?.accessToken
+        OrderRequest(accessToken: token!).cancelOrderByOrderId(orderId: orderId) { [self] in
+            navigationController?.popToRootViewController(animated: true)
+            
+            DispatchQueue.main.async {
+                self.view.hideToastActivity()
+            }
+            view.isUserInteractionEnabled = true
+            navigationController?.view.isUserInteractionEnabled = true
+        }
     }
     
 }

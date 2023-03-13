@@ -140,15 +140,25 @@ class HomeViewController: UIViewController {
     private func setupNotificationCenter() {
         NotificationCenter.default.addObserver(self, selector: #selector(connectVideoCall), name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(declineCall), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
-         NotificationCenter.default.addObserver(self, selector: #selector(showToastAndPopToRootVC), name: ShoppingCartLogic.Alert.orderSuccessAndCleanUpDone.rawValue, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(orderPlaced), name: ShoppingCartLogic.Alert.orderSuccessAndCleanUpDone.rawValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(orderCanceled), name: OrderRequest.Alert.orderCancelSuccess.rawValue, object: nil)
     }
     
     @objc
-    private func showToastAndPopToRootVC() {
+    private func orderPlaced() {
         DispatchQueue.main.async {
             self.view.makeToast("Order successful", position: .top)
+            self.navigationController?.popToRootViewController(animated: true)
         }
-        navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
+    @objc
+    private func orderCanceled() {
+        DispatchQueue.main.async {
+            self.view.makeToast("Order canceled", position: .top)
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
 }

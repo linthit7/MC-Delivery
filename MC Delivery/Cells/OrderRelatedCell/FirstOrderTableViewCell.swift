@@ -20,10 +20,13 @@ class FirstOrderTableViewCell: UITableViewCell {
     }
     
     func createFirstOrderCell(orderHistory: OrderHistory) {
-        DispatchQueue.main.async {
-            self.orderIdLabel.text = "Order #\(String(describing: orderHistory._id!))"
-            self.deliverDateLabel.text = "Delivered on \(String(describing: orderHistory.updatedAt!))"
-            self.addressLabel.text = "\(String(describing: orderHistory.address!))"
+        DispatchQueue.main.async { [self] in
+            if orderHistory.status == "cancel" {
+                deliverDateLabel.isHidden = true
+            }
+            orderIdLabel.text = "Order #\(String(describing: orderHistory._id!))"
+            deliverDateLabel.text = "Delivered on \(String(describing: orderHistory.updatedAt!))"
+            addressLabel.text = "\(String(describing: orderHistory.address!))"
         }
     }
     

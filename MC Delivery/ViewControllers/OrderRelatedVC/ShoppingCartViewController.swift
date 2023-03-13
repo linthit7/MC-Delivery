@@ -64,20 +64,20 @@ class ShoppingCartViewController: UIViewController {
     }
     
     private func setupUI() {
-        DispatchQueue.main.async {
-            self.title = "Shopping Cart"
-            self.proceedToCheckoutButton.setTitle("Proceed To Checkout", for: .normal)
-            self.view.backgroundColor = CustomColor().backgroundColor
-            self.shoppingCartTableView.backgroundColor = CustomColor().backgroundColor
-            self.totalAmountLabel.text = "Total Amount: \(ShoppingCartLogic.totalAmount(meds: self.shoppingCartItem)) Ks"
-            self.proceedToCheckoutButton.tintColor = CustomColor().buttonColor
+        DispatchQueue.main.async { [self] in
+            title = "Shopping Cart"
+            proceedToCheckoutButton.setTitle("Proceed To Checkout", for: .normal)
+            view.backgroundColor = CustomColor().backgroundColor
+            shoppingCartTableView.backgroundColor = CustomColor().backgroundColor
+            totalAmountLabel.text = "Total Amount: \(ShoppingCartLogic.totalAmount(meds: shoppingCartItem)) Ks"
+            proceedToCheckoutButton.tintColor = CustomColor().buttonColor
             if ShoppingCart().fetchAllItem()!.isEmpty {
-                self.totalAmountLabel.isHidden = true
-                self.proceedToCheckoutButton.isEnabled = false
-                self.shoppingCartTableView.alpha = 0
-                self.nothingLabel.isHidden = false
+                totalAmountLabel.isHidden = true
+                proceedToCheckoutButton.isEnabled = false
+                shoppingCartTableView.alpha = 0
+                nothingLabel.isHidden = false
             }
-            self.proceedToCheckoutButton.layer.shadowOpacity = 0.15
+            proceedToCheckoutButton.layer.shadowOpacity = 0.15
         }
     }
 

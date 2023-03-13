@@ -126,4 +126,35 @@ struct OrderRequest {
             }
         }
     }
+    
+    func cancelOrderByOrderId(orderId: String, completion: @escaping() -> Void) {
+        
+        let cancelOrderByOrderId: String = "https://pharmacydelivery-production.up.railway.app/api/orders/cancel/\(orderId)"
+        
+        let headers: HTTPHeaders = [
+            .authorization(accessToken)
+        ]
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            AF.request(cancelOrderByOrderId, method: .put, encoding: JSONEncoding.prettyPrinted, headers: headers).response { response in
+                switch response.data {
+                case .some(let data):
+                    let json = JSON(data)
+                    
+                    NotificationCenter.default.post(name: OrderRequest.Alert.orderCancelSuccess.rawValue, object: nil)
+                    completion()
+                case .none:
+                    print("Nothing in response")
+                }
+            }
+        }
+    }
+}
+
+extension OrderRequest {
+    
+    enum Alert: NSNotification.Name {
+        case orderCancelSuccess = "Order cancel successfully"
+    }
 }

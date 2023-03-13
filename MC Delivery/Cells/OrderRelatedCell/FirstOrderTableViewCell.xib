@@ -18,19 +18,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="8uD-VF-X3r">
-                        <rect key="frame" x="10" y="10" width="300" height="151"/>
+                        <rect key="frame" x="10" y="20" width="300" height="141"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iui-Gd-DJa">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="45.666666666666664"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OrderId Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgT-Ce-PKi">
-                                        <rect key="frame" x="94.666666666666686" y="0.0" width="111" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <rect key="frame" x="91.333333333333343" y="0.0" width="117.33333333333334" height="21.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deliver Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfL-ep-KRn">
-                                        <rect key="frame" x="87.666666666666686" y="27" width="125" height="18"/>
+                                        <rect key="frame" x="87.666666666666686" y="27.666666666666664" width="125" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.60193518109540634" green="0.60193518109540634" blue="0.60193518109540634" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xFc-fX-r9g">
-                                <rect key="frame" x="0.0" y="52" width="300" height="99"/>
+                                <rect key="frame" x="0.0" y="52.666666666666679" width="300" height="88.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="DIE-sk-SXy">
                                         <rect key="frame" x="0.0" y="0.0" width="145.33333333333334" height="38.666666666666664"/>
@@ -50,7 +50,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="MyanCare Pharmacy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie7-XS-uUs">
-                                                <rect key="frame" x="0.0" y="15.666666666666671" width="145.33333333333334" height="23"/>
+                                                <rect key="frame" x="0.0" y="15.666666666666657" width="145.33333333333334" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <color key="textColor" red="0.2529927314" green="0.78361636400000001" blue="0.118182864" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wsR-ge-tUq">
-                                        <rect key="frame" x="0.0" y="45.666666666666671" width="100" height="53.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="45.666666666666657" width="100" height="42.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivered to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8p-OE-cR8">
                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="15.666666666666666"/>
@@ -67,7 +67,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Address Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-Up-Shl">
-                                                <rect key="frame" x="0.0" y="15.666666666666654" width="100" height="37.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="15.666666666666671" width="100" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <color key="textColor" red="0.45439029519212537" green="0.45439029519212537" blue="0.45439029519212537" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
                 </subviews>
                 <color key="backgroundColor" red="0.96404317579505305" green="0.96404317579505305" blue="0.96404317579505305" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
-                    <constraint firstItem="8uD-VF-X3r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="T4t-dF-QHA"/>
+                    <constraint firstItem="8uD-VF-X3r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="T4t-dF-QHA"/>
                     <constraint firstAttribute="bottom" secondItem="8uD-VF-X3r" secondAttribute="bottom" constant="10" id="je9-pj-hXj"/>
                     <constraint firstAttribute="trailing" secondItem="8uD-VF-X3r" secondAttribute="trailing" constant="10" id="msm-0L-peb"/>
                     <constraint firstItem="8uD-VF-X3r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="pFk-E1-q6c"/>

@@ -77,7 +77,7 @@
 		F975A84D29AC9415006EE0E7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975A84B29AC9415006EE0E7 /* Settings.swift */; };
 		F987C5DD29BEE313001A5B58 /* OngoingOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987C5DB29BEE313001A5B58 /* OngoingOrderViewController.swift */; };
 		F987C5DE29BEE313001A5B58 /* OngoingOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F987C5DC29BEE313001A5B58 /* OngoingOrderViewController.xib */; };
-		F987C5E729BF035F001A5B58 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987C5E629BF035F001A5B58 /* AuthRequest.swift */; };
+		F987C5EA29C05D27001A5B58 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987C5E629BF035F001A5B58 /* AuthRequest.swift */; };
 		F995FC9729ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
 		F995FC9829ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
 		F9B478FA29B58D8D002817F8 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */; };
@@ -865,7 +865,7 @@
 				F975A83529AA3151006EE0E7 /* ProfileViewController.swift in Sources */,
 				F975A82329AA055D006EE0E7 /* MenuViewController.swift in Sources */,
 				F975A83D29AA360A006EE0E7 /* CallManager.swift in Sources */,
-				F987C5E729BF035F001A5B58 /* AuthRequest.swift in Sources */,
+				F987C5EA29C05D27001A5B58 /* AuthRequest.swift in Sources */,
 				F975A84D29AC9415006EE0E7 /* Settings.swift in Sources */,
 				F975A83F29AA3899006EE0E7 /* CreateOrJoinRoomRequest.swift in Sources */,
 			);

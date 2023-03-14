@@ -51,6 +51,8 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+
         NotificationCenter.default.addObserver(self, selector: #selector(callKitEndCallAction), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
         
         mSocket.on("declineCall") { [self] data, ack in
@@ -268,6 +270,7 @@ extension VideoCallViewController : RoomDelegate {
         self.cleanupRemoteParticipant()
         self.room = nil
         self.showRoomUI(inRoom: false)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func roomDidFailToConnect(room: Room, error: Error) {

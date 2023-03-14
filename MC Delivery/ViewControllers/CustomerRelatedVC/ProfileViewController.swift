@@ -9,6 +9,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var idLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +22,7 @@ class ProfileViewController: UIViewController {
     func setUpUI() {
         let name = CredentialsStore.getCredentials()?.user.name
         self.title = name
+        self.idLabel.text = CredentialsStore.getCredentials()?.user._id
         self.view.backgroundColor = CustomColor().backgroundColor
     }
 

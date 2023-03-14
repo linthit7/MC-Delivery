@@ -10,11 +10,8 @@ import TwilioVideo
 import CallKit
 
 class VideoCallViewController: UIViewController, LocalParticipantDelegate {
-    
 
-    
     var room: Room?
-    
     var socketRoom: MCRoom?
     var camera: CameraSource?
     var localVideoTrack: LocalVideoTrack?
@@ -24,6 +21,8 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     let callManager = CallManager.sharedInstance
     let mSocket = SocketHandler.sharedInstance.getSocket()
     
+    var calleeName = String()
+    
     @IBOutlet weak var previewView: VideoView!
     @IBOutlet weak var remoteView: VideoView!
     
@@ -32,9 +31,9 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var endButoon: UIButton!
     
-    init(socketRoom: MCRoom) {
+    init(socketRoom: MCRoom, calleeName: String) {
         self.socketRoom = socketRoom
-
+        self.calleeName = calleeName
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -43,7 +42,6 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     }
     
     deinit {
-        
         if let camera = self.camera {
             camera.stopCapture()
             self.camera = nil
@@ -55,39 +53,29 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(callKitEndCallAction), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
         
-        mSocket.on("declineCall") { data, ack in
-            
-            print("Decline call received VideoCallViewController")
-            self.callManager.performEndCallAction(id: UUID(uuidString: (self.socketRoom?.roomName)!)!)
-            self.room?.disconnect()
+        mSocket.on("declineCall") { [self] data, ack in
+            callManager.performEndCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
+            room?.disconnect()
         }
-        mSocket.on("callEnded") { data, ack in
-            
-            print("Call ended received")
-            self.callManager.performEndCallAction(id: UUID(uuidString: (self.socketRoom?.roomName)!)!)
-            self.room?.disconnect()
+        mSocket.on("callEnded") { [self] data, ack in
+            callManager.performEndCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
+            room?.disconnect()
         }
         
-        self.micButton.isHidden = true
-        self.endButoon.isHidden = true
-        self.startPreview()
-        self.connectToRoom()
+        DispatchQueue.main.async { [self] in
+            startPreview()
+            connectToRoom()
+        }
+        
     }
     
     @objc
-    private func callKitEndCallAction() {
-        
-        self.room?.disconnect()
-        self.navigationController?.popViewController(animated: true)
-        print("Call Kit End Call Action From Video Call Viewcontroller")
-    }
+    private func callKitEndCallAction() { room?.disconnect() }
     
     @IBAction func endButtonPressed(_ sender: UIButton) {
-        
-        self.callManager.performEndCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
-        self.room?.disconnect()
-        self.navigationController?.popViewController(animated: true)
-        print("End Button Pressed From Video Call Viewcontroller")
+        callManager.performEndCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
+        room?.disconnect()
+        navigationController?.popViewController(animated: true)
         
         let callerId = CredentialsStore.getCredentials()?.user
         let calleeId = CalleeStore.getCallee()
@@ -99,19 +87,19 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
             "roomSid": socketRoom?.roomSid
         ]
         mSocket.emit("callEnded", data) {
-            print("Call Ended Emit")
+            print("End Call Emitted")
         }
     }
     
     @IBAction func micButtonPresses(_ sender: UIButton) {
-        if micButton.titleLabel!.text == "Mute" {
-            micButton.setTitle("Unmute", for: .normal)
-            self.callManager.performMuteCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
+        let id = UUID(uuidString: (socketRoom?.roomName!)!)
+        if micButton.imageView?.image == UIImage(systemName: "mic.fill") {
+            micButton.setImage(UIImage(systemName: "mic.slash.fill"), for: .normal)
+            callManager.performMuteCallAction(id: id!)
         } else {
-            micButton.setTitle("Mute", for: .normal)
-            self.callManager.performUnmuteCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
+            micButton.setImage(UIImage(systemName: "mic.fill"), for: .normal)
+            callManager.performUnmuteCallAction(id: id!)
         }
-        print("Mute Button Pressed From Video Call Viewcontroller(Muted)")
     }
     
     
@@ -168,13 +156,15 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     // Update our UI based upon if we are in a Room or not
     func showRoomUI(inRoom: Bool) {
         
-        self.micButton.setTitle("Mute", for: .normal)
-        self.micButton.isHidden = !inRoom
-        self.endButoon.isHidden = !inRoom
+        DispatchQueue.main.async { [self] in
+            callStateLabel.text = "Calling"
+            calleeNameLabel.text = calleeName
+            micButton.setImage(UIImage(systemName: "mic.fill"), for: .normal)
+            micButton.isHidden = !inRoom
+            endButoon.isHidden = !inRoom
+        }
         UIApplication.shared.isIdleTimerDisabled = inRoom
-        
-        // Show / hide the automatic home indicator on modern iPhones.
-        self.setNeedsUpdateOfHomeIndicatorAutoHidden()
+        setNeedsUpdateOfHomeIndicatorAutoHidden()
     }
     
     func prepareLocalMedia() {

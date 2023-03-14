@@ -22,6 +22,8 @@ struct AuthRequest {
         
         let loginRoute = "https://pharmacydelivery-production.up.railway.app/api/auth/login"
         
+//        let loginRoute = "https://pharmacydelivery-production.up.railway.app/api/deliveryPersons/login"
+        
         let params: Parameters = [
             "email": email,
             "password": password
@@ -33,6 +35,7 @@ struct AuthRequest {
                 case .some(let data):
                     let json: JSON = JSON(data)
                     let loginResponse = LoginResponse.loadLoginResponse(json: json)
+                    print(json)
                     completion(loginResponse)
                 case .none: print("No response from login route.")
                 }

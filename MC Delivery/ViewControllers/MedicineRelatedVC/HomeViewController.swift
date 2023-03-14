@@ -7,9 +7,8 @@
 
 import UIKit
 import SideMenu
-import BottomSheet
 
-class HomeViewController: UIViewController, UISheetPresentationControllerDelegate {
+class HomeViewController: UIViewController {
     
     private let customButton = CustomButton()
     private var medicinesRequest = MedicinesRequest()
@@ -23,11 +22,22 @@ class HomeViewController: UIViewController, UISheetPresentationControllerDelegat
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var onGoingUIView: UIView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if AppDelegate.loginState {
+            let accessToken = (CredentialsStore.getCredentials()?.accessToken)!
+            OrderRequest(accessToken: accessToken).getOngoingOrder { ongoingOrder in
+                if ongoingOrder.count != 0 {
+                    self.customizedSheet()
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customizedSheet()
-
         setupNotificationCenter()
         medicinesRequest.getAllMedicinesWithPagination(page: page) { medicines, total in
             
@@ -57,6 +67,7 @@ class HomeViewController: UIViewController, UISheetPresentationControllerDelegat
         
         mSocket.on("calling") { data, ack in
             
+            print("Receiving Call")
             let dataDic = data[0] as? NSDictionary
             let roomName = dataDic?.value(forKey: "roomName") as? String
             let token = dataDic?.value(forKey: "token") as? String
@@ -85,11 +96,15 @@ class HomeViewController: UIViewController, UISheetPresentationControllerDelegat
     
     @objc
     private func menuButtonPressed() {
-        let menu = SideMenuNavigationController(rootViewController: MenuViewController())
-        menu.leftSide = true
-        SideMenuManager.default.leftMenuNavigationController = menu
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-        present(menu, animated: true, completion: nil)
+        
+            dismiss(animated: true) {
+                let menu = SideMenuNavigationController(rootViewController: MenuViewController())
+                menu.leftSide = true
+                SideMenuManager.default.leftMenuNavigationController = menu
+                SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+                self.present(menu, animated: true)
+            }
+        
     }
     
     @objc
@@ -105,10 +120,9 @@ class HomeViewController: UIViewController, UISheetPresentationControllerDelegat
             "roomSid": room.roomSid
             ]
         
-        mSocket.emit("acceptCall", data) {
-        }
+        mSocket.emit("acceptCall", data) {}
         
-        let videoVC = VideoCallViewController(socketRoom: room)
+        let videoVC = VideoCallViewController(socketRoom: room, calleeName: (callee?.name)!)
         navigationController?.pushViewController(videoVC, animated: true)
     }
     
@@ -126,13 +140,15 @@ class HomeViewController: UIViewController, UISheetPresentationControllerDelegat
         ]
         
         mSocket.emit("declineCall", data) {
-            print("Emit decline Call From HomeVC")
+            print("Decline Call Emitted")
         }
     }
     
     @objc
     private func shoppingCartButtonPressed() {
-        navigationController?.pushViewController(ShoppingCartViewController(), animated: true)
+        dismiss(animated: true) {
+            self.navigationController?.pushViewController(ShoppingCartViewController(), animated: true)
+        }
     }
     
     private func setupNotificationCenter() {
@@ -159,22 +175,20 @@ class HomeViewController: UIViewController, UISheetPresentationControllerDelegat
     }
     
     func customizedSheet() {
+        
         let viewControllerToPresent = UINavigationController(rootViewController: OngoingOrderViewController())
         viewControllerToPresent.isModalInPresentation = true
 
         if #available(iOS 15.0, *) {
             if let sheet = viewControllerToPresent.sheetPresentationController {
-                sheet.delegate = self
                 if #available(iOS 16.0, *) {
-                    sheet.detents = [.custom(identifier: UISheetPresentationController.Detent.Identifier("Notify Ongoing Bottom Sheet"), resolver: { context in
-                        return 250
-                    }), .custom(identifier: UISheetPresentationController.Detent.Identifier("Hide Ongoing Bottom Sheet"), resolver: { context in
+                    sheet.detents = [.custom(identifier: UISheetPresentationController.Detent.Identifier("Hide Ongoing Bottom Sheet"), resolver: { context in
                         return 15
                     }), .medium()]
                 } else {
                     // Fallback on earlier versions
                 }
-                sheet.largestUndimmedDetentIdentifier = UISheetPresentationController.Detent.Identifier("Notify Ongoing Bottom Sheet")
+                sheet.largestUndimmedDetentIdentifier = UISheetPresentationController.Detent.Identifier("Hide Ongoing Bottom Sheet")
                 sheet.prefersScrollingExpandsWhenScrolledToEdge = false
                 sheet.prefersEdgeAttachedInCompactHeight = true
                 sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true

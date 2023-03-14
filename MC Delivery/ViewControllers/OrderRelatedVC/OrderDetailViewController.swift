@@ -36,6 +36,8 @@ class OrderDetailViewController: UIViewController {
                 self.orderHistory = orderHistory
                 if orderHistory.status == "pending" {
                     cancelOrderView.isHidden = false
+                } else if orderHistory.status == "deliver" {
+                    cancelOrderView.isHidden = false
                 }
                 orderDetailTableView.register(UINib(nibName: FirstOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: FirstOrderTableViewCell.reuseIdentifier)
                 orderDetailTableView.register(UINib(nibName: MedicineOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineOrderTableViewCell.reuseIdentifier)
@@ -54,8 +56,8 @@ class OrderDetailViewController: UIViewController {
             orderDetailTableView.separatorColor = UIColor.clear
             cancelOrderView.layer.shadowOpacity = 0.2
             cancelOrderView.backgroundColor = CustomColor().backgroundColor
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            self.navigationController?.navigationBar.tintColor = UIColor.white
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            navigationController?.navigationBar.tintColor = UIColor.white
         }
     }
     @IBAction func cancelOrderButtonPressed(_ sender: UIButton) {

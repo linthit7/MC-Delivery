@@ -24,16 +24,16 @@ class OrderViewController: UIViewController {
             let token = CredentialsStore.getCredentials()?.accessToken
             OrderRequest(accessToken: token!).getPastOrderWithCompleteAndCancel() { [self] orderHistory in
                 
-                self.orderHistoryList.append(contentsOf: orderHistory)
+                orderHistoryList.append(contentsOf: orderHistory)
                 DispatchQueue.main.async {
-                    self.orderTableView.reloadData()
+                    orderTableView.reloadData()
                 }
             }
             OrderRequest(accessToken: token!).getPendingOrder { [self] pendingOrder in
                 
-                self.pendingOrderList.append(contentsOf: pendingOrder)
+                pendingOrderList.append(contentsOf: pendingOrder)
                 DispatchQueue.main.async {
-                    self.pendingTableView.reloadData()
+                    pendingTableView.reloadData()
                 }
             }
         }

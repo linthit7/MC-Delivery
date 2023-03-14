@@ -22,14 +22,9 @@ class LoginViewController: UIViewController {
             self.title = "Login"
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
-        
-        emailTextField.text = "testcapybara@gmail.com"
-        passwordTextField.text = "test1234"
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        print(self.emailTextField.text!)
-        print(self.passwordTextField.text!)
         let authLogic = AuthRequest(email: emailTextField.text!, password: passwordTextField.text!)
         authLogic.validateWithEmailAndPassword() { loginResponse in
         

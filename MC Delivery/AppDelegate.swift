@@ -14,15 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var loginState: Bool = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-//        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-//        print(url!)
-        
+
         CoreDataManager.sharedManager.prepare()
         
         if CredentialsStore.getCredentials()?.accessToken != nil {
         
-            AppDelegate.loginState = true
+//            AppDelegate.loginState = true
             SocketHandler.sharedInstance.establishConnection(token: CredentialsStore.getCredentials()?.accessToken ?? "")
         }
         return true

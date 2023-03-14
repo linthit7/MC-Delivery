@@ -37,25 +37,22 @@ class ShoppingCartViewController: UIViewController {
             locationVC.delegate = self
             present(locationVC, animated: true)
         } else {
-            DispatchQueue.main.async {
-                self.view.makeToastActivity(.center)
-                self.view.alpha = 0.8
+            DispatchQueue.main.async { [self] in
+                view.makeToastActivity(.center)
+                view.alpha = 0.8
             }
             view.isUserInteractionEnabled = false
             navigationController?.view.isUserInteractionEnabled = false
             
             let accessToken = (CredentialsStore.getCredentials()?.accessToken)!
             ShoppingCartLogic.medToOrder(meds: shoppingCartItem) { [self] order in
-                
                 OrderRequest(accessToken: accessToken).placeOrder(order: order, address: address) {
-                    
-                    ShoppingCartLogic.orderCleanUp {
-                        
-                        DispatchQueue.main.async {
-                            self.view.hideToastActivity()
+                    ShoppingCartLogic.orderCleanUp { [self] in
+                        DispatchQueue.main.async { [self] in
+                            view.hideToastActivity()
                         }
-                        self.view.isUserInteractionEnabled = true
-                        self.navigationController?.view.isUserInteractionEnabled = true
+                        view.isUserInteractionEnabled = true
+                        navigationController?.view.isUserInteractionEnabled = true
                     }
                 }
             }
@@ -109,10 +106,10 @@ extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource
             
                 ShoppingCart.sharedInstance.removeItemFromPersistentStore(item: shoppingCartItem[indexPath.row])
                 tableView.beginUpdates()
-                self.shoppingCartItem.remove(at: indexPath.row)
+                shoppingCartItem.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 tableView.endUpdates()
-                totalAmountLabel.text = "Total Amount: \(ShoppingCartLogic.totalAmount(meds: self.shoppingCartItem)) Ks"
+                totalAmountLabel.text = "Total Amount: \(ShoppingCartLogic.totalAmount(meds: shoppingCartItem)) Ks"
         }
     }
     
@@ -122,8 +119,8 @@ extension ShoppingCartViewController: MyDataSendingDelegateProtocol {
     
     func sendDataToFirstViewController(myData: String) {
         
-        DispatchQueue.main.async {
-            self.proceedToCheckoutButton.setTitle("Checkout", for: .normal)
+        DispatchQueue.main.async { [self] in
+            proceedToCheckoutButton.setTitle("Checkout", for: .normal)
         }
         address = myData
     }

@@ -36,6 +36,8 @@ class HomeViewController: UIViewController {
         
         mSocket.on("calling") { data, ack in
             
+            print("Receiving Call")
+            
             let dataDic = data[0] as? NSDictionary
             let roomName = dataDic?.value(forKey: "roomName") as? String
             let token = dataDic?.value(forKey: "token") as? String
@@ -54,7 +56,9 @@ class HomeViewController: UIViewController {
             let roomName = dataDic?.value(forKey: "roomName") as? String
 
             self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: roomName!)!, connectedAt: Date())
-            print("Accept Call Recieved From HomeViewController MCDC")
+        }
+        mSocket.on("missedCall") {_,_ in
+            print("Missed Call")
         }
     }
     
@@ -81,11 +85,9 @@ class HomeViewController: UIViewController {
             "roomSid": room.roomSid
         ]
         
-        mSocket.emit("acceptCall", data) {
-            print("Emit accept Call from HomeVC")
-        }
+        mSocket.emit("acceptCall", data) {}
         
-        let videoVC = VideoCallViewController(socketRoom: room)
+        let videoVC = VideoCallViewController(socketRoom: room, calleeName: (callee?.name)!)
         navigationController?.pushViewController(videoVC, animated: true)
     }
     
@@ -102,9 +104,7 @@ class HomeViewController: UIViewController {
             "roomSid": room.roomSid
         ]
         
-        mSocket.emit("declineCall", data) {
-            print("Emit decline Call From HomeVC")
-        }
+        mSocket.emit("declineCall", data) {}
     }
 
 }

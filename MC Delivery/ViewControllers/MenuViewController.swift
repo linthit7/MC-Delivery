@@ -52,7 +52,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch AppDelegate.loginState {
-        case true: return 2
+        case true: return 3
         case false: return 1
         }
     }
@@ -70,6 +70,11 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = UITableViewCell()
                 cell.textLabel?.text = "Orders"
                 cell.imageView?.image = UIImage(systemName: "doc.plaintext")
+                return cell
+            case 2:
+                let cell = UITableViewCell()
+                cell.textLabel?.text = "Carrier"
+                cell.imageView?.image = UIImage(systemName: "person.3")
                 return cell
             default: return UITableViewCell()
             }

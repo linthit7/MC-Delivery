@@ -458,6 +458,26 @@
 			path = "MC Delivery Carrier";
 			sourceTree = "<group>";
 		};
+		F9494F8829C16DFF00EB4A3B /* CustomerRelatedVC */ = {
+			isa = PBXGroup;
+			children = (
+				F975A83829AA3256006EE0E7 /* ClientViewController.xib */,
+				F975A83729AA3256006EE0E7 /* ClientViewController.swift */,
+			);
+			path = CustomerRelatedVC;
+			sourceTree = "<group>";
+		};
+		F9494F8929C16E2100EB4A3B /* CarrierRelatedVC */ = {
+			isa = PBXGroup;
+			children = (
+				F975A82A29AA0A26006EE0E7 /* LoginViewController.swift */,
+				F975A82B29AA0A26006EE0E7 /* LoginViewController.xib */,
+				F975A83329AA3151006EE0E7 /* ProfileViewController.swift */,
+				F975A83429AA3151006EE0E7 /* ProfileViewController.xib */,
+			);
+			path = CarrierRelatedVC;
+			sourceTree = "<group>";
+		};
 		F9516FE029B98FA300BA447C /* OrderRelatedCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,16 +496,12 @@
 		F975A82529AA0564006EE0E7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F9494F8929C16E2100EB4A3B /* CarrierRelatedVC */,
+				F9494F8829C16DFF00EB4A3B /* CustomerRelatedVC */,
 				F9E4619329A32FED0050BF0F /* HomeViewController.swift */,
 				F9E4619429A32FED0050BF0F /* HomeViewController.xib */,
 				F975A82129AA055D006EE0E7 /* MenuViewController.swift */,
 				F975A82229AA055D006EE0E7 /* MenuViewController.xib */,
-				F975A82A29AA0A26006EE0E7 /* LoginViewController.swift */,
-				F975A82B29AA0A26006EE0E7 /* LoginViewController.xib */,
-				F975A83329AA3151006EE0E7 /* ProfileViewController.swift */,
-				F975A83429AA3151006EE0E7 /* ProfileViewController.xib */,
-				F975A83729AA3256006EE0E7 /* ClientViewController.swift */,
-				F975A83829AA3256006EE0E7 /* ClientViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

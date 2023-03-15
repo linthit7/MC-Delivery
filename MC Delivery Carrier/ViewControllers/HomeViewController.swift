@@ -57,8 +57,12 @@ class HomeViewController: UIViewController {
 
             self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: roomName!)!, connectedAt: Date())
         }
-        mSocket.on("missedCall") {_,_ in
-            print("Missed Call")
+        mSocket.on("missedCall") { data, ack in
+            
+            let dataDic = data[0] as? NSDictionary
+            let roomName = dataDic?.value(forKey: "roomName") as? String
+            
+            self.callManager.performEndCallAction(id: UUID(uuidString: roomName!)!)
         }
     }
     

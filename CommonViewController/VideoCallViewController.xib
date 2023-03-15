@@ -11,10 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoCallViewController" customModule="MC_Delivery" customModuleProvider="target">
             <connections>
-                <outlet property="callStateLabel" destination="v2o-Ku-W4Z" id="v8G-eu-YoD"/>
-                <outlet property="calleeNameLabel" destination="VTq-Yo-psy" id="HeL-65-vL7"/>
-                <outlet property="endButoon" destination="zd9-f1-KfQ" id="ZWl-J6-7sz"/>
-                <outlet property="micButton" destination="nTJ-Gi-QXX" id="mmN-zT-x4R"/>
+                <outlet property="cameraButton" destination="vtX-Qx-aqP" id="kDr-Bi-Kr6"/>
+                <outlet property="endButoon" destination="xbP-fw-ygn" id="XEp-6Y-wWS"/>
+                <outlet property="micButton" destination="17y-ri-3K9" id="O7c-fr-S87"/>
                 <outlet property="previewView" destination="zBb-Jg-cR9" id="xz3-vv-dRG"/>
                 <outlet property="remoteView" destination="CU5-fj-QaF" id="Gvg-4d-inW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -27,101 +26,72 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CU5-fj-QaF" customClass="TVIVideoView">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBb-Jg-cR9" customClass="TVIVideoView">
-                            <rect key="frame" x="306" y="56" width="100" height="140"/>
-                            <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="2ct-kS-WRz"/>
-                                <constraint firstAttribute="height" constant="140" id="XHp-6x-pL5"/>
-                            </constraints>
-                        </view>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="624" translatesAutoresizingMaskIntoConstraints="NO" id="fsf-zd-4F6">
-                            <rect key="frame" x="8" y="56" width="158" height="698"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="138" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-LW-olt">
-                                    <rect key="frame" x="0.0" y="0.0" width="158" height="47"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-aN-ZhN">
-                                            <rect key="frame" x="0.0" y="0.0" width="158" height="47"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CalleeNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTq-Yo-psy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CallStateLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2o-Ku-W4Z">
-                                                    <rect key="frame" x="0.0" y="31" width="158" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="2vb-Nf-CbH">
-                                    <rect key="frame" x="0.0" y="671" width="158" height="27"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd9-f1-KfQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="61.5" height="27"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="tintColor" systemColor="systemRedColor"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" image="phone.down.fill" catalog="system"/>
-                                            <connections>
-                                                <action selector="endButtonPressed:" destination="-1" eventType="touchUpInside" id="xzY-YQ-ytR"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTJ-Gi-QXX">
-                                            <rect key="frame" x="96.5" y="0.0" width="61.5" height="27"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" image="mic.fill" catalog="system"/>
-                                            <connections>
-                                                <action selector="micButtonPresses:" destination="-1" eventType="touchUpInside" id="w8m-mO-haL"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBrownColor"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="zBb-Jg-cR9" secondAttribute="trailing" constant="8" id="ifg-5n-uno"/>
-                        <constraint firstItem="zBb-Jg-cR9" firstAttribute="top" secondItem="CU5-fj-QaF" secondAttribute="top" constant="56" id="sis-H1-nwM"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="subviews">
-                            <exclude reference="fsf-zd-4F6"/>
-                        </mask>
-                    </variation>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBb-Jg-cR9" customClass="TVIVideoView">
+                    <rect key="frame" x="296" y="48" width="110" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="wOD-su-fEQ"/>
+                        <constraint firstAttribute="height" constant="140" id="xgV-dh-ReI"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="eGb-1w-eTt">
+                    <rect key="frame" x="20" y="828" width="374" height="34"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtX-Qx-aqP">
+                            <rect key="frame" x="0.0" y="0.0" width="101.5" height="34"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="tinted" image="camera.fill" catalog="system">
+                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbP-fw-ygn">
+                            <rect key="frame" x="136.5" y="0.0" width="101" height="34"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="tinted" image="phone.down.fill" catalog="system">
+                                <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="endButtonPressed:" destination="-1" eventType="touchUpInside" id="uv4-6W-GX6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17y-ri-3K9">
+                            <rect key="frame" x="272.5" y="0.0" width="101.5" height="34"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="tinted" image="mic.fill" catalog="system">
+                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="micButtonPresses:" destination="-1" eventType="touchUpInside" id="91h-HZ-0sr"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="CU5-fj-QaF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LOk-WB-Yvt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CU5-fj-QaF" secondAttribute="trailing" id="e1T-6Z-Si1"/>
-                <constraint firstAttribute="bottom" secondItem="CU5-fj-QaF" secondAttribute="bottom" id="lh8-IF-rgK"/>
-                <constraint firstItem="CU5-fj-QaF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xXl-av-emg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eGb-1w-eTt" secondAttribute="trailing" constant="20" id="IGM-JV-4Mn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eGb-1w-eTt" secondAttribute="bottom" id="K1C-BF-MD7"/>
+                <constraint firstAttribute="bottom" secondItem="CU5-fj-QaF" secondAttribute="bottom" id="L2Z-s6-QhN"/>
+                <constraint firstItem="CU5-fj-QaF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LfI-Ez-7kl"/>
+                <constraint firstItem="CU5-fj-QaF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="M1M-tI-U1O"/>
+                <constraint firstItem="eGb-1w-eTt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Sy7-A4-qgM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zBb-Jg-cR9" secondAttribute="trailing" constant="8" id="ecH-WV-6pf"/>
+                <constraint firstItem="CU5-fj-QaF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fYc-Mz-a20"/>
+                <constraint firstItem="zBb-Jg-cR9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qT3-32-pyO"/>
             </constraints>
             <point key="canvasLocation" x="-72.463768115942031" y="-10.044642857142856"/>
         </view>
     </objects>
     <resources>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="mic.fill" catalog="system" width="110" height="128"/>
         <image name="phone.down.fill" catalog="system" width="128" height="55"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

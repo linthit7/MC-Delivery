@@ -54,14 +54,14 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.selectionStyle = .none
         cell.textLabel?.text = existingUserList[indexPath.row].name
         cell.imageView?.image = UIImage(systemName: "phone.fill")?.sd_tintedImage(with: CustomColor().backgroundColor)
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+     
         if  AppDelegate.loginState {
             
             let token = CredentialsStore.getCredentials()?.accessToken
@@ -80,11 +80,11 @@ extension ClientViewController: UITableViewDataSource, UITableViewDelegate {
        
                 self.mSocket.emit("startCall", data) {
                     
-                    print(data)
                     self.callManager.performStartCallAction(id: UUID(uuidString: room.roomName)!, handle: callee.name)
                     
                     let videoVC = VideoCallViewController(socketRoom: room, calleeName: callee.name)
-                    self.navigationController?.pushViewController(videoVC, animated: true)
+                    videoVC.callState = "Calling"
+                    self.navigationController?.pushViewController(videoVC, animated: false)
                 }
             }
         }

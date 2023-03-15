@@ -17,17 +17,18 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     var localVideoTrack: LocalVideoTrack?
     var localAudioTrack: LocalAudioTrack?
     var remoteParticipant: RemoteParticipant?
+    var localParticipant: LocalParticipant?
     
     let callManager = CallManager.sharedInstance
     let mSocket = SocketHandler.sharedInstance.getSocket()
     
     var calleeName = String()
+    var callState = String()
     
     @IBOutlet weak var previewView: VideoView!
     @IBOutlet weak var remoteView: VideoView!
     
     @IBOutlet weak var calleeNameLabel: UILabel!
-    @IBOutlet weak var callStateLabel: UILabel!
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var endButoon: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
@@ -80,6 +81,7 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
             micButton.setTitle("", for: .normal)
             endButoon.setTitle("", for: .normal)
             cameraButton.setTitle("", for: .normal)
+            calleeNameLabel.text = callState
         }
     }
     
@@ -105,6 +107,7 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     }
     
     @IBAction func micButtonPresses(_ sender: UIButton) {
+        
         let id = UUID(uuidString: (socketRoom?.roomName!)!)
         if micButton.imageView?.image == UIImage(systemName: "mic.fill") {
             micButton.setImage(UIImage(systemName: "mic.slash.fill"), for: .normal)
@@ -115,58 +118,82 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
         }
     }
     
+    @IBAction func cameraButtonPressed(_ sender: UIButton) {
+        cameraOnOff()
+    }
     
-    func connectToRoom() {
+    @IBAction func camereFlipButtonPressed(_ sender: UIButton) {
+        flipCamera()
+    }
+    
+    private func cameraOnOff() {
+        if cameraButton.imageView?.image == UIImage(systemName: "video.fill") {
+            cameraButton.setImage(UIImage(systemName: "video.slash.fill"), for: .normal)
+            localVideoTrack?.isEnabled = false
+        } else {
+            cameraButton.setImage(UIImage(systemName: "video.fill"), for: .normal)
+            localVideoTrack?.isEnabled = true
+        }
+    }
+    
+    private func flipCamera() {
+        var newDevice: AVCaptureDevice?
+
+        if let camera = self.camera, let captureDevice = camera.device {
+            if captureDevice.position == .front {
+                newDevice = CameraSource.captureDevice(position: .back)
+            } else {
+                newDevice = CameraSource.captureDevice(position: .front)
+            }
+
+            if let newDevice = newDevice {
+                camera.selectCaptureDevice(newDevice) { (captureDevice, videoFormat, error) in
+                    if let error = error {
+                        self.logMessage(messageText: "Error selecting capture device.\ncode = \((error as NSError).code) error = \(error.localizedDescription)")
+                    } else {
+                        self.previewView.shouldMirror = (captureDevice.position == .front)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func connectToRoom() {
+        prepareLocalMedia()
         
-        // Prepare local media which we will share with Room Participants.
-        self.prepareLocalMedia()
-        
-        // Preparing the connect options with the access token that we fetched (or hardcoded).
         let connectOptions = ConnectOptions(token: (socketRoom?.token)!) { (builder) in
             
-            // Use the local media that we prepared earlier.
             builder.audioTracks = self.localAudioTrack != nil ? [self.localAudioTrack!] : [LocalAudioTrack]()
             builder.videoTracks = self.localVideoTrack != nil ? [self.localVideoTrack!] : [LocalVideoTrack]()
             
-            // Use the preferred audio codec
             if let preferredAudioCodec = Settings.shared.audioCodec {
                 builder.preferredAudioCodecs = [preferredAudioCodec]
             }
             
-            // Use Adpative Simulcast by setting builer.videoEncodingMode to .auto if preferredVideoCodec is .auto (default). The videoEncodingMode API is mutually exclusive with existing codec management APIs EncodingParameters.maxVideoBitrate and preferredVideoCodecs
             let preferredVideoCodec = Settings.shared.videoCodec
+            
             if preferredVideoCodec == .auto {
                 builder.videoEncodingMode = .auto
             } else if let codec = preferredVideoCodec.codec {
                 builder.preferredVideoCodecs = [codec]
             }
             
-            // Use the preferred encoding parameters
             if let encodingParameters = Settings.shared.getEncodingParameters() {
                 builder.encodingParameters = encodingParameters
             }
             
-            // Use the preferred signaling region
             if let signalingRegion = Settings.shared.signalingRegion {
                 builder.region = signalingRegion
             }
             
-            // The name of the Room where the Client will attempt to connect to. Please note that if you pass an empty
-            // Room `name`, the Client will create one for you. You can get the name or sid from any connected Room.
             builder.roomName = self.socketRoom?.roomName
-            
             builder.uuid = UUID(uuidString: (self.socketRoom?.roomName)!)
         }
         
-        // Connect to the Room using the options we provided.
         room = TwilioVideoSDK.connect(options: connectOptions, delegate: self)
-        
-        logMessage(messageText: "Attempting to connect to room \(String(describing: self.socketRoom?.roomName))")
-        
-        self.showRoomUI(inRoom: true)
+        showRoomUI(inRoom: true)
     }
     
-    // Update our UI based upon if we are in a Room or not
     func showRoomUI(inRoom: Bool) {
         
         UIApplication.shared.isIdleTimerDisabled = inRoom
@@ -174,19 +201,13 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     }
     
     func prepareLocalMedia() {
-        // We will share local audio and video when we connect to the Room.
-        // Create an audio track.
+        
         if (localAudioTrack == nil) {
             localAudioTrack = LocalAudioTrack(options: nil, enabled: true, name: "Microphone")
-            
-            if (localAudioTrack == nil) {
-                logMessage(messageText: "Failed to create audio track")
-            }
         }
         
-        // Create a video track which captures from the camera.
         if (localVideoTrack == nil) {
-            self.startPreview()
+            startPreview()
         }
     }
     
@@ -259,8 +280,12 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
 extension VideoCallViewController : RoomDelegate {
     
     func roomDidConnect(room: Room) {
-        logMessage(messageText: "Connected to room \(room.name) as \(room.localParticipant?.identity ?? "")")
+       
         callManager.audioDevice.isEnabled = true
+        
+        if let localParticipant = room.localParticipant {
+            localParticipant.delegate = self
+        }
         
         for remoteParticipant in room.remoteParticipants {
             remoteParticipant.delegate = self
@@ -274,7 +299,7 @@ extension VideoCallViewController : RoomDelegate {
         self.cleanupRemoteParticipant()
         self.room = nil
         self.showRoomUI(inRoom: false)
-        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: false)
     }
     
     func roomDidFailToConnect(room: Room, error: Error) {
@@ -293,9 +318,12 @@ extension VideoCallViewController : RoomDelegate {
     
     func participantDidConnect(room: Room, participant: RemoteParticipant) {
         // Listen for events from all Participants to decide which RemoteVideoTrack to render.
+        DispatchQueue.main.async { [self] in
+            calleeNameLabel.text = calleeName
+        }
         participant.delegate = self
         
-        self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: (socketRoom?.roomName)!)!, connectedAt: Date())
+        callManager.provider.reportOutgoingCall(with: UUID(uuidString: (socketRoom?.roomName)!)!, connectedAt: Date())
     }
     
     func participantDidDisconnect(room: Room, participant: RemoteParticipant) {}

@@ -35,6 +35,11 @@ class HomeViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dismiss(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,15 +105,13 @@ class HomeViewController: UIViewController {
     
     @objc
     private func menuButtonPressed() {
-        
-            dismiss(animated: true) {
-                let menu = SideMenuNavigationController(rootViewController: MenuViewController())
-                menu.leftSide = true
-                SideMenuManager.default.leftMenuNavigationController = menu
-                SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-                self.present(menu, animated: true)
-            }
-        
+        dismiss(animated: true) {
+            let menu = SideMenuNavigationController(rootViewController: MenuViewController())
+            menu.leftSide = true
+            SideMenuManager.default.leftMenuNavigationController = menu
+            SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+            self.present(menu, animated: true)
+        }
     }
     
     @objc
@@ -127,7 +130,8 @@ class HomeViewController: UIViewController {
         mSocket.emit("acceptCall", data) {}
         
         let videoVC = VideoCallViewController(socketRoom: room, calleeName: (callee?.name)!)
-        navigationController?.pushViewController(videoVC, animated: true)
+        videoVC.callState = "Joining call"
+        navigationController?.pushViewController(videoVC, animated: false)
     }
     
     @objc

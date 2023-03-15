@@ -52,6 +52,7 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.selectionStyle = .none
         cell.textLabel?.text = existingUserList[indexPath.row].name
         cell.imageView?.image = UIImage(systemName: "phone.fill")?.sd_tintedImage(with: CustomColor().backgroundColor)
         
@@ -82,7 +83,8 @@ extension CarrierViewController: UITableViewDataSource, UITableViewDelegate {
                     self.callManager.performStartCallAction(id: UUID(uuidString: room.roomName)!, handle: callee.name)
 
                     let videoVC = VideoCallViewController(socketRoom: room, calleeName: callee.name)
-                    self.navigationController?.pushViewController(videoVC, animated: true)
+                    videoVC.callState = "Calling"
+                    self.navigationController?.pushViewController(videoVC, animated: false)
                 }
             }
         }

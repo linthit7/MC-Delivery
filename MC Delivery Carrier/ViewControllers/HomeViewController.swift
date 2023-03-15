@@ -92,7 +92,7 @@ class HomeViewController: UIViewController {
         mSocket.emit("acceptCall", data) {}
         
         let videoVC = VideoCallViewController(socketRoom: room, calleeName: (callee?.name)!)
-        navigationController?.pushViewController(videoVC, animated: true)
+        navigationController?.pushViewController(videoVC, animated: false)
     }
     
     @objc

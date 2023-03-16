@@ -24,6 +24,9 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     
     var calleeName = String()
     var callState = String()
+    var second = 0
+    var minute = 0
+    var hour = 0
     
     @IBOutlet weak var previewView: VideoView!
     @IBOutlet weak var remoteView: VideoView!
@@ -32,6 +35,12 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var endButoon: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var firstColonLabel: UILabel!
+    @IBOutlet weak var minuteLabel: UILabel!
+    @IBOutlet weak var secondColonLabel: UILabel!
+    @IBOutlet weak var hourLabel: UILabel!
+    
     
     init(socketRoom: MCRoom, calleeName: String) {
         self.socketRoom = socketRoom
@@ -285,6 +294,7 @@ extension VideoCallViewController : RoomDelegate {
         
         if !room.remoteParticipants.isEmpty {
             calleeNameLabel.text = calleeName
+            showCallDurationTimer()
         }
         
     }
@@ -304,6 +314,7 @@ extension VideoCallViewController : RoomDelegate {
     func participantDidConnect(room: Room, participant: RemoteParticipant) {
         DispatchQueue.main.async { [self] in
             calleeNameLabel.text = calleeName
+            showCallDurationTimer()
         }
         participant.delegate = self
         callManager.provider.reportOutgoingCall(with: UUID(uuidString: (socketRoom?.roomName)!)!, connectedAt: Date())

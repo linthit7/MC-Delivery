@@ -22,6 +22,8 @@
 		F91F71EA29B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */; };
 		F91F71EC29B5ACFC002EF3E6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */; };
 		F91F71F829B5CB8A002EF3E6 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71F729B5CB8A002EF3E6 /* ShoppingCart.swift */; };
+		F92616C729C2D6610003B874 /* VideoCallViewController+CallDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616C629C2D6610003B874 /* VideoCallViewController+CallDuration.swift */; };
+		F92616C829C2D6610003B874 /* VideoCallViewController+CallDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616C629C2D6610003B874 /* VideoCallViewController+CallDuration.swift */; };
 		F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */; };
 		F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */; };
 		F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */; };
@@ -131,6 +133,7 @@
 		F91F71E929B5A44C002EF3E6 /* MC_Delivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MC_Delivery.xcdatamodel; sourceTree = "<group>"; };
 		F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F91F71F729B5CB8A002EF3E6 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		F92616C629C2D6610003B874 /* VideoCallViewController+CallDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoCallViewController+CallDuration.swift"; sourceTree = "<group>"; };
 		F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDetailViewController.xib; sourceTree = "<group>"; };
 		F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -529,6 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */,
+				F92616C629C2D6610003B874 /* VideoCallViewController+CallDuration.swift */,
 				F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */,
 			);
 			path = CommonViewController;
@@ -814,6 +818,7 @@
 				F9F58CA429B5E72F00D3B904 /* Med+CoreDataClass.swift in Sources */,
 				F9E461A429A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
 				F9E461AE29A3AED60050BF0F /* CustomLayout.swift in Sources */,
+				F92616C729C2D6610003B874 /* VideoCallViewController+CallDuration.swift in Sources */,
 				F975A81729A86229006EE0E7 /* ProfileViewController.swift in Sources */,
 				F900949629B725740031A016 /* OrderRequest.swift in Sources */,
 				F93FAF9C29A26E1400786ED4 /* AppDelegate.swift in Sources */,
@@ -869,6 +874,7 @@
 				F975A84529AB9BDF006EE0E7 /* VideoCallViewController.swift in Sources */,
 				F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */,
 				F9E461A229A359460050BF0F /* CustomButton.swift in Sources */,
+				F92616C829C2D6610003B874 /* VideoCallViewController+CallDuration.swift in Sources */,
 				F975A83B29AA32B0006EE0E7 /* User.swift in Sources */,
 				F975A82F29AA2C46006EE0E7 /* Auth.swift in Sources */,
 				F9E4619929A337300050BF0F /* CustomColor.swift in Sources */,

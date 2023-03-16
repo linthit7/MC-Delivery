@@ -24,6 +24,9 @@
 		F91F71F829B5CB8A002EF3E6 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71F729B5CB8A002EF3E6 /* ShoppingCart.swift */; };
 		F92616C729C2D6610003B874 /* VideoCallViewController+CallDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616C629C2D6610003B874 /* VideoCallViewController+CallDuration.swift */; };
 		F92616C829C2D6610003B874 /* VideoCallViewController+CallDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616C629C2D6610003B874 /* VideoCallViewController+CallDuration.swift */; };
+		F92616CA29C2F7EF0003B874 /* VideoCallViewController+Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616C929C2F7EF0003B874 /* VideoCallViewController+Twilio.swift */; };
+		F92616CB29C2F7EF0003B874 /* VideoCallViewController+Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616C929C2F7EF0003B874 /* VideoCallViewController+Twilio.swift */; };
+		F92616CD29C2FF080003B874 /* HomeViewController+SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616CC29C2FF080003B874 /* HomeViewController+SideMenu.swift */; };
 		F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */; };
 		F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */; };
 		F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */; };
@@ -134,6 +137,8 @@
 		F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F91F71F729B5CB8A002EF3E6 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		F92616C629C2D6610003B874 /* VideoCallViewController+CallDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoCallViewController+CallDuration.swift"; sourceTree = "<group>"; };
+		F92616C929C2F7EF0003B874 /* VideoCallViewController+Twilio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoCallViewController+Twilio.swift"; sourceTree = "<group>"; };
+		F92616CC29C2FF080003B874 /* HomeViewController+SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+SideMenu.swift"; sourceTree = "<group>"; };
 		F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDetailViewController.xib; sourceTree = "<group>"; };
 		F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -272,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */,
+				F92616CC29C2FF080003B874 /* HomeViewController+SideMenu.swift */,
 				F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */,
 				F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */,
 				F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */,
@@ -532,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				F975A84129AA56B9006EE0E7 /* VideoCallViewController.swift */,
+				F92616C929C2F7EF0003B874 /* VideoCallViewController+Twilio.swift */,
 				F92616C629C2D6610003B874 /* VideoCallViewController+CallDuration.swift */,
 				F975A84229AA56B9006EE0E7 /* VideoCallViewController.xib */,
 			);
@@ -839,11 +846,13 @@
 				F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */,
 				F9C6C6FA29BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift in Sources */,
 				F932AE9129A6705700DFB859 /* UserRequest.swift in Sources */,
+				F92616CD29C2FF080003B874 /* HomeViewController+SideMenu.swift in Sources */,
 				F91F71E329B59298002EF3E6 /* MedicineTableViewCell.swift in Sources */,
 				F975A81A29A86A21006EE0E7 /* CredentialsStore.swift in Sources */,
 				F900949429B6FB740031A016 /* ShoppingCartLogic.swift in Sources */,
 				F932AE9329A6756C00DFB859 /* User.swift in Sources */,
 				F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */,
+				F92616CA29C2F7EF0003B874 /* VideoCallViewController+Twilio.swift in Sources */,
 				F9E4619829A337300050BF0F /* CustomColor.swift in Sources */,
 				F975A82029A9164B006EE0E7 /* CallManager.swift in Sources */,
 				F995FC9729ADEC4E003E9C44 /* CalleeStore.swift in Sources */,
@@ -875,6 +884,7 @@
 				F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */,
 				F9E461A229A359460050BF0F /* CustomButton.swift in Sources */,
 				F92616C829C2D6610003B874 /* VideoCallViewController+CallDuration.swift in Sources */,
+				F92616CB29C2F7EF0003B874 /* VideoCallViewController+Twilio.swift in Sources */,
 				F975A83B29AA32B0006EE0E7 /* User.swift in Sources */,
 				F975A82F29AA2C46006EE0E7 /* Auth.swift in Sources */,
 				F9E4619929A337300050BF0F /* CustomColor.swift in Sources */,

@@ -17,7 +17,6 @@ struct CredentialsStore {
             standardUserDefaults.set(data, forKey: "Credentials")
             AppDelegate.loginState = true
             NotificationCenter.default.post(name: NSNotification.Name("Login Successful"), object: nil)
-            
             print("Successfully stored", payload)
         } catch {
             print("Error storing credentials to userdefaults")

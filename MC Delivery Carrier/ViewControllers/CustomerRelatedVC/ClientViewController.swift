@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import Toast_Swift
 
 class ClientViewController: UIViewController {
     
@@ -32,6 +33,15 @@ class ClientViewController: UIViewController {
                     self.clientTableView.reloadData()
                 }
             }
+        }
+        
+        mSocket.on("missedCall") { data, ack in
+            
+            let dataDic = data[0] as? NSDictionary
+            let roomName = dataDic?.value(forKey: "roomName") as? String
+            
+            self.callManager.performEndCallAction(id: UUID(uuidString: roomName!)!)
+            self.view.makeToast("Missed Call", position: .top)
         }
 
     }

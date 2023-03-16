@@ -21,9 +21,7 @@ struct AuthRequest {
     func validateWithEmailAndPassword(completion: @escaping (LoginResponse) -> Void) {
         
         let loginRoute = "https://pharmacydelivery-production.up.railway.app/api/auth/login"
-        
-//        let loginRoute = "https://pharmacydelivery-production.up.railway.app/api/deliveryPersons/login"
-        
+                
         let params: Parameters = [
             "email": email,
             "password": password

@@ -32,6 +32,15 @@ class CarrierViewController: UIViewController {
                 }
             }
         }
+        
+        mSocket.on("missedCall") { data, ack in
+            
+            let dataDic = data[0] as? NSDictionary
+            let roomName = dataDic?.value(forKey: "roomName") as? String
+            
+            self.callManager.performEndCallAction(id: UUID(uuidString: roomName!)!)
+            self.view.makeToast("Missed Call", position: .top)
+        }
     }
     
     private func setupUI() {

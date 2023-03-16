@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(connectVideoCall), name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(declineCall), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(makeToastForLoginSuccess), name: NSNotification.Name("Login Successful"), object: nil)
         
         DispatchQueue.main.async {
             self.view.backgroundColor = CustomColor().backgroundColor
@@ -57,12 +58,12 @@ class HomeViewController: UIViewController {
 
             self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: roomName!)!, connectedAt: Date())
         }
-        mSocket.on("missedCall") { data, ack in
-            
-            let dataDic = data[0] as? NSDictionary
-            let roomName = dataDic?.value(forKey: "roomName") as? String
-            
-            self.callManager.performEndCallAction(id: UUID(uuidString: roomName!)!)
+    }
+    
+    @objc
+    private func makeToastForLoginSuccess() {
+        DispatchQueue.main.async {
+            self.view.makeToast("Login Successful", position: .top)
         }
     }
     
@@ -92,6 +93,7 @@ class HomeViewController: UIViewController {
         mSocket.emit("acceptCall", data) {}
         
         let videoVC = VideoCallViewController(socketRoom: room, calleeName: (callee?.name)!)
+        videoVC.callState = "Joining Call"
         navigationController?.pushViewController(videoVC, animated: false)
     }
     

@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     var mSocket = SocketHandler.sharedInstance.getSocket()
     let callManager = CallManager.sharedInstance
     var room = MCRoom()
+    let menu = SideMenuNavigationController(rootViewController: MenuViewController())
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var onGoingUIView: UIView!
@@ -44,6 +45,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupNotificationCenter()
+        setupMenu()
         medicinesRequest.getAllMedicinesWithPagination(page: page) { medicines, total in
             
             self.medicineList.append(contentsOf: medicines)
@@ -93,24 +95,20 @@ class HomeViewController: UIViewController {
             
             self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: roomName!)!, connectedAt: Date())
         }
-        
-        mSocket.on("missedCall") { data, ack in
-            
-            let dataDic = data[0] as? NSDictionary
-            let roomName = dataDic?.value(forKey: "roomName") as? String
-            
-            self.callManager.performEndCallAction(id: UUID(uuidString: roomName!)!)
+ 
+    }
+    
+    @objc
+    private func makeToastForLoginSuccess() {
+        DispatchQueue.main.async {
+            self.view.makeToast("Login Successful", position: .top)
         }
     }
     
     @objc
     private func menuButtonPressed() {
         dismiss(animated: true) {
-            let menu = SideMenuNavigationController(rootViewController: MenuViewController())
-            menu.leftSide = true
-            SideMenuManager.default.leftMenuNavigationController = menu
-            SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-            self.present(menu, animated: true)
+            self.present(self.menu, animated: true)
         }
     }
     
@@ -130,7 +128,7 @@ class HomeViewController: UIViewController {
         mSocket.emit("acceptCall", data) {}
         
         let videoVC = VideoCallViewController(socketRoom: room, calleeName: (callee?.name)!)
-        videoVC.callState = "Joining call"
+        videoVC.callState = "Joining Call"
         navigationController?.pushViewController(videoVC, animated: false)
     }
     
@@ -164,6 +162,7 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(declineCall), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
          NotificationCenter.default.addObserver(self, selector: #selector(orderPlaced), name: ShoppingCartLogic.Alert.orderSuccessAndCleanUpDone.rawValue, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(orderCanceled), name: OrderRequest.Alert.orderCancelSuccess.rawValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(makeToastForLoginSuccess), name: NSNotification.Name("Login Successful"), object: nil)
     }
     
     @objc
@@ -181,6 +180,7 @@ class HomeViewController: UIViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }
     }
+    
     
     func customizedSheet() {
         
@@ -206,6 +206,11 @@ class HomeViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
+    }
+    
+    func setupMenu() {
+        menu.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = menu
     }
     
 }

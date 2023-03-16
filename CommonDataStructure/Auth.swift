@@ -14,6 +14,7 @@ struct LoginResponse {
     var payload: Payload!
     
     static func loadLoginResponse(json: JSON) -> LoginResponse {
+        
         var loginResponse = LoginResponse()
         loginResponse.statusCode = json["statusCode"].intValue
         loginResponse.message = json["message"].stringValue
@@ -28,6 +29,7 @@ struct Payload: Codable {
     var accessToken: String!
     
     static func loadPayload(json: JSON) -> Payload {
+        
         var payload = Payload()
         payload.user = User.loadUser(json: JSON(rawValue: json["user"].dictionaryValue)!)
         payload.accessToken = json["accessToken"].stringValue

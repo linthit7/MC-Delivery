@@ -58,7 +58,6 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtX-Qx-aqP">
                             <rect key="frame" x="0.0" y="0.0" width="101.5" height="34"/>
-                            <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="tinted" image="video.fill" catalog="system">
                                 <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

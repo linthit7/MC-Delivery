@@ -81,6 +81,8 @@ class VideoCallViewController: UIViewController, LocalParticipantDelegate {
             endButoon.setTitle("", for: .normal)
             cameraButton.setTitle("", for: .normal)
             calleeNameLabel.text = callState
+            previewView.layer.cornerRadius = 20
+            previewView.layer.cornerCurve = .continuous
         }
     }
     

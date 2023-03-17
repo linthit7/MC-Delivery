@@ -9,6 +9,11 @@ import SideMenu
 
 extension HomeViewController: SideMenuNavigationControllerDelegate {
     
+    func setupMenu() {
+        menu.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = menu
+    }
+    
     func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
         if navigationController?.visibleViewController == self {
             if AppDelegate.loginState {
@@ -19,6 +24,13 @@ extension HomeViewController: SideMenuNavigationControllerDelegate {
                     }
                 }
             }
+        }
+    }
+    
+    @objc
+    func menuButtonPressed() {
+        dismiss(animated: true) {
+            self.present(self.menu, animated: true)
         }
     }
 }

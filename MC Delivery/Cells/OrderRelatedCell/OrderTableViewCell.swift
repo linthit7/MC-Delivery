@@ -15,9 +15,16 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var medicineLabel: UILabel!
     @IBOutlet weak var medicineImageView: UIImageView!
+    @IBOutlet weak var callDeliveryPersonButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    @IBAction func callDeliveryPersonButtonPressed(_ sender: UIButton) {
+        
+        let token = CredentialsStore.getCredentials()?.accessToken
+        let caller = CredentialsStore.getCredentials()?.user
     }
     
     func createOrderHistoryCell(orderHistory: OrderHistory) {
@@ -32,6 +39,11 @@ class OrderTableViewCell: UITableViewCell {
                 frontView.frame = medicineImageView.frame
                 frontView.alpha = 0.4
                 medicineImageView.addSubview(frontView)
+            } else if orderHistory.status == "deliver" {
+                callDeliveryPersonButton.setTitle("", for: .normal)
+                callDeliveryPersonButton.isHidden = false
+                let url = URL(string: orderHistory.orderDetails[0].medicine.pictureUrls[0].stringValue)
+                medicineImageView.sd_setImage(with: url)
             } else {
                 let url = URL(string: orderHistory.orderDetails[0].medicine.pictureUrls[0].stringValue)
                 medicineImageView.sd_setImage(with: url)

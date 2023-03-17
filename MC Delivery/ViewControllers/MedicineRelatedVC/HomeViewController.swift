@@ -72,7 +72,7 @@ class HomeViewController: UIViewController {
         customButton.menuButton.target = self
         customButton.menuButton.action = #selector(menuButtonPressed)
         
-        mSocket.on("calling") { data, ack in
+        mSocket.on("calling") { data, _ in
             
             let dataDic = data[0] as? NSDictionary
             let roomName = dataDic?.value(forKey: "roomName") as? String
@@ -87,14 +87,14 @@ class HomeViewController: UIViewController {
             self.callManager.reportIncomingCall(id: UUID(uuidString: roomName!)!, handle: caller?.value(forKey: "name") as! String)
         }
         
-        mSocket.on("acceptCall") { data, ack in
+        mSocket.on("acceptCall") { data, _ in
 
             let dataDic = data[0] as? NSDictionary
             let roomName = dataDic?.value(forKey: "roomName") as? String
             
             self.callManager.provider.reportOutgoingCall(with: UUID(uuidString: roomName!)!, connectedAt: Date())
         }
-        mSocket.on("callEnded") { data, ack in
+        mSocket.on("callEnded") { data, _ in
             
             let dataDic = data[0] as? NSDictionary
             let roomName = dataDic?.value(forKey: "roomName") as? String
@@ -102,7 +102,7 @@ class HomeViewController: UIViewController {
             self.callManager.performEndCallAction(id: UUID(uuidString: roomName!)!)
         }
         
-        mSocket.on("missedCall") { data, ack in
+        mSocket.on("missedCall") { data, _ in
             
             let dataDic = data[0] as? NSDictionary
             let roomName = dataDic?.value(forKey: "roomName") as? String
@@ -117,13 +117,6 @@ class HomeViewController: UIViewController {
     private func makeToastForLoginSuccess() {
         DispatchQueue.main.async {
             self.view.makeToast("Login Successful", position: .top)
-        }
-    }
-    
-    @objc
-    private func menuButtonPressed() {
-        dismiss(animated: true) {
-            self.present(self.menu, animated: true)
         }
     }
     
@@ -160,9 +153,7 @@ class HomeViewController: UIViewController {
             "roomSid": room.roomSid
         ]
         
-        mSocket.emit("declineCall", data) {
-            print("Decline Call Emitted")
-        }
+        mSocket.emit("declineCall", data) {}
     }
     
     @objc
@@ -222,12 +213,6 @@ class HomeViewController: UIViewController {
             // Fallback on earlier versions
         }
     }
-    
-    func setupMenu() {
-        menu.leftSide = true
-        SideMenuManager.default.leftMenuNavigationController = menu
-    }
-    
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {

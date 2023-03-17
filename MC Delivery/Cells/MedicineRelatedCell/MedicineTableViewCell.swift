@@ -11,6 +11,7 @@ class MedicineTableViewCell: UITableViewCell {
     
     private var medicine: Med!
     private var currentIndexPath: IndexPath!
+    private var isCallable: Bool = false
     
     static let reuseIdentifier = String(describing: MedicineTableViewCell.self)
 

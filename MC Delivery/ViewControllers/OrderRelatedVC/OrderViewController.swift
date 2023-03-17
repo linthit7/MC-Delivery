@@ -26,14 +26,14 @@ class OrderViewController: UIViewController {
                 
                 orderHistoryList.append(contentsOf: orderHistory)
                 DispatchQueue.main.async {
-                    orderTableView.reloadData()
+                    self.orderTableView.reloadData()
                 }
             }
             OrderRequest(accessToken: token!).getPendingOrder { [self] pendingOrder in
                 
                 pendingOrderList.append(contentsOf: pendingOrder)
                 DispatchQueue.main.async {
-                    pendingTableView.reloadData()
+                    self.pendingTableView.reloadData()
                 }
             }
         }
@@ -95,10 +95,10 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView == orderTableView {
-            let orderDetailVC = OrderDetailViewController(orderId: orderHistoryList[indexPath.row]._id)
+            let orderDetailVC = OrderDetailViewController(orderHistory: orderHistoryList[indexPath.row])
             navigationController?.pushViewController(orderDetailVC, animated: true)
         } else {
-            let orderDetailVC = OrderDetailViewController(orderId: pendingOrderList[indexPath.row]._id)
+            let orderDetailVC = OrderDetailViewController(orderHistory: pendingOrderList[indexPath.row])
             navigationController?.pushViewController(orderDetailVC, animated: true)
         }
     }

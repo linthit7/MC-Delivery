@@ -49,6 +49,7 @@ struct OrderHistory {
     var createdAt: String!
     var updatedAt: String!
     
+    
     static func loadOrderHistory(json: JSON) -> OrderHistory {
         
         var orderHistory = OrderHistory()

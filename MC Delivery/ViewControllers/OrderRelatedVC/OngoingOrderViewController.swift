@@ -53,7 +53,7 @@ extension OngoingOrderViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let orderDetailVC = OrderDetailViewController(orderId: ongoingOrderList[indexPath.row]._id)
+        let orderDetailVC = OrderDetailViewController(orderHistory: ongoingOrderList[indexPath.row])
         navigationController?.pushViewController(orderDetailVC, animated: true)
     }
     

@@ -9,14 +9,13 @@ import UIKit
 
 class OrderDetailViewController: UIViewController {
     
-    private let orderId: String
     private var orderHistory = OrderHistory()
-
+    
     @IBOutlet weak var orderDetailTableView: UITableView!
     @IBOutlet weak var cancelOrderView: UIView!
     
-    init(orderId: String) {
-        self.orderId = orderId
+    init(orderHistory: OrderHistory) {
+        self.orderHistory = orderHistory
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -29,24 +28,18 @@ class OrderDetailViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        if AppDelegate.loginState {
-            let token = CredentialsStore.getCredentials()?.accessToken
-            OrderRequest(accessToken: token!).getOrderByOrderId(orderId: orderId) { [self] orderHistory in
-                
-                self.orderHistory = orderHistory
-                if orderHistory.status == "pending" {
-                    cancelOrderView.isHidden = false
-                } else if orderHistory.status == "deliver" {
-                    cancelOrderView.isHidden = false
-                }
-                orderDetailTableView.register(UINib(nibName: FirstOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: FirstOrderTableViewCell.reuseIdentifier)
-                orderDetailTableView.register(UINib(nibName: MedicineOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineOrderTableViewCell.reuseIdentifier)
-                orderDetailTableView.register(UINib(nibName: OrderTotalBillTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: OrderTotalBillTableViewCell.reuseIdentifier)
-                orderDetailTableView.dataSource = self
-                orderDetailTableView.delegate = self
-                orderDetailTableView.reloadData()
-            }
+        
+        if orderHistory.status == "pending" {
+            cancelOrderView.isHidden = false
+        } else if orderHistory.status == "deliver" {
+            cancelOrderView.isHidden = true
         }
+        orderDetailTableView.register(UINib(nibName: FirstOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: FirstOrderTableViewCell.reuseIdentifier)
+        orderDetailTableView.register(UINib(nibName: MedicineOrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MedicineOrderTableViewCell.reuseIdentifier)
+        orderDetailTableView.register(UINib(nibName: OrderTotalBillTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: OrderTotalBillTableViewCell.reuseIdentifier)
+        orderDetailTableView.dataSource = self
+        orderDetailTableView.delegate = self
+        orderDetailTableView.reloadData()
     }
     
     private func setupUI() {
@@ -67,9 +60,9 @@ class OrderDetailViewController: UIViewController {
         }
         view.isUserInteractionEnabled = false
         navigationController?.view.isUserInteractionEnabled = false
-
+        
         let token = CredentialsStore.getCredentials()?.accessToken
-        OrderRequest(accessToken: token!).cancelOrderByOrderId(orderId: orderId) { [self] in
+        OrderRequest(accessToken: token!).cancelOrderByOrderId(orderId: orderHistory._id) { [self] in
             navigationController?.popToRootViewController(animated: true)
             
             DispatchQueue.main.async {

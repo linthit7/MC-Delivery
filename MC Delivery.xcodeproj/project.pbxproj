@@ -102,6 +102,10 @@
 		F9D1D22029C42FF800F4C4BD /* Med+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F58CA229B5E72F00D3B904 /* Med+CoreDataClass.swift */; };
 		F9D1D22129C42FFA00F4C4BD /* Med+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F58CA329B5E72F00D3B904 /* Med+CoreDataProperties.swift */; };
 		F9D1D22229C42FFC00F4C4BD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */; };
+		F9D1D22529C44B1B00F4C4BD /* OrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1D22429C44B1B00F4C4BD /* OrderRequest.swift */; };
+		F9D1D22729C44FCB00F4C4BD /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9516FE129B9901F00BA447C /* OrderTableViewCell.swift */; };
+		F9D1D22829C4500D00F4C4BD /* OrderHistoryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9516FE529B9C54100BA447C /* OrderHistoryLogic.swift */; };
+		F9D1D22929C4511500F4C4BD /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9516FE229B9901F00BA447C /* OrderTableViewCell.xib */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -207,6 +211,7 @@
 		F9C6C6F529BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineOrderTableViewCell.xib; sourceTree = "<group>"; };
 		F9C6C6F829BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTotalBillTableViewCell.swift; sourceTree = "<group>"; };
 		F9C6C6F929BB0AA700D41CE3 /* OrderTotalBillTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTotalBillTableViewCell.xib; sourceTree = "<group>"; };
+		F9D1D22429C44B1B00F4C4BD /* OrderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequest.swift; sourceTree = "<group>"; };
 		F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F9E4619329A32FED0050BF0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -565,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				F987C5E629BF035F001A5B58 /* AuthRequest.swift */,
+				F9D1D22429C44B1B00F4C4BD /* OrderRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -727,6 +733,7 @@
 				F975A83629AA3151006EE0E7 /* ProfileViewController.xib in Resources */,
 				F975A82D29AA0A26006EE0E7 /* LoginViewController.xib in Resources */,
 				F93FAFC229A26E2600786ED4 /* LaunchScreen.storyboard in Resources */,
+				F9D1D22929C4511500F4C4BD /* OrderTableViewCell.xib in Resources */,
 				F93FAFBF29A26E2600786ED4 /* Assets.xcassets in Resources */,
 				F975A83A29AA3256006EE0E7 /* ClientViewController.xib in Resources */,
 				F9E4619629A32FED0050BF0F /* HomeViewController.xib in Resources */,
@@ -902,11 +909,14 @@
 				F92616C829C2D6610003B874 /* VideoCallViewController+CallDuration.swift in Sources */,
 				F92616CB29C2F7EF0003B874 /* VideoCallViewController+Twilio.swift in Sources */,
 				F9D1D21F29C42FD500F4C4BD /* MC_Delivery.xcdatamodeld in Sources */,
+				F9D1D22729C44FCB00F4C4BD /* OrderTableViewCell.swift in Sources */,
 				F975A83B29AA32B0006EE0E7 /* User.swift in Sources */,
+				F9D1D22829C4500D00F4C4BD /* OrderHistoryLogic.swift in Sources */,
 				F975A82F29AA2C46006EE0E7 /* Auth.swift in Sources */,
 				F9E4619929A337300050BF0F /* CustomColor.swift in Sources */,
 				F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */,
 				F9D1D22029C42FF800F4C4BD /* Med+CoreDataClass.swift in Sources */,
+				F9D1D22529C44B1B00F4C4BD /* OrderRequest.swift in Sources */,
 				F975A84029AA38B3006EE0E7 /* Room.swift in Sources */,
 				F975A83529AA3151006EE0E7 /* ProfileViewController.swift in Sources */,
 				F975A82329AA055D006EE0E7 /* MenuViewController.swift in Sources */,

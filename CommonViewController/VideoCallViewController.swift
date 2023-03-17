@@ -102,15 +102,29 @@ class VideoCallViewController: UIViewController {
         callManager.performEndCallAction(id: UUID(uuidString: (socketRoom?.roomName)!)!)
         room?.disconnect()
         
-        let callerId = CredentialsStore.getCredentials()?.user
-        let calleeId = CalleeStore.getOrderHistory()
+        let caller = CredentialsStore.getCredentials()?.user
+        let orderHistory = CalleeStore.getOrderHistory()
         
-        let data = [
-            "callerId": callerId?._id,
-            "calleeId": calleeId?.deliveryPerson,
-            "roomName": socketRoom?.roomName,
-            "roomSid": socketRoom?.roomSid
-        ]
+        var data = [String: String]()
+        if caller?.roleType == "Customer" {
+            data = [
+                "callerId": caller!.id,
+                "calleeId": orderHistory!.deliveryPerson,
+                "roomName": socketRoom!.roomName,
+//                "roomSid": socketRoom!.roomSid
+            ]
+            print("Customer")
+        } else {
+            data = [
+                "callerId": caller!._id,
+                "calleeId": orderHistory!.user,
+                "roomName": socketRoom!.roomName,
+//                "roomSid": socketRoom!.roomSid
+            ]
+            print("Carrier")
+        }
+        
+        
         mSocket.emit("callEnded", data) {}
     }
     

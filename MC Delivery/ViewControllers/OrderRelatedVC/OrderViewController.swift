@@ -83,11 +83,11 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
         
         if tableView == orderTableView {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.reuseIdentifier, for: indexPath) as? OrderTableViewCell else { return UITableViewCell()}
-            cell.createOrderHistoryCell(orderHistory: orderHistoryList[indexPath.row])
+            cell.createOrderHistoryCell(orderHistory: orderHistoryList[indexPath.row], user: "Customer")
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.reuseIdentifier, for: indexPath) as? OrderTableViewCell else {return UITableViewCell()}
-            cell.createOrderHistoryCell(orderHistory: pendingOrderList[indexPath.row])
+            cell.createOrderHistoryCell(orderHistory: pendingOrderList[indexPath.row], user: "Customer")
             return cell
         }
     }

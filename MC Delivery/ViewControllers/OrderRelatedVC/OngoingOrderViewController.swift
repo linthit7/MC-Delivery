@@ -51,7 +51,7 @@ extension OngoingOrderViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.reuseIdentifier, for: indexPath) as? OrderTableViewCell else {return UITableViewCell()}
-        cell.createOrderHistoryCell(orderHistory: ongoingOrderList[indexPath.row])
+        cell.createOrderHistoryCell(orderHistory: ongoingOrderList[indexPath.row], user: "Customer")
         return cell
     }
     

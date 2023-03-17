@@ -33,13 +33,13 @@ class OrderTableViewCell: UITableViewCell {
         
         CreateOrJoinRoomRequest(accessToken: token!).creatOrJoinRoom { room in
             RoomStore.storeRoom(room: room) {
-                NotificationCenter.default.post(name: "Call Delivery Person", object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Call Delivery Person"), object: nil)
             }
         }
         
     }
     
-    func createOrderHistoryCell(orderHistory: OrderHistory) {
+    func createOrderHistoryCell(orderHistory: OrderHistory, user: String) {
         self.orderHistory = orderHistory
         DispatchQueue.main.async { [self] in
             pharmacyLabel.text = "MyanCare Pharmacy"
@@ -53,7 +53,13 @@ class OrderTableViewCell: UITableViewCell {
                 frontView.alpha = 0.4
                 medicineImageView.addSubview(frontView)
             } else if orderHistory.status == "deliver" {
-                deliveryPersonNameLabel.text = "Carrier - \(String(describing: orderHistory.deliveryPersonDetail[0].name!))" 
+                if user == "Customer" {
+                    deliveryPersonNameLabel.text = "Carrier - \(String(describing: orderHistory.deliveryPersonDetail[0].name!))"
+                } else {
+                    deliveryPersonNameLabel.text = "Customer - \(String(describing: orderHistory.userDetail[0].name!))"
+                }
+                deliveryPersonNameLabel.isHidden = false
+                
                 callDeliveryPersonButton.setTitle("", for: .normal)
                 callDeliveryPersonButton.isHidden = false
                 let url = URL(string: orderHistory.orderDetails[0].medicine.pictureUrls[0].stringValue)

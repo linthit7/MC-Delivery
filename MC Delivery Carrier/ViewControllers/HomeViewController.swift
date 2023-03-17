@@ -10,35 +10,54 @@ import SideMenu
 
 class HomeViewController: UIViewController {
     
+    var ongoingOrderList = [OrderHistory]()
     var mSocket = SocketHandler.sharedInstance.getSocket()
     let callManager = CallManager.sharedInstance
     var room = MCRoom()
     
     private let customButton = CustomButton()
-
+    
+    @IBOutlet weak var ongoingOrderTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if AppDelegate.loginState {
+            if let token = CredentialsStore.getCredentials()?.accessToken {
+                OrderRequest().getOngoingOrderRouteCarrier(accessToken: token) { [self] ongoingOrder in
+                    ongoingOrderList.append(contentsOf: ongoingOrder)
+                    DispatchQueue.main.async {
+                        self.ongoingOrderTableView.reloadData()
+                    }
+                }
+            }
+        }
+        
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(startCall), name: NSNotification.Name("Call Delivery Person"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(connectVideoCall), name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(declineCall), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(makeToastForLoginSuccess), name: NSNotification.Name("Login Successful"), object: nil)
         
-        DispatchQueue.main.async {
-            self.view.backgroundColor = CustomColor().backgroundColor
-            self.title = "MyanCare Carrier"
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-            self.navigationController?.navigationBar.standardAppearance = CustomNavigationBar().navBar
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            self.navigationController?.navigationBar.tintColor = UIColor.white
-            self.navigationItem.leftBarButtonItem = self.customButton.menuButton
+        DispatchQueue.main.async { [self] in
+            view.backgroundColor = CustomColor().backgroundColor
+            title = "MyanCare Carrier"
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.standardAppearance = CustomNavigationBar().navBar
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            navigationController?.navigationBar.tintColor = UIColor.white
+            navigationItem.leftBarButtonItem = customButton.menuButton
+            ongoingOrderTableView.backgroundColor = CustomColor().backgroundColor
+            ongoingOrderTableView.register(UINib(nibName: OrderTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: OrderTableViewCell.reuseIdentifier)
+            ongoingOrderTableView.delegate = self
+            ongoingOrderTableView.dataSource = self
         }
         customButton.menuButton.target = self
         customButton.menuButton.action = #selector(menuButtonPressed)
         
         mSocket.on("calling") { data, ack in
-            
-            print("Receiving Call")
-            
+                        
             let dataDic = data[0] as? NSDictionary
             let roomName = dataDic?.value(forKey: "roomName") as? String
             let token = dataDic?.value(forKey: "token") as? String
@@ -96,11 +115,10 @@ class HomeViewController: UIViewController {
     private func connectVideoCall() {
         
         let caller = CredentialsStore.getCredentials()?.user
-        let callee =
-        CalleeStore.getCallee()
-            
+        let orderHistory = CalleeStore.getOrderHistory()
+
         let data = [
-            "callerId": callee?._id,
+            "callerId": orderHistory?.user,
             "calleeId": caller?._id,
             "roomName": room.roomName,
             "roomSid": room.roomSid
@@ -108,7 +126,7 @@ class HomeViewController: UIViewController {
         
         mSocket.emit("acceptCall", data) {}
         
-        let videoVC = VideoCallViewController(socketRoom: room, calleeName: (callee?.name)!)
+        let videoVC = VideoCallViewController(socketRoom: room, calleeName: (orderHistory?.userDetail[0].name)!)
         videoVC.callState = "Joining Call"
         navigationController?.pushViewController(videoVC, animated: false)
     }
@@ -117,16 +135,54 @@ class HomeViewController: UIViewController {
     private func declineCall() {
         
         let caller = CredentialsStore.getCredentials()?.user
-        let callee = CalleeStore.getCallee()
-        
+        let orderHistory = CalleeStore.getOrderHistory()
+        let room = RoomStore.getRoom()
+
         let data = [
-            "callerId": callee?._id,
+            "callerId": orderHistory?.user,
             "calleeId": caller?._id,
-            "roomName": room.roomName,
-            "roomSid": room.roomSid
+            "roomName": room?.roomName,
+            "roomSid": room?.roomSid
         ]
         
         mSocket.emit("declineCall", data) {}
     }
+    @objc
+    private func startCall() {
+        let caller = CredentialsStore.getCredentials()?.user
+        let orderHistory = CalleeStore.getOrderHistory()
+        let room = RoomStore.getRoom()
+        
+        let data = [
+            "callerId": caller?.id,
+            "calleeId": orderHistory?.user,
+            "roomName": room?.roomName,
+            "roomSide": room?.roomSid
+        ]
+        
+        self.mSocket.emit("startCall", data) {
+            
+            self.callManager.performStartCallAction(id: UUID(uuidString: (room?.roomName)!)!, handle: (orderHistory?.userDetail[0].name)!)
 
+            let videoVC = VideoCallViewController(socketRoom: room!, calleeName: (orderHistory?.userDetail[0].name)!)
+            videoVC.callState = "Calling"
+            self.navigationController?.pushViewController(videoVC, animated: false)
+        }
+    }
+
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ongoingOrderList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.reuseIdentifier, for: indexPath) as? OrderTableViewCell else { return UITableViewCell() }
+        cell.createOrderHistoryCell(orderHistory: ongoingOrderList[indexPath.row], user: "Carrier")
+        return cell
+    }
+    
+    
 }

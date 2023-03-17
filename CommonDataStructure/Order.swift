@@ -50,6 +50,7 @@ struct OrderHistory: Codable {
     var updatedAt: String!
     var deliveryPerson: String!
     var deliveryPersonDetail: [DeliveryPersonDetail]!
+    var userDetail: [User]!
     
     static func loadOrderHistory(json: JSON) -> OrderHistory {
         
@@ -66,6 +67,7 @@ struct OrderHistory: Codable {
         orderHistory.updatedAt = json["updatedAt"].stringValue
         orderHistory.deliveryPerson = json["deliveryPerson"].stringValue
         orderHistory.deliveryPersonDetail = DeliveryPersonDetail.loadDeliveryPersonDetailArray(jsonArray: json["deliveryPersonDetail"].arrayValue)
+        orderHistory.userDetail = User.loadUserArray(jsonArray: json["userDetail"].arrayValue)
         return orderHistory
     }
     

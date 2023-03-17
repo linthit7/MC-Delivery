@@ -124,10 +124,10 @@ class HomeViewController: UIViewController {
     private func connectVideoCall() {
         
         let caller = CredentialsStore.getCredentials()?.user
-        let callee = CalleeStore.getCallee()
+        let orderHistory = CalleeStore.getOrderHistory()
         
         let data = [
-            "callerId": callee?._id,
+            "callerId": orderHistory?.deliveryPerson,
             "calleeId": caller?._id,
             "roomName": room.roomName,
             "roomSid": room.roomSid
@@ -135,7 +135,7 @@ class HomeViewController: UIViewController {
         
         mSocket.emit("acceptCall", data) {}
         
-        let videoVC = VideoCallViewController(socketRoom: room, calleeName: (callee?.name)!)
+        let videoVC = VideoCallViewController(socketRoom: room, calleeName: (orderHistory?.deliveryPersonDetail[0].name)!)
         videoVC.callState = "Joining Call"
         navigationController?.pushViewController(videoVC, animated: false)
     }
@@ -144,13 +144,14 @@ class HomeViewController: UIViewController {
     private func declineCall() {
         
         let caller = CredentialsStore.getCredentials()?.user
-        let callee = CalleeStore.getCallee()
+        let orderHistory = CalleeStore.getOrderHistory()
+        let room = RoomStore.getRoom()
         
         let data = [
-            "callerId": callee?._id,
+            "callerId": orderHistory?.deliveryPerson,
             "calleeId": caller?._id,
-            "roomName": room.roomName,
-            "roomSid": room.roomSid
+            "roomName": room?.roomName,
+            "roomSid": room?.roomSid
         ]
         
         mSocket.emit("declineCall", data) {}
@@ -229,7 +230,6 @@ class HomeViewController: UIViewController {
         
         self.mSocket.emit("startCall", data) {
             
-            print("Start Call Emitted", data)
             self.callManager.performStartCallAction(id: UUID(uuidString: (room?.roomName)!)!, handle: (orderHistory?.deliveryPersonDetail[0].name)!)
 
             let videoVC = VideoCallViewController(socketRoom: room!, calleeName: (orderHistory?.deliveryPersonDetail[0].name)!)

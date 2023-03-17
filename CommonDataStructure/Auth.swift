@@ -51,6 +51,7 @@ struct User: Codable {
     var favouriteMedicines: [JSON]!
     var createdAt: String!
     var updatedAt: String!
+    var roleType: String!
     
     static func loadUser(json: JSON) -> User {
         
@@ -67,6 +68,17 @@ struct User: Codable {
         user.favouriteMedicines = json["favouriteMedicines"].arrayValue
         user.createdAt = json["createdAt"].stringValue
         user.updatedAt = json["updatedAt"].stringValue
+        user.roleType = json["roleType"].stringValue
         return user
+    }
+    
+    static func loadUserArray(jsonArray: [JSON]) -> [User] {
+        
+        var userArray = [User]()
+        for json in jsonArray {
+            let user = User.loadUser(json: json)
+            userArray.append(user)
+        }
+        return userArray
     }
 }

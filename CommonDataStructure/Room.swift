@@ -24,7 +24,7 @@ struct RoomResponse {
     
 }
 
-struct MCRoom {
+struct MCRoom: Codable {
     
     var roomName: String!
     var roomSid: String!

@@ -18,7 +18,7 @@ struct Order {
     }
 }
 
-struct OrderHistoryResponse {
+struct OrderHistoryResponse{
     
     var statusCode: Int!
     var payload: [OrderHistory]!
@@ -36,7 +36,7 @@ struct OrderHistoryResponse {
     
 }
 
-struct OrderHistory {
+struct OrderHistory: Codable {
     
     var _id: String!
     var id: String!
@@ -48,7 +48,8 @@ struct OrderHistory {
     var address: String!
     var createdAt: String!
     var updatedAt: String!
-    
+    var deliveryPerson: String!
+    var deliveryPersonDetail: [DeliveryPersonDetail]!
     
     static func loadOrderHistory(json: JSON) -> OrderHistory {
         
@@ -63,6 +64,8 @@ struct OrderHistory {
         orderHistory.address = json["address"].stringValue
         orderHistory.createdAt = json["createdAt"].stringValue
         orderHistory.updatedAt = json["updatedAt"].stringValue
+        orderHistory.deliveryPerson = json["deliveryPerson"].stringValue
+        orderHistory.deliveryPersonDetail = DeliveryPersonDetail.loadDeliveryPersonDetailArray(jsonArray: json["deliveryPersonDetail"].arrayValue)
         return orderHistory
     }
     
@@ -77,7 +80,7 @@ struct OrderHistory {
     }
 }
 
-struct OrderDetails {
+struct OrderDetails: Codable {
     
     var medicine: Medicine!
     var quantity: Int!
@@ -100,5 +103,27 @@ struct OrderDetails {
             orderDetailsArray.append(orderDetails)
         }
         return orderDetailsArray
+    }
+}
+
+struct DeliveryPersonDetail: Codable {
+    
+    var name: String!
+    
+    static func loadDeliveryPersonDetail(json: JSON) -> DeliveryPersonDetail {
+        
+        var deliveryPersonDetail = DeliveryPersonDetail()
+        deliveryPersonDetail.name = json["name"].stringValue
+        return deliveryPersonDetail
+    }
+    
+    static func loadDeliveryPersonDetailArray(jsonArray: [JSON]) -> [DeliveryPersonDetail] {
+        
+        var deliveryPersonDetailArray = [DeliveryPersonDetail]()
+        for json in jsonArray {
+            let deliveryPersonDetail = DeliveryPersonDetail.loadDeliveryPersonDetail(json: json)
+            deliveryPersonDetailArray.append(deliveryPersonDetail)
+        }
+        return deliveryPersonDetailArray
     }
 }

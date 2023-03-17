@@ -10,6 +10,9 @@ import UIKit
 class OngoingOrderViewController: UIViewController {
 
     private var ongoingOrderList = [OrderHistory]()
+    var mSocket = SocketHandler.sharedInstance.getSocket()
+    let callManager = CallManager.sharedInstance
+    
     @IBOutlet weak var ongoingOrderTableView: UITableView!
     
     override func viewDidLoad() {

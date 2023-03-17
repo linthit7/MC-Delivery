@@ -103,11 +103,11 @@ class VideoCallViewController: UIViewController {
         room?.disconnect()
         
         let callerId = CredentialsStore.getCredentials()?.user
-        let calleeId = CalleeStore.getCallee()
+        let calleeId = CalleeStore.getOrderHistory()
         
         let data = [
             "callerId": callerId?._id,
-            "calleeId": calleeId?._id,
+            "calleeId": calleeId?.deliveryPerson,
             "roomName": socketRoom?.roomName,
             "roomSid": socketRoom?.roomSid
         ]

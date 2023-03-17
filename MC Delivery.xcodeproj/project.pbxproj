@@ -27,6 +27,7 @@
 		F92616CA29C2F7EF0003B874 /* VideoCallViewController+Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616C929C2F7EF0003B874 /* VideoCallViewController+Twilio.swift */; };
 		F92616CB29C2F7EF0003B874 /* VideoCallViewController+Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616C929C2F7EF0003B874 /* VideoCallViewController+Twilio.swift */; };
 		F92616CD29C2FF080003B874 /* HomeViewController+SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616CC29C2FF080003B874 /* HomeViewController+SideMenu.swift */; };
+		F92616CF29C424AA0003B874 /* RoomStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616CE29C424AA0003B874 /* RoomStore.swift */; };
 		F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */; };
 		F932AE8329A5BAEC00DFB859 /* MedicineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */; };
 		F932AE8629A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */; };
@@ -83,7 +84,6 @@
 		F987C5DE29BEE313001A5B58 /* OngoingOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F987C5DC29BEE313001A5B58 /* OngoingOrderViewController.xib */; };
 		F987C5EA29C05D27001A5B58 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987C5E629BF035F001A5B58 /* AuthRequest.swift */; };
 		F995FC9729ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
-		F995FC9829ADEC4E003E9C44 /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
 		F9B478FA29B58D8D002817F8 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B478F829B58D8D002817F8 /* ShoppingCartViewController.swift */; };
 		F9B478FB29B58D8D002817F8 /* ShoppingCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B478F929B58D8D002817F8 /* ShoppingCartViewController.xib */; };
 		F9C6C6EE29BAD65800D41CE3 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6C6EC29BAD65800D41CE3 /* OrderDetailViewController.swift */; };
@@ -94,6 +94,14 @@
 		F9C6C6F729BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6F529BAF1C300D41CE3 /* MedicineOrderTableViewCell.xib */; };
 		F9C6C6FA29BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6C6F829BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift */; };
 		F9C6C6FB29BB0AA700D41CE3 /* OrderTotalBillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6C6F929BB0AA700D41CE3 /* OrderTotalBillTableViewCell.xib */; };
+		F9D1D21B29C42F6400F4C4BD /* CalleeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */; };
+		F9D1D21C29C42F6600F4C4BD /* RoomStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92616CE29C424AA0003B874 /* RoomStore.swift */; };
+		F9D1D21D29C42F9800F4C4BD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F900949729B735A20031A016 /* Order.swift */; };
+		F9D1D21E29C42FAF00F4C4BD /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF20EA29A4CE02002E05A1 /* Medicine.swift */; };
+		F9D1D21F29C42FD500F4C4BD /* MC_Delivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */; };
+		F9D1D22029C42FF800F4C4BD /* Med+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F58CA229B5E72F00D3B904 /* Med+CoreDataClass.swift */; };
+		F9D1D22129C42FFA00F4C4BD /* Med+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F58CA329B5E72F00D3B904 /* Med+CoreDataProperties.swift */; };
+		F9D1D22229C42FFC00F4C4BD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */; };
 		F9E4618F29A32FBE0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4618D29A32FBE0050BF0F /* HomeViewController.swift */; };
 		F9E4619129A32FBE0050BF0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E4618E29A32FBE0050BF0F /* HomeViewController.xib */; };
 		F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4619329A32FED0050BF0F /* HomeViewController.swift */; };
@@ -139,6 +147,7 @@
 		F92616C629C2D6610003B874 /* VideoCallViewController+CallDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoCallViewController+CallDuration.swift"; sourceTree = "<group>"; };
 		F92616C929C2F7EF0003B874 /* VideoCallViewController+Twilio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoCallViewController+Twilio.swift"; sourceTree = "<group>"; };
 		F92616CC29C2FF080003B874 /* HomeViewController+SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+SideMenu.swift"; sourceTree = "<group>"; };
+		F92616CE29C424AA0003B874 /* RoomStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomStore.swift; sourceTree = "<group>"; };
 		F932AE8029A5BAEC00DFB859 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		F932AE8129A5BAEC00DFB859 /* MedicineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDetailViewController.xib; sourceTree = "<group>"; };
 		F932AE8429A5C7DC00DFB859 /* MedicineDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -210,8 +219,8 @@
 		F9E461B129A3B1160050BF0F /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineCollectionViewCell.xib; sourceTree = "<group>"; };
 		F9E461BC29A3C3090050BF0F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F9E461BD29A3C3090050BF0F /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		F9F58CA229B5E72F00D3B904 /* Med+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Med+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		F9F58CA329B5E72F00D3B904 /* Med+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Med+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		F9F58CA229B5E72F00D3B904 /* Med+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Med+CoreDataClass.swift"; path = "CommonModels/CoreData/Med+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		F9F58CA329B5E72F00D3B904 /* Med+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Med+CoreDataProperties.swift"; path = "CommonModels/CoreData/Med+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		F9FF20E529A4735D002E05A1 /* MedicinesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesRequest.swift; sourceTree = "<group>"; };
 		F9FF20EA29A4CE02002E05A1 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,9 +347,6 @@
 		F91F71ED29B5C76E002EF3E6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				F9F58CA229B5E72F00D3B904 /* Med+CoreDataClass.swift */,
-				F9F58CA329B5E72F00D3B904 /* Med+CoreDataProperties.swift */,
-				F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */,
 				F91F71F729B5CB8A002EF3E6 /* ShoppingCart.swift */,
 			);
 			path = CoreData;
@@ -371,6 +377,7 @@
 			children = (
 				F975A81929A86A21006EE0E7 /* CredentialsStore.swift */,
 				F995FC9629ADEC4E003E9C44 /* CalleeStore.swift */,
+				F92616CE29C424AA0003B874 /* RoomStore.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -438,14 +445,12 @@
 			children = (
 				F93FAF9B29A26E1400786ED4 /* AppDelegate.swift */,
 				F93FAF9D29A26E1400786ED4 /* SceneDelegate.swift */,
-				F9FF20E729A4ACD2002E05A1 /* DataStructure */,
 				F9FF20E229A46EAB002E05A1 /* Models */,
 				F9E461B429A3B8220050BF0F /* ViewControllers */,
 				F9E461B529A3B8320050BF0F /* Cells */,
 				F93FAFA429A26E1500786ED4 /* Assets.xcassets */,
 				F93FAFA629A26E1500786ED4 /* LaunchScreen.storyboard */,
 				F93FAFA929A26E1500786ED4 /* Info.plist */,
-				F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */,
 			);
 			path = "MC Delivery";
 			sourceTree = "<group>";
@@ -518,6 +523,8 @@
 				F932AE8E29A6621400DFB859 /* Auth.swift */,
 				F932AE9229A6756C00DFB859 /* User.swift */,
 				F932AE9C29A74B8C00DFB859 /* Room.swift */,
+				F9FF20EA29A4CE02002E05A1 /* Medicine.swift */,
+				F900949729B735A20031A016 /* Order.swift */,
 			);
 			path = CommonDataStructure;
 			sourceTree = "<group>";
@@ -525,6 +532,7 @@
 		F975A83129AA2C6A006EE0E7 /* CommonModels */ = {
 			isa = PBXGroup;
 			children = (
+				F9D1D22329C4309800F4C4BD /* CoreData */,
 				F91F71F429B5C85F002EF3E6 /* Socket */,
 				F91F71F329B5C84D002EF3E6 /* Twilio */,
 				F91F71F229B5C835002EF3E6 /* CallKit */,
@@ -561,6 +569,17 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		F9D1D22329C4309800F4C4BD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F9F58CA229B5E72F00D3B904 /* Med+CoreDataClass.swift */,
+				F9F58CA329B5E72F00D3B904 /* Med+CoreDataProperties.swift */,
+				F91F71EB29B5ACFC002EF3E6 /* CoreDataManager.swift */,
+				F91F71E829B5A44C002EF3E6 /* MC_Delivery.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		F9E461B429A3B8220050BF0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,15 +611,6 @@
 				F91F71ED29B5C76E002EF3E6 /* CoreData */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		F9FF20E729A4ACD2002E05A1 /* DataStructure */ = {
-			isa = PBXGroup;
-			children = (
-				F9FF20EA29A4CE02002E05A1 /* Medicine.swift */,
-				F900949729B735A20031A016 /* Order.swift */,
-			);
-			path = DataStructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -845,6 +855,7 @@
 				F900949129B6EA840031A016 /* NotificationEnum.swift in Sources */,
 				F932AE8229A5BAEC00DFB859 /* MedicineDetailViewController.swift in Sources */,
 				F9C6C6FA29BB0AA700D41CE3 /* OrderTotalBillTableViewCell.swift in Sources */,
+				F92616CF29C424AA0003B874 /* RoomStore.swift in Sources */,
 				F932AE9129A6705700DFB859 /* UserRequest.swift in Sources */,
 				F92616CD29C2FF080003B874 /* HomeViewController+SideMenu.swift in Sources */,
 				F91F71E329B59298002EF3E6 /* MedicineTableViewCell.swift in Sources */,
@@ -872,23 +883,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				F975A82C29AA0A26006EE0E7 /* LoginViewController.swift in Sources */,
-				F995FC9829ADEC4E003E9C44 /* CalleeStore.swift in Sources */,
 				F975A83929AA3256006EE0E7 /* ClientViewController.swift in Sources */,
+				F9D1D21B29C42F6400F4C4BD /* CalleeStore.swift in Sources */,
 				F975A83E29AA37FE006EE0E7 /* UserRequest.swift in Sources */,
 				F9E461A529A360F20050BF0F /* CustomNavigationBar.swift in Sources */,
 				F9E461AF29A3AED60050BF0F /* CustomLayout.swift in Sources */,
+				F9D1D21C29C42F6600F4C4BD /* RoomStore.swift in Sources */,
+				F9D1D21E29C42FAF00F4C4BD /* Medicine.swift in Sources */,
 				F93FAFB629A26E2600786ED4 /* AppDelegate.swift in Sources */,
 				F975A83C29AA355A006EE0E7 /* SocketHandler.swift in Sources */,
 				F975A83229AA2E51006EE0E7 /* CredentialsStore.swift in Sources */,
 				F975A84529AB9BDF006EE0E7 /* VideoCallViewController.swift in Sources */,
 				F93FAFB829A26E2600786ED4 /* SceneDelegate.swift in Sources */,
+				F9D1D21D29C42F9800F4C4BD /* Order.swift in Sources */,
+				F9D1D22229C42FFC00F4C4BD /* CoreDataManager.swift in Sources */,
 				F9E461A229A359460050BF0F /* CustomButton.swift in Sources */,
+				F9D1D22129C42FFA00F4C4BD /* Med+CoreDataProperties.swift in Sources */,
 				F92616C829C2D6610003B874 /* VideoCallViewController+CallDuration.swift in Sources */,
 				F92616CB29C2F7EF0003B874 /* VideoCallViewController+Twilio.swift in Sources */,
+				F9D1D21F29C42FD500F4C4BD /* MC_Delivery.xcdatamodeld in Sources */,
 				F975A83B29AA32B0006EE0E7 /* User.swift in Sources */,
 				F975A82F29AA2C46006EE0E7 /* Auth.swift in Sources */,
 				F9E4619929A337300050BF0F /* CustomColor.swift in Sources */,
 				F9E4619529A32FED0050BF0F /* HomeViewController.swift in Sources */,
+				F9D1D22029C42FF800F4C4BD /* Med+CoreDataClass.swift in Sources */,
 				F975A84029AA38B3006EE0E7 /* Room.swift in Sources */,
 				F975A83529AA3151006EE0E7 /* ProfileViewController.swift in Sources */,
 				F975A82329AA055D006EE0E7 /* MenuViewController.swift in Sources */,

@@ -164,6 +164,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(startCall), name: "Call Delivery Person", object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(connectVideoCall), name: NSNotification.Name(rawValue: "AnswerCall"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(declineCall), name: NSNotification.Name(rawValue: "EndCall"), object: nil)
          NotificationCenter.default.addObserver(self, selector: #selector(orderPlaced), name: ShoppingCartLogic.Alert.orderSuccessAndCleanUpDone.rawValue, object: nil)
@@ -211,6 +212,29 @@ class HomeViewController: UIViewController {
             present(viewControllerToPresent, animated: true)
         } else {
             // Fallback on earlier versions
+        }
+    }
+    @objc
+    private func startCall() {
+        let caller = CredentialsStore.getCredentials()?.user
+        let orderHistory = CalleeStore.getOrderHistory()
+        let room = RoomStore.getRoom()
+        
+        let data = [
+            "callerId": caller?.id,
+            "calleeId": orderHistory?.deliveryPerson,
+            "roomName": room?.roomName,
+            "roomSid": room?.roomSid
+        ]
+        
+        self.mSocket.emit("startCall", data) {
+            
+            print("Start Call Emitted", data)
+            self.callManager.performStartCallAction(id: UUID(uuidString: (room?.roomName)!)!, handle: (orderHistory?.deliveryPersonDetail[0].name)!)
+
+            let videoVC = VideoCallViewController(socketRoom: room!, calleeName: (orderHistory?.deliveryPersonDetail[0].name)!)
+            videoVC.callState = "Calling"
+            self.navigationController?.pushViewController(videoVC, animated: false)
         }
     }
 }

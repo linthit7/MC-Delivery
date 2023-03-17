@@ -22,7 +22,7 @@ struct MedicineResponse {
     }
 }
 
-struct Medicine {
+struct Medicine: Codable {
     
     var _id: String!
     var name: String!
@@ -66,7 +66,7 @@ struct Medicine {
     }
 }
 
-struct CategoryDetail {
+struct CategoryDetail: Codable {
     
     var id: String!
     var title: String!

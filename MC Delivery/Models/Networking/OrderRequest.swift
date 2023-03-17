@@ -164,8 +164,7 @@ struct OrderRequest {
             AF.request(cancelOrderByOrderId, method: .put, encoding: JSONEncoding.prettyPrinted, headers: headers).response { response in
                 switch response.data {
                 case .some(let data):
-                    let json = JSON(data)
-                    
+                    _ = JSON(data)
                     NotificationCenter.default.post(name: OrderRequest.Alert.orderCancelSuccess.rawValue, object: nil)
                     completion()
                 case .none:

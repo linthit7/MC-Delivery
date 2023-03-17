@@ -28,7 +28,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="23" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFy-P1-f2C">
-                                <rect key="frame" x="108" y="0.0" width="226" height="66.333333333333329"/>
+                                <rect key="frame" x="108" y="0.0" width="226" height="88.666666666666671"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="N7T-Vf-13O">
                                         <rect key="frame" x="0.0" y="0.0" width="122" height="20.333333333333332"/>
@@ -50,6 +50,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lb-5R-zIG">
                                         <rect key="frame" x="0.0" y="46" width="80" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Person Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6S-fS-O2K">
+                                        <rect key="frame" x="0.0" y="73" width="133.66666666666666" height="15.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -79,6 +85,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="callDeliveryPersonButton" destination="UOS-WY-g1e" id="CpU-Nj-jfp"/>
+                <outlet property="deliveryPersonNameLabel" destination="l6S-fS-O2K" id="plv-TD-RyI"/>
                 <outlet property="medicineImageView" destination="l49-Dc-fze" id="EX3-fo-bnX"/>
                 <outlet property="medicineLabel" destination="QIu-EB-Rde" id="2hm-xJ-1gm"/>
                 <outlet property="pharmacyLabel" destination="29f-ZL-Xc9" id="nKE-0Q-Bl5"/>
